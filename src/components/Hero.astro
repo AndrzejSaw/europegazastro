@@ -1,0 +1,34 @@
+---
+import { Button } from "./ui/button";
+import { Image } from "astro:assets";
+import HeroImage from "@/assets/hero.webp";
+---
+<section class="px-4 py-16 sm:px-6 lg:px-8">
+  <div class="mx-auto grid max-w-screen-xl grid-cols-1 items-center gap-8 md:grid-cols-2">
+    <!-- Left column -->
+    <div>
+      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
+        Reliable Transport Solutions for Your Business
+      </h1>
+      <p class="mt-4 text-muted-foreground">
+        We provide timely and secure cargo delivery across Europe, leveraging a modern fleet and professional drivers.
+      </p>
+      <div class="mt-6 flex flex-wrap items-center gap-3">
+        <Button>
+          Our Services
+        </Button>
+        <Button variant="secondary">
+          Become a Driver
+        </Button>
+      </div>
+    </div>
+
+    <!-- Right column (hero image) -->
+    <Image
+      src={HeroImage}
+      alt="A modern EUROPEGAZ truck on the highway"
+      loading="eager"
+      class="rounded-lg shadow-lg"
+    />
+  </div>
+</section>

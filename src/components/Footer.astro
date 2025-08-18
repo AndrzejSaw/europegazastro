@@ -1,0 +1,20 @@
+---
+import { Twitter, Facebook, Instagram } from "lucide-react";
+const year = new Date().getFullYear();
+---
+<footer class="border-t">
+  <div class="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-6 sm:px-6 lg:px-8">
+    <p class="text-sm text-muted-foreground">© {year} EUROPEGAZ. All rights reserved.</p>
+    <div class="flex items-center gap-4">
+      <a href="https://twitter.com" aria-label="Twitter" target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-primary">
+        <Twitter className="size-5" />
+      </a>
+      <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-primary">
+        <Facebook className="size-5" />
+      </a>
+      <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener noreferrer" class="transition-colors hover:text-primary">
+        <Instagram className="size-5" />
+      </a>
+    </div>
+  </div>
+</footer>

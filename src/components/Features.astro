@@ -1,0 +1,58 @@
+---
+import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
+import { Truck, Timer, ShieldCheck } from "lucide-react";
+---
+<section class="py-16 sm:py-24">
+  <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <h2 class="text-center text-3xl font-bold tracking-tight sm:text-4xl">
+      Why Choose Us?
+    </h2>
+    <p class="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
+      We offer more than just transportation; we offer peace of mind.
+    </p>
+
+    <div class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
+      <!-- Card 1 -->
+      <Card>
+        <CardHeader className="flex-row items-center gap-3">
+          <Truck className="size-6 text-primary" />
+          <CardTitle>Modern Fleet</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>
+            Our vehicles are maintained to the highest standards to ensure
+            reliability and efficiency.
+          </p>
+        </CardContent>
+      </Card>
+
+      <!-- Card 2 -->
+      <Card>
+        <CardHeader className="flex-row items-center gap-3">
+          <Timer className="size-6 text-primary" />
+          <CardTitle>On-Time Delivery</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>
+            We prioritize punctuality and keep you informed at every step of the
+            journey.
+          </p>
+        </CardContent>
+      </Card>
+
+      <!-- Card 3 -->
+      <Card>
+        <CardHeader className="flex-row items-center gap-3">
+          <ShieldCheck className="size-6 text-primary" />
+          <CardTitle>Guaranteed Safety</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>
+            Safety is our top priority—from cargo handling to on-road
+            operations.
+          </p>
+        </CardContent>
+      </Card>
+    </div>
+  </div>
+</section>

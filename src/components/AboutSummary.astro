@@ -1,0 +1,29 @@
+---
+import { Image } from "astro:assets";
+import SumImage from "@/assets/sum.webp";
+---
+<section class="py-16 sm:py-24">
+  <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      <!-- Left: image placeholder -->
+  <Image src={SumImage} alt="Company fleet on the road across Europe" class="rounded-xl" />
+
+      <!-- Right: content -->
+      <div class="flex flex-col justify-center">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+          Decades of Experience in European Logistics
+        </h2>
+        <p class="mt-4 text-muted-foreground">
+          For years, we’ve delivered dependable logistics across Europe with a focus on reliability,
+          safety, and customer satisfaction. Our team and modern fleet ensure every shipment arrives on time.
+        </p>
+        <a
+          href="/about"
+          class="mt-6 inline-flex items-center justify-center whitespace-nowrap rounded-md border bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground"
+        >
+          Learn More About Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
