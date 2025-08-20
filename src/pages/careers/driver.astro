@@ -4,7 +4,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import PageHero from "@/components/PageHero.astro";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import MultiStepJobApplicationForm from "@/components/MultiStepJobApplicationForm";
+import JobApplicationForm from "@/components/JobApplicationForm.tsx";
 ---
 
 <BaseLayout title="Вакансия: Водитель C+E | EUROPEGAZ">
@@ -150,7 +150,7 @@ import MultiStepJobApplicationForm from "@/components/MultiStepJobApplicationFor
 				<!-- Application form section -->
 				<section id="application-form" class="scroll-mt-8">
 					<h2 class="text-3xl font-bold mb-8 text-center">Подача заявки</h2>
-					<MultiStepJobApplicationForm client:only="react" />
+					<JobApplicationForm client:only="react" />
 				</section>
 			</div>
 

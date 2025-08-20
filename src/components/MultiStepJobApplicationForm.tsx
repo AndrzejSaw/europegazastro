@@ -75,128 +75,80 @@ const steps = [
   }
 ]
 
+const STORAGE_KEY = 'jobApplicationForm'
+
+const defaultValues: FormValues = {
+  first_name: '',
+  email: '',
+  phone: '',
+  citizenship: 'УКРАИНА',
+  has_experience: 'НЕТ',
+  code_95: 'НЕТ',
+  license_year: 'ПОСЛЕ 09.09.2009 Г',
+  'date-197': undefined,
+  residence_documents: 'ВИЗА ПОЛЬША',
+  'acceptance-979': false,
+}
+
 export default function MultiStepJobApplicationForm() {
   // Prevent SSR issues
   const [isMounted, setIsMounted] = useState(false)
   const [currentStep, setCurrentStep] = useState(1)
-  
-  useEffect(() => {
-    setIsMounted(true)
-    // Clear any corrupted localStorage data on first mount
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('jobApplicationForm')
-      if (saved) {
-        try {
-          const parsedData = JSON.parse(saved)
-          // Check if saved data has empty strings for select fields
-          const selectFields = ['citizenship', 'has_experience', 'code_95', 'license_year', 'residence_documents']
-          const hasEmptySelects = selectFields.some(field => parsedData[field] === '')
-          
-          if (hasEmptySelects) {
-            console.log('Found corrupted localStorage data, clearing...')
-            localStorage.removeItem('jobApplicationForm')
-          }
-        } catch (error) {
-          localStorage.removeItem('jobApplicationForm')
-        }
-      }
-    }
-  }, [])
-  
-  // Load saved data from localStorage
-  const loadSavedData = () => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('jobApplicationForm')
-      if (saved) {
-        try {
-          const parsedData = JSON.parse(saved)
-          // Convert date string back to Date object if it exists
-          if (parsedData['date-197']) {
-            parsedData['date-197'] = new Date(parsedData['date-197'])
-          }
-          return parsedData
-        } catch (error) {
-          console.error('Error parsing saved form data:', error)
-        }
-      }
-    }
-    return {}
-  }
 
-  const getDefaultValues = () => {
-    const savedData = loadSavedData()
-    const defaults = {
-      first_name: '',
-      email: '',
-      phone: '',
-      citizenship: 'УКРАИНА',
-      has_experience: 'НЕТ',
-      code_95: 'НЕТ',
-      license_year: 'ПОСЛЕ 09.09.2009 Г',
-      residence_documents: 'ВИЗА ПОЛЬША',
-      'acceptance-979': false,
-    }
-    
-    // Only override defaults with saved data if the saved value is meaningful
-    Object.keys(savedData).forEach(key => {
-      const savedValue = savedData[key]
-      const defaultValue = defaults[key]
-      
-      // For select fields, only override if saved value is different from empty string
-      // and it's actually a meaningful selection
-      if (key === 'citizenship' || key === 'has_experience' || key === 'code_95' || 
-          key === 'license_year' || key === 'residence_documents') {
-        if (savedValue && savedValue !== '' && savedValue !== defaultValue) {
-          defaults[key] = savedValue
-        }
-      } else {
-        // For other fields, override if not empty
-        if (savedValue !== '' && savedValue !== null && savedValue !== undefined) {
-          defaults[key] = savedValue
-        }
-      }
-    })
-    
-    return defaults
-  }
-  
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    defaultValues: getDefaultValues(),
+    defaultValues,
+    shouldUnregister: false,
   })
+
+  useEffect(() => {
+    setIsMounted(true)
+
+    if (typeof window === 'undefined') return
+
+    const saved = localStorage.getItem(STORAGE_KEY)
+    if (!saved) return
+
+    try {
+      const parsed = JSON.parse(saved)
+      const selectFields = ['citizenship', 'has_experience', 'code_95', 'license_year', 'residence_documents']
+      const hasEmptySelects = selectFields.some(field => parsed[field] === '')
+      if (hasEmptySelects) {
+        localStorage.removeItem(STORAGE_KEY)
+        return
+      }
+
+      if (parsed['date-197']) {
+        parsed['date-197'] = new Date(parsed['date-197'])
+      }
+
+      form.reset({ ...defaultValues, ...parsed })
+    } catch (e) {
+      localStorage.removeItem(STORAGE_KEY)
+    }
+  }, [form])
 
   // Save form data to localStorage whenever form values change
   useEffect(() => {
-    const subscription = form.watch((value) => {
-      if (typeof window !== 'undefined') {
-        // Default values to not save
-        const defaultsToSkip = {
-          citizenship: 'УКРАИНА',
-          has_experience: 'НЕТ',
-          code_95: 'НЕТ',
-          license_year: 'ПОСЛЕ 09.09.2009 Г',
-          residence_documents: 'ВИЗА ПОЛЬША',
-          'acceptance-979': false,
+    const subscription = form.watch(value => {
+      if (typeof window === 'undefined') return
+
+      const dataToSave: Record<string, unknown> = {}
+
+      Object.entries(value).forEach(([key, val]) => {
+        if (val === '' || val === null || val === undefined || val === (defaultValues as any)[key]) {
+          return
         }
-        
-        // Convert Date to string for localStorage and filter out empty/default values
-        const dataToSave = {}
-        Object.keys(value).forEach(key => {
-          const val = value[key]
-          const defaultVal = defaultsToSkip[key]
-          
-          // Only save if value is not empty and different from default
-          if (val !== '' && val !== null && val !== undefined && val !== defaultVal) {
-            if (key === 'date-197' && val instanceof Date) {
-              dataToSave[key] = val.toISOString()
-            } else {
-              dataToSave[key] = val
-            }
-          }
-        })
-        localStorage.setItem('jobApplicationForm', JSON.stringify(dataToSave))
-      }
+        if (key === 'date-197' && val instanceof Date) {
+          dataToSave[key] = val.toISOString()
+        } else {
+          dataToSave[key] = val
+        }
+      })
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave))
     })
+
     return () => subscription.unsubscribe()
   }, [form])
 
@@ -211,39 +163,20 @@ export default function MultiStepJobApplicationForm() {
     
     // Clear localStorage on successful submission
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('jobApplicationForm')
+      localStorage.removeItem(STORAGE_KEY)
     }
-    
-    form.reset()
+
+    form.reset(defaultValues)
     setCurrentStep(1)
   }
 
   const clearForm = () => {
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('jobApplicationForm')
-    }
-    // Force reset to default values
-    const defaultValues = {
-      first_name: '',
-      email: '',
-      phone: '',
-      citizenship: 'УКРАИНА',
-      has_experience: 'НЕТ',
-      code_95: 'НЕТ',
-      license_year: 'ПОСЛЕ 09.09.2009 Г',
-      'date-197': undefined,
-      residence_documents: 'ВИЗА ПОЛЬША',
-      'acceptance-979': false,
+      localStorage.removeItem(STORAGE_KEY)
     }
     form.reset(defaultValues)
-    // Force re-render by updating state
     setCurrentStep(1)
     toast.success('Форма очищена')
-    
-    // Force component re-mount to ensure defaults are applied
-    setTimeout(() => {
-      window.location.reload()
-    }, 500)
   }
 
   const nextStep = async () => {
@@ -348,7 +281,7 @@ export default function MultiStepJobApplicationForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Гражданство</FormLabel>
-                  <Select onValueChange={field.onChange} value={field.value || ""}>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder="Выберите гражданство" />
@@ -385,7 +318,7 @@ export default function MultiStepJobApplicationForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Есть ли у вас опыт работы водителем C+E в Европе?</FormLabel>
-                  <Select onValueChange={field.onChange} value={field.value || ""}>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder="Выберите опцию" />
@@ -407,7 +340,7 @@ export default function MultiStepJobApplicationForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Есть ли у вас код 95?</FormLabel>
-                  <Select onValueChange={field.onChange} value={field.value || ""}>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder="Выберите опцию" />
@@ -430,7 +363,7 @@ export default function MultiStepJobApplicationForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>В каком году вы получили водительские права категории C?</FormLabel>
-                  <Select onValueChange={field.onChange} value={field.value || ""}>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder="Выберите год" />
@@ -499,7 +432,7 @@ export default function MultiStepJobApplicationForm() {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Какие у вас документы для пребывания в Польше?</FormLabel>
-                  <Select onValueChange={field.onChange} value={field.value || ""}>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
                       <SelectTrigger>
                         <SelectValue placeholder="Выберите документы" />
