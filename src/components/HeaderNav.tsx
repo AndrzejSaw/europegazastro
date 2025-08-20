@@ -8,16 +8,16 @@ export default function HeaderNav() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuLink href="/about">About Us</NavigationMenuLink>
+            <NavigationMenuLink href="/about">О нас</NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink href="/services">Services</NavigationMenuLink>
+            <NavigationMenuLink href="/services">Услуги</NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink href="/fleet">Fleet</NavigationMenuLink>
+            <NavigationMenuLink href="/fleet">Автопарк</NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuLink href="/careers">Careers</NavigationMenuLink>
+            <NavigationMenuLink href="/careers">Карьера</NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
