@@ -68,8 +68,8 @@ html { color-scheme: light; }
 	--secondary: hsl(46 78% 50%); /* #e1b31d */
 	--secondary-foreground: hsl(20 36% 5%);
 
-	--muted: hsl(15 25% 90%);
-	--muted-foreground: hsl(25 5% 45%);
+	--muted: hsl(0 0% 90%);
+	--muted-foreground: hsl(0 0% 45%);
 
 	--accent: hsl(45 66% 79%); /* #eddba3 */
 	--accent-foreground: hsl(20 36% 5%);

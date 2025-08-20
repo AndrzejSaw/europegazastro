@@ -1,9 +1,18 @@
 ---
 import HeaderNav from "./HeaderNav";
+import { Image } from "astro:assets";
+import Logo from "@/assets/logo.svg";
 ---
 <header class="border-b">
   <nav class="mx-auto flex max-w-screen-xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-    <a href="/" class="text-lg font-semibold tracking-tight">EUROPEGAZ</a>
+    <a href="/" class="flex items-center">
+      <Image
+        src={Logo}
+        alt="EUROPEGAZ"
+        class="h-8 w-auto"
+        loading="eager"
+      />
+    </a>
 
   <HeaderNav client:load />
   </nav>
