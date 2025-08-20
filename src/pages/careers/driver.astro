@@ -4,6 +4,8 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import PageHero from "@/components/PageHero.astro";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { CheckCircle, Briefcase, Wallet, MapPin, Truck, Globe, Info } from "lucide-react";
+import AnimatedSection from "@/components/AnimatedSection";
 import JobApplicationForm from "@/components/JobApplicationForm.tsx";
 ---
 
@@ -17,206 +19,166 @@ import JobApplicationForm from "@/components/JobApplicationForm.tsx";
 		<div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-12">
 			<!-- Left column (2/3) - Main content -->
 			<div class="lg:col-span-2 order-2 lg:order-1">
-				<!-- Descriptive text section -->
-				<div class="space-y-6 mb-12">
-					<p class="text-lg leading-relaxed text-muted-foreground">
-						Мы предлагаем стабильную работу с возможностью профессионального роста в крупной транспортной компании. 
-						Наша команда состоит из опытных профессионалов, которые ценят качество работы и взаимопонимание.
-					</p>
-					
-					<p class="text-lg leading-relaxed text-muted-foreground">
-						Присоединяйтесь к нашей команде и получите возможность работать в международных рейсах по Европе. 
-						Мы обеспечиваем полную поддержку наших водителей и создаем комфортные условия для работы.
-					</p>
-					
-					<p class="text-lg leading-relaxed text-muted-foreground">
-						Все автомобили проходят регулярное техническое обслуживание и оборудованы современными системами безопасности. 
-						Мы гарантируем своевременные выплаты и прозрачные условия труда.
-					</p>
-				</div>
+				<!-- Descriptive text section wrapped in Card -->
+				<AnimatedSection client:visible>
+				<Card className="mb-12">
+					<CardHeader>
+						<CardTitle>Общая информация</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<div class="space-y-6">
+							<p class="text-lg leading-relaxed text-muted-foreground">
+								Мы предлагаем стабильную работу с возможностью профессионального роста в крупной транспортной компании. 
+								Наша команда состоит из опытных профессионалов, которые ценят качество работы и взаимопонимание.
+							</p>
+						
+							<p class="text-lg leading-relaxed text-muted-foreground">
+								Присоединяйтесь к нашей команде и получите возможность работать в международных рейсах по Европе. 
+								Мы обеспечиваем полную поддержку наших водителей и создаем комфортные условия для работы.
+							</p>
+						
+							<p class="text-lg leading-relaxed text-muted-foreground">
+								Все автомобили проходят регулярное техническое обслуживание и оборудованы современными системами безопасности. 
+								Мы гарантируем своевременные выплаты и прозрачные условия труда.
+							</p>
+						</div>
+					</CardContent>
+				</Card>
+				</AnimatedSection>
 
-				<!-- What we offer -->
-				<section class="mb-12">
-					<h2 class="text-3xl font-bold mb-6">Предлагаем:</h2>
-					<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-						<li class="flex items-start gap-3">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 flex-shrink-0 mt-0.5">
-								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-								<polyline points="22,4 12,14.01 9,11.01"/>
-							</svg>
-							<span>Стабильную работу с официальным трудоустройством</span>
-						</li>
-						<li class="flex items-start gap-3">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 flex-shrink-0 mt-0.5">
-								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-								<polyline points="22,4 12,14.01 9,11.01"/>
-							</svg>
-							<span>Заработную плату от 85 до 98 евро в день</span>
-						</li>
-						<li class="flex items-start gap-3">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 flex-shrink-0 mt-0.5">
-								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-								<polyline points="22,4 12,14.01 9,11.01"/>
-							</svg>
-							<span>Современные грузовики MAN с полным техническим обслуживанием</span>
-						</li>
-						<li class="flex items-start gap-3">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 flex-shrink-0 mt-0.5">
-								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-								<polyline points="22,4 12,14.01 9,11.01"/>
-							</svg>
-							<span>Бесплатное проживание в современных общежитиях</span>
-						</li>
-						<li class="flex items-start gap-3">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 flex-shrink-0 mt-0.5">
-								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-								<polyline points="22,4 12,14.01 9,11.01"/>
-							</svg>
-							<span>Медицинскую страховку и социальный пакет</span>
-						</li>
-						<li class="flex items-start gap-3">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 flex-shrink-0 mt-0.5">
-								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-								<polyline points="22,4 12,14.01 9,11.01"/>
-							</svg>
-							<span>Оплачиваемые отпуска и больничные</span>
-						</li>
-						<li class="flex items-start gap-3">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 flex-shrink-0 mt-0.5">
-								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-								<polyline points="22,4 12,14.01 9,11.01"/>
-							</svg>
-							<span>Возможности профессионального развития</span>
-						</li>
-					</ul>
-				</section>
+				<!-- What we offer wrapped in Card -->
+				<AnimatedSection client:visible>
+				<Card className="mb-12">
+					<CardHeader>
+						<CardTitle>Предлагаем:</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+							<li class="flex items-start gap-3">
+								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+								<span>Стабильную работу с официальным трудоустройством</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+								<span>Заработную плату от 85 до 98 евро в день</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+								<span>Современные грузовики MAN с полным техническим обслуживанием</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+								<span>Бесплатное проживание в современных общежитиях</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+								<span>Медицинскую страховку и социальный пакет</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+								<span>Оплачиваемые отпуска и больничные</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+								<span>Возможности профессионального развития</span>
+							</li>
+						</ul>
+					</CardContent>
+				</Card>
+				</AnimatedSection>
 
-				<!-- Requirements -->
-				<section class="mb-16">
-					<h2 class="text-3xl font-bold mb-6">Требования к кандидатам:</h2>
-					<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-						<li class="flex items-start gap-3">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 flex-shrink-0 mt-0.5">
-								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-								<polyline points="22,4 12,14.01 9,11.01"/>
-							</svg>
-							<span>Водительские права категории C+E</span>
-						</li>
-						<li class="flex items-start gap-3">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 flex-shrink-0 mt-0.5">
-								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-								<polyline points="22,4 12,14.01 9,11.01"/>
-							</svg>
-							<span>Опыт работы водителем от 2 лет</span>
-						</li>
-						<li class="flex items-start gap-3">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 flex-shrink-0 mt-0.5">
-								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-								<polyline points="22,4 12,14.01 9,11.01"/>
-							</svg>
-							<span>Карта водителя (цифровой тахограф)</span>
-						</li>
-						<li class="flex items-start gap-3">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 flex-shrink-0 mt-0.5">
-								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-								<polyline points="22,4 12,14.01 9,11.01"/>
-							</svg>
-							<span>Базовое знание английского языка</span>
-						</li>
-						<li class="flex items-start gap-3">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 flex-shrink-0 mt-0.5">
-								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-								<polyline points="22,4 12,14.01 9,11.01"/>
-							</svg>
-							<span>Ответственность и пунктуальность</span>
-						</li>
-						<li class="flex items-start gap-3">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 flex-shrink-0 mt-0.5">
-								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-								<polyline points="22,4 12,14.01 9,11.01"/>
-							</svg>
-							<span>Готовность к работе в международных рейсах</span>
-						</li>
-						<li class="flex items-start gap-3">
-							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600 flex-shrink-0 mt-0.5">
-								<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-								<polyline points="22,4 12,14.01 9,11.01"/>
-							</svg>
-							<span>Чистое водительское удостоверение</span>
-						</li>
-					</ul>
-				</section>
+				<!-- Requirements wrapped in Card -->
+				<AnimatedSection client:visible>
+				<Card className="mb-16">
+					<CardHeader>
+						<CardTitle>Требования к кандидатам:</CardTitle>
+					</CardHeader>
+					<CardContent>
+						<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+							<li class="flex items-start gap-3">
+								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+								<span>Водительские права категории C+E</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+								<span>Опыт работы водителем от 2 лет</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+								<span>Карта водителя (цифровой тахограф)</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+								<span>Базовое знание английского языка</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+								<span>Ответственность и пунктуальность</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+								<span>Готовность к работе в международных рейсах</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+								<span>Чистое водительское удостоверение</span>
+							</li>
+						</ul>
+					</CardContent>
+				</Card>
+				</AnimatedSection>
 
 				<!-- Application form section -->
 				<section id="application-form" class="scroll-mt-8">
 					<h2 class="text-3xl font-bold mb-8 text-center">Подача заявки</h2>
-					<JobApplicationForm client:only="react" />
+					<JobApplicationForm client:visible />
 				</section>
 			</div>
 
 			<!-- Right column (1/3) - Sidebar -->
 			<div class="lg:col-span-1 order-1 lg:order-2 mb-8 lg:mb-0">
 				<!-- Mobile sticky card -->
-				<div class="sticky top-4">
-					<Card className="shadow-lg border-2 border-blue-100">
-						<CardHeader className="bg-gradient-to-r from-blue-50 to-blue-100">
-							<CardTitle className="text-blue-900 flex items-center gap-2">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600">
-									<circle cx="12" cy="12" r="10"/>
-									<path d="M12 6v6l4 2"/>
-								</svg>
+					<div class="sticky top-4">
+						<AnimatedSection client:visible>
+						<Card className="bg-muted/50">
+						<CardHeader>
+							<CardTitle className="flex items-center gap-2">
+								<Info className="size-5 text-primary" />
 								Ключевая информация
 							</CardTitle>
 						</CardHeader>
 						<CardContent className="p-6">
 						<ul class="space-y-4">
 							<li class="flex items-center gap-3">
-								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary flex-shrink-0">
-									<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-									<circle cx="9" cy="7" r="4"/>
-									<path d="m22 2-5 10-3-3-2 5"/>
-								</svg>
+								<Briefcase className="size-5 text-primary flex-shrink-0" />
 								<div>
 									<p class="font-semibold text-sm text-muted-foreground">Вакансия:</p>
 									<p class="font-medium">Водитель С+Е</p>
 								</div>
 							</li>
 							<li class="flex items-center gap-3">
-								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary flex-shrink-0">
-									<line x1="12" y1="1" x2="12" y2="23"/>
-									<path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-								</svg>
+								<Wallet className="size-5 text-primary flex-shrink-0" />
 								<div>
 									<p class="font-semibold text-sm text-muted-foreground">Зарплата:</p>
 									<p class="font-medium">85-98 евро в день</p>
 								</div>
 							</li>
 							<li class="flex items-center gap-3">
-								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary flex-shrink-0">
-									<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
-									<circle cx="12" cy="10" r="3"/>
-								</svg>
+								<MapPin className="size-5 text-primary flex-shrink-0" />
 								<div>
 									<p class="font-semibold text-sm text-muted-foreground">База:</p>
 									<p class="font-medium">64-113, Osieczna</p>
 								</div>
 							</li>
 							<li class="flex items-center gap-3">
-								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary flex-shrink-0">
-									<path d="m8 3 4 8 5-5v11H3V7l5 5Z"/>
-									<path d="M16 8h4V4h-4v4Z"/>
-								</svg>
+								<Truck className="size-5 text-primary flex-shrink-0" />
 								<div>
 									<p class="font-semibold text-sm text-muted-foreground">Автомобили:</p>
 									<p class="font-medium">MAN Euro 6</p>
 								</div>
 							</li>
 							<li class="flex items-center gap-3">
-								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary flex-shrink-0">
-									<circle cx="12" cy="12" r="10"/>
-									<path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
-									<path d="M2 12h20"/>
-								</svg>
+								<Globe className="size-5 text-primary flex-shrink-0" />
 								<div>
 									<p class="font-semibold text-sm text-muted-foreground">Маршруты:</p>
 									<p class="font-medium">Западная Европа</p>
@@ -231,7 +193,8 @@ import JobApplicationForm from "@/components/JobApplicationForm.tsx";
 							</a>
 						</div>
 					</CardContent>
-				</Card>
+						</Card>
+						</AnimatedSection>
 			</div>
 		</div>
 	</main>

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
-import { toast, Toaster } from 'sonner'
+import { toast } from 'sonner'
 import { format } from 'date-fns'
 import { CalendarIcon, Send, RefreshCw } from 'lucide-react'
 
@@ -56,7 +56,7 @@ type FormValues = z.infer<typeof formSchema>
 
 const STORAGE_KEY = 'singleJobApplicationForm'
 
-const defaultValues: FormValues = {
+const defaultValues: Partial<FormValues> = {
   first_name: '',
   email: '',
   phone: '',
@@ -472,7 +472,7 @@ export default function JobApplicationForm() {
           </Form>
         </CardContent>
       </Card>
-      <Toaster />
+  {/* Toaster removed; provided globally in BaseLayout */}
     </div>
   )
 }

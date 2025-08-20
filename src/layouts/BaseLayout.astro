@@ -1,14 +1,31 @@
 ---
 import "../styles/global.css";
 import { Toaster } from "@/components/ui/sonner";
-const { title = "Astro" } = Astro.props;
+const {
+  title = "EUROPEGAZ",
+  description = "EUROPEGAZ — международные грузоперевозки по Европе. Современный автопарк, профессиональные водители и надежная логистика.",
+} = Astro.props;
 ---
 <!doctype html>
-<html lang="en" id="top">
+<html lang="ru" id="top">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={Astro.url?.href} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={Astro.url?.href} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
   </head>
   <body class="bg-background text-foreground">
     <slot />
