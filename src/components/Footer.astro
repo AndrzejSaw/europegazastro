@@ -5,7 +5,7 @@ import { Image } from "astro:assets";
 import Logo from "@/assets/logo.svg";
 const year = new Date().getFullYear();
 ---
-<footer class="bg-muted border-t">
+<footer class="bg-gradient-to-br from-primary to-primary/90 text-white border-t border-primary/20">
   <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8">
     <!-- Main Grid -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -15,10 +15,10 @@ const year = new Date().getFullYear();
         <Image
           src={Logo}
           alt="EUROPEGAZ"
-          class="h-10 w-auto"
+          class="h-12 w-auto footer-logo"
           loading="lazy"
         />
-        <p class="text-sm text-muted-foreground leading-relaxed">
+        <p class="text-sm text-white/80 leading-relaxed">
           Мы предоставляем надежные транспортные решения по всей Европе. 
           Ищем профессиональных водителей для работы в нашей команде. 
           Присоединяйтесь к нам и станьте частью успешной компании!
@@ -27,25 +27,25 @@ const year = new Date().getFullYear();
 
       <!-- Second Column (Navigation) -->
       <div class="space-y-4">
-        <h3 class="text-lg font-semibold">НАВИГАЦИЯ</h3>
+        <h3 class="text-lg font-semibold text-yellow-300">НАВИГАЦИЯ</h3>
         <ul class="space-y-2">
           <li>
-            <a href="/about" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+            <a href="/about" class="text-sm text-white/70 hover:text-yellow-300 transition-colors">
               О Нас
             </a>
           </li>
           <li>
-            <a href="/fleet" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+            <a href="/fleet" class="text-sm text-white/70 hover:text-yellow-300 transition-colors">
               Автопарк
             </a>
           </li>
           <li>
-            <a href="/careers" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+            <a href="/careers" class="text-sm text-white/70 hover:text-yellow-300 transition-colors">
               Карьера
             </a>
           </li>
           <li>
-            <a href="/contact" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+            <a href="/contact" class="text-sm text-white/70 hover:text-yellow-300 transition-colors">
               Контакты
             </a>
           </li>
@@ -54,15 +54,15 @@ const year = new Date().getFullYear();
 
       <!-- Third Column (Contact) -->
       <div class="space-y-4">
-        <h3 class="text-lg font-semibold">ТРУДОУСТРОЙСТВО</h3>
+        <h3 class="text-lg font-semibold text-yellow-300">ТРУДОУСТРОЙСТВО</h3>
         <div class="space-y-3">
           <div class="flex items-center gap-2">
-            <Phone className="size-4 text-primary" />
-            <span class="text-sm text-muted-foreground">+48 509 717 619</span>
+            <Phone className="size-4 text-yellow-300" />
+            <span class="text-sm text-white/70">+48 509 717 619</span>
           </div>
           <div class="flex items-center gap-2">
-            <Mail className="size-4 text-primary" />
-            <span class="text-sm text-muted-foreground">careers@europegaz.com</span>
+            <Mail className="size-4 text-yellow-300" />
+            <span class="text-sm text-white/70">careers@europegaz.com</span>
           </div>
       
         </div>
@@ -70,16 +70,16 @@ const year = new Date().getFullYear();
     </div>
 
     <!-- Bottom Bar -->
-    <div class="mt-12 pt-6 border-t">
+    <div class="mt-12 pt-6 border-t border-white/20">
       <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p class="text-sm text-muted-foreground">
+        <p class="text-sm text-white/70">
           © {year} EUROPEGAZ. Все права защищены.
         </p>
         <div class="flex gap-6">
-          <a href="/privacy" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+          <a href="/privacy" class="text-sm text-white/70 hover:text-yellow-300 transition-colors">
             Политика конфиденциальности
           </a>
-          <a href="/terms" class="text-sm text-muted-foreground hover:text-primary transition-colors">
+          <a href="/terms" class="text-sm text-white/70 hover:text-yellow-300 transition-colors">
             Условия использования
           </a>
         </div>
@@ -90,7 +90,7 @@ const year = new Date().getFullYear();
   <!-- Back to Top Button -->
   <a 
     href="#top" 
-    class="fixed bottom-8 right-8 inline-flex items-center justify-center w-12 h-12 rounded-full border bg-background text-foreground shadow-lg hover:bg-accent hover:text-accent-foreground transition-all duration-300 hover:scale-110 z-50"
+    class="fixed bottom-8 right-8 inline-flex items-center justify-center w-12 h-12 rounded-full gradient-secondary text-white shadow-yellow hover:shadow-lg hover-lift z-50"
     aria-label="Наверх"
   >
     <ArrowUp className="size-5" />

@@ -13,15 +13,15 @@ const { title, description, href } = Astro.props;
 
 <a 
   href={href} 
-  class="block transition-all duration-300 hover:scale-[1.02]"
+  class="block hover-lift"
 >
-  <Card className="h-full hover:shadow-lg hover:border-primary transition-all duration-300">
+  <Card className="h-full shadow-green hover:shadow-lg border-primary/20 hover:border-primary/40">
     <CardContent className="p-6">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Left Column (Image Placeholder) -->
         <div class="md:col-span-1">
-          <div class="bg-muted aspect-[4/3] rounded-lg flex items-center justify-center">
-            <span class="text-muted-foreground text-sm">Изображение</span>
+          <div class="gradient-card aspect-[4/3] rounded-lg flex items-center justify-center border border-primary/10">
+            <span class="text-primary/60 text-sm font-medium">Изображение</span>
           </div>
         </div>
 
