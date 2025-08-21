@@ -3,41 +3,37 @@ import { Button } from "./ui/button";
 import { Image } from "astro:assets";
 import HeroImage from "@/assets/hero.webp";
 ---
-<section class="relative overflow-hidden gradient-hero px-4 py-20 sm:px-6 lg:px-8">
-  <!-- Overlay for better text readability -->
-  <div class="absolute inset-0 bg-gradient-to-br from-black/30 via-black/10 to-transparent"></div>
+<section class="rounded-2xl gradient-hero relative overflow-hidden p-8 sm:p-12 flex flex-col items-center text-center">
   
-  <!-- Background animated shapes -->
-  <div class="absolute -top-24 -left-24 w-96 h-96 bg-white/20 rounded-full blur-3xl opacity-30 animate-pulse -z-10"></div>
-  <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-3xl opacity-20 animate-pulse -z-10" style="animation-delay: 1s;"></div>
-  
-  <div class="relative mx-auto grid max-w-screen-xl grid-cols-1 items-center gap-12 md:grid-cols-2">
-    <!-- Left column -->
-    <div class="text-white">
-      <h1 class="text-5xl font-bold tracking-tight leading-tight sm:text-6xl lg:text-7xl">
-        <span class="block">Reliable</span>
-        <span class="block text-gradient-secondary text-yellow-300">Transport</span>
-        <span class="block">Solutions</span>
-      </h1>
-      <p class="mt-6 text-xl text-white/90 leading-relaxed">
-        We provide timely and secure cargo delivery across Europe, leveraging a modern fleet and professional drivers.
+  <div class="relative mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <!-- Left Column (Text) -->
+    <div>
+<h1 class="heading-display text-4xl sm:text-4xl leading-tight">
+  <span class="text-[#007e57]">Euro-Pegaz</span>
+  <span class="text-[#eeba4b]"> Transport</span><br>
+  <span class="text-[#007e57]"> sp. z o.o.</span>
+</h1>
+      <p class="mt-6 text-xl text-muted-foreground leading-relaxed">
+        Вы находитесь на официальном сайте по трудоустройству в нашей компании. Мы всегда в поиске талантливых специалистов, готовых расти вместе с нами. Узнайте больше о нашей компании или сразу переходите к открытым вакансиям.
       </p>
-      <div class="mt-8 flex flex-wrap items-center gap-4">
-        <Button size="lg" className="bg-white text-primary hover:bg-white/90 shadow-xl">
-          Our Services
-        </Button>
-        <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
-          Become a Driver
-        </Button>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
+        <a href="/about">
+          <Button variant="default" size="lg">О компании</Button>
+        </a>
+        <a href="/careers">
+          <Button variant="secondary" size="lg">Смотреть вакансии</Button>
+        </a>
       </div>
     </div>
 
-    <!-- Right column (hero image) -->
-    <Image
-      src={HeroImage}
-      alt="A modern EUROPEGAZ truck on the highway"
-      loading="eager"
-      class="rounded-lg shadow-lg"
-    />
+    <!-- Right Column (Image) -->
+    <div class="relative p-6 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 shadow-2xl">
+      <Image
+        src={HeroImage}
+        alt="Современный грузовик EUROPEGAZ на европейской автомагистрали"
+        loading="eager"
+        class="rounded-lg shadow-xl w-full h-auto"
+      />
+    </div>
   </div>
 </section>

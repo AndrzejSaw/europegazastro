@@ -1,305 +1,316 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
-/* Optional: tokens via @theme (Tailwind v4) */
+
 @theme {
-	--font-sans: "Inter", ui-sans-serif, system-ui, Arial, sans-serif;
-	--font-display: "Poppins", "Inter", ui-sans-serif, system-ui, Arial, sans-serif;
-	--radius-lg: 12px;
-	--radius-xl: 16px;
-	--radius-2xl: 24px;
+    --font-sans: "Verdana", ui-sans-serif, system-ui, Arial, sans-serif;
+    --font-display: "Verdana", ui-sans-serif, system-ui, Arial, sans-serif;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
 }
 
 html { color-scheme: light; }
 
 @theme inline {
-	--radius-sm: calc(var(--radius) - 4px);
-	--radius-md: calc(var(--radius) - 2px);
-	--radius-lg: var(--radius);
-	--radius-xl: calc(var(--radius) + 4px);
-	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--color-card: var(--card);
-	--color-card-foreground: var(--card-foreground);
-	--color-popover: var(--popover);
-	--color-popover-foreground: var(--popover-foreground);
-	--color-primary: var(--primary);
-	--color-primary-foreground: var(--primary-foreground);
-	--color-secondary: var(--secondary);
-	--color-secondary-foreground: var(--secondary-foreground);
-	--color-muted: var(--muted);
-	--color-muted-foreground: var(--muted-foreground);
-	--color-accent: var(--accent);
-	--color-accent-foreground: var(--accent-foreground);
-	--color-destructive: var(--destructive);
-	--color-border: var(--border);
-	--color-input: var(--input);
-	--color-ring: var(--ring);
-	--color-chart-1: var(--chart-1);
-	--color-chart-2: var(--chart-2);
-	--color-chart-3: var(--chart-3);
-	--color-chart-4: var(--chart-4);
-	--color-chart-5: var(--chart-5);
-	--color-sidebar: var(--sidebar);
-	--color-sidebar-foreground: var(--sidebar-foreground);
-	--color-sidebar-primary: var(--sidebar-primary);
-	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-	--color-sidebar-accent: var(--sidebar-accent);
-	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-	--color-sidebar-border: var(--sidebar-border);
-	--color-sidebar-ring: var(--sidebar-ring);
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
 }
 
-
 :root {
-	/* Основные цвета фона */
-	--background: hsl(0 0% 98%); /* Чистый белый фон */
-	--foreground: hsl(0 0% 9%); /* Чистый темно-серый/черный для текста */
+    /* Нейтральные фон и текст */
+    --background: hsl(210 20% 98%); /* Почти белый, холодный */
+    --foreground: hsl(215 28% 17%); /* Темно-синий сланец */
 
-	--card: hsl(0 0% 100%); /* Чисто белый для карточек */
-	--card-foreground: hsl(0 0% 9%); /* Чистый темно-серый для текста в карточках */
+    --card: hsl(0 0% 100%); /* Чисто белый для карточек */
+    --card-foreground: hsl(215 28% 17%);
 
-	--popover: hsl(0 0% 100%);
-	--popover-foreground: hsl(0 0% 9%); /* Чистый темно-серый для текста в поповерах */
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(215 28% 17%);
 
-	/* Основной зеленый цвет (как на логотипе) */
-	--primary: hsl(127, 86%, 22%); /* Насыщенный зеленый #1ca832 */
-	--primary-foreground: hsl(0 0% 100%);
+    /* Основной цвет - Фирменный Зеленый */
+    --primary: hsl(161 100% 25%); /* #007e57 */
+    --primary-foreground: hsl(0 0% 100%); /* Белый текст на зеленом */
 
-	/* Желтый акцентный цвет (как на логотипе) */
-	--secondary: hsl(45, 85%, 32%); /* Яркий желтый #f2c127 */
-	--secondary-foreground: hsl(0 0% 9%); /* Чистый темно-серый для текста на желтом */
+    /* Вторичный цвет - Фирменный Желтый */
+    --secondary: hsl(52 100% 59%); /* #ffe22e */
+    --secondary-foreground: hsl(215 28% 17%); /* Темный текст на желтом для контраста */
 
-	/* Приглушенные цвета */
-	--muted: hsl(0 0% 94%); /* Нейтральный светло-серый */
-	--muted-foreground: hsl(0 0% 45%); /* Нейтральный серый для приглушенного текста */
+    /* Акцент - оставим приглушенным для баланса */
+    --accent: hsl(210 30% 90%);
+    --accent-foreground: hsl(215 28% 17%);
 
-	/* Дополнительный оранжевый акцент */
-	--accent: hsl(35 80% 62%); /* Теплый оранжевый #e69a3c */
-	--accent-foreground: hsl(0 0% 100%);
+    /* Приглушенные цвета */
+    --muted: hsl(210 30% 94%);
+    --muted-foreground: hsl(215 20% 45%);
 
-	--destructive: hsl(0 84% 60%);
-	--destructive-foreground: hsl(0 0% 100%);
+    --destructive: hsl(0 84% 60%);
+    --destructive-foreground: hsl(0 0% 100%);
 
-	/* Границы и поля ввода */
-	--border: hsl(0 0% 89%); /* Нейтральный светло-серый для границ */
-	--input: hsl(0 0% 96%); /* Нейтральный очень светло-серый для полей ввода */
-	--ring: hsl(127 75% 38%); /* Зеленый для фокуса */
+    /* Границы и поля ввода */
+    --border: hsl(210 20% 88%);
+    --input: hsl(210 20% 92%);
+    --ring: hsl(162 100% 25%); /* Зеленый для фокуса */
 
-	--radius: 0.75rem; /* Увеличенный радиус для современного вида */
+    --radius: 0.75rem;
 }
 
 .dark {
-	--background: oklch(0.145 0 0);
-	--foreground: oklch(0.985 0 0);
-	--card: oklch(0.205 0 0);
-	--card-foreground: oklch(0.985 0 0);
-	--popover: oklch(0.205 0 0);
-	--popover-foreground: oklch(0.985 0 0);
-	--primary: oklch(0.922 0 0);
-	--primary-foreground: oklch(0.205 0 0);
-	--secondary: oklch(0.269 0 0);
-	--secondary-foreground: oklch(0.985 0 0);
-	--muted: oklch(0.269 0 0);
-	--muted-foreground: oklch(0.708 0 0);
-	--accent: oklch(0.269 0 0);
-	--accent-foreground: oklch(0.985 0 0);
-	--destructive: oklch(0.704 0.191 22.216);
-	--border: oklch(1 0 0 / 10%);
-	--input: oklch(1 0 0 / 15%);
-	--ring: oklch(0.556 0 0);
-	--chart-1: oklch(0.488 0.243 264.376);
-	--chart-2: oklch(0.696 0.17 162.48);
-	--chart-3: oklch(0.769 0.188 70.08);
-	--chart-4: oklch(0.627 0.265 303.9);
-	--chart-5: oklch(0.645 0.246 16.439);
-	--sidebar: oklch(0.205 0 0);
-	--sidebar-foreground: oklch(0.985 0 0);
-	--sidebar-primary: oklch(0.488 0.243 264.376);
-	--sidebar-primary-foreground: oklch(0.985 0 0);
-	--sidebar-accent: oklch(0.269 0 0);
-	--sidebar-accent-foreground: oklch(0.985 0 0);
-	--sidebar-border: oklch(1 0 0 / 10%);
-	--sidebar-ring: oklch(0.556 0 0);
+    --background: oklch(0.145 0 0);
+    --foreground: oklch(0.985 0 0);
+    --card: oklch(0.205 0 0);
+    --card-foreground: oklch(0.985 0 0);
+    --popover: oklch(0.205 0 0);
+    --popover-foreground: oklch(0.985 0 0);
+    --primary: oklch(0.922 0 0);
+    --primary-foreground: oklch(0.205 0 0);
+    --secondary: oklch(0.269 0 0);
+    --secondary-foreground: oklch(0.985 0 0);
+    --muted: oklch(0.269 0 0);
+    --muted-foreground: oklch(0.708 0 0);
+    --accent: oklch(0.269 0 0);
+    --accent-foreground: oklch(0.985 0 0);
+    --destructive: oklch(0.704 0.191 22.216);
+    --border: oklch(1 0 0 / 10%);
+    --input: oklch(1 0 0 / 15%);
+    --ring: oklch(0.556 0 0);
+    --chart-1: oklch(0.488 0.243 264.376);
+    --chart-2: oklch(0.696 0.17 162.48);
+    --chart-3: oklch(0.769 0.188 70.08);
+    --chart-4: oklch(0.627 0.265 303.9);
+    --chart-5: oklch(0.645 0.246 16.439);
+    --sidebar: oklch(0.205 0 0);
+    --sidebar-foreground: oklch(0.985 0 0);
+    --sidebar-primary: oklch(0.488 0.243 264.376);
+    --sidebar-primary-foreground: oklch(0.985 0 0);
+    --sidebar-accent: oklch(0.269 0 0);
+    --sidebar-accent-foreground: oklch(0.985 0 0);
+    --sidebar-border: oklch(1 0 0 / 10%);
+    --sidebar-ring: oklch(0.556 0 0);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
-	}
+    }
   body {
     @apply bg-background text-foreground;
-	}
+    font-family: "Verdana", ui-sans-serif, system-ui, Arial, sans-serif;
+    }
 }
 
 /* Пользовательские градиенты для современного дизайна */
 @layer utilities {
-	.gradient-primary {
-		background: linear-gradient(135deg, hsl(127 75% 38%) 0%, hsl(127 65% 45%) 100%);
-	}
-	
-	.gradient-secondary {
-		background: linear-gradient(135deg, hsl(45 85% 55%) 0%, hsl(35 80% 62%) 100%);
-	}
-	
-	.gradient-hero {
-		background: linear-gradient(135deg, 
-			hsl(128, 90%, 19%) 0%, 
-			hsl(125, 56%, 75%) 25%,
-			hsl(60, 7%, 97%) 75%,
-			hsl(53, 80%, 63%) 100%);
-	}
-	
-	.gradient-card {
-		background: linear-gradient(145deg, 
-			hsl(0 0% 100%) 0%, 
-			hsl(0 0% 97%) 50%,
-			hsl(0 0% 94%) 100%);
-		box-shadow: 
-			0 1px 3px 0 rgb(0 0 0 / 0.1), 
-			0 1px 2px -1px rgb(0 0 0 / 0.1),
-			inset 0 1px 0 0 rgb(255 255 255 / 0.1);
-	}
-	
-	.text-gradient-primary {
-		background: linear-gradient(135deg, hsl(127 75% 38%) 0%, hsl(127 65% 45%) 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-	}
-	
-	.text-gradient-secondary {
-		background: linear-gradient(135deg, hsl(45 85% 55%) 0%, hsl(35 80% 62%) 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
-	}
-	
-	.shadow-green {
-		box-shadow: 
-			0 4px 6px -1px hsla(127, 75%, 38%, 0.1), 
-			0 2px 4px -2px hsla(127, 75%, 38%, 0.1),
-			0 10px 15px -3px rgba(0, 0, 0, 0.1),
-			0 4px 6px -4px rgba(0, 0, 0, 0.1);
-	}
-	
-	.shadow-yellow {
-		box-shadow: 
-			0 4px 6px -1px hsla(45, 85%, 55%, 0.1), 
-			0 2px 4px -2px hsla(45, 85%, 55%, 0.1),
-			0 10px 15px -3px rgba(0, 0, 0, 0.1),
-			0 4px 6px -4px rgba(0, 0, 0, 0.1);
-	}
-	
-	.hover-lift {
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
-	}
-	
-	.hover-lift:hover {
-		transform: translateY(-4px);
-		box-shadow: 
-			0 20px 25px -5px rgba(0, 0, 0, 0.1),
-			0 8px 10px -6px rgba(0, 0, 0, 0.1),
-			0 25px 50px -12px rgba(0, 0, 0, 0.25);
-	}
-	
-	/* Дополнительные рельефные эффекты */
-	.card-elevated {
-		background: linear-gradient(145deg, 
-			hsl(0 0% 100%) 0%, 
-			hsl(0 0% 98%) 100%);
-		box-shadow: 
-			0 4px 6px -1px rgba(0, 0, 0, 0.1),
-			0 2px 4px -2px rgba(0, 0, 0, 0.1),
-			inset 0 1px 0 rgba(255, 255, 255, 0.6),
-			inset 0 -1px 0 rgba(0, 0, 0, 0.05);
-		border: 1px solid rgba(255, 255, 255, 0.2);
-	}
-	
-	.card-elevated:hover {
-		box-shadow: 
-			0 10px 15px -3px rgba(0, 0, 0, 0.1),
-			0 4px 6px -4px rgba(0, 0, 0, 0.1),
-			0 20px 25px -5px rgba(0, 0, 0, 0.1),
-			inset 0 1px 0 rgba(255, 255, 255, 0.8),
-			inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-		transform: translateY(-2px);
-	}
-	
-	.card-pressed {
-		background: linear-gradient(145deg, 
-			hsl(0 0% 96%) 0%, 
-			hsl(0 0% 100%) 100%);
-		box-shadow: 
-			inset 0 2px 4px rgba(0, 0, 0, 0.1),
-			inset 0 -1px 0 rgba(255, 255, 255, 0.9),
-			0 1px 2px rgba(0, 0, 0, 0.05);
-	}
-	
-	.glass-effect {
-		background: linear-gradient(145deg, 
-			rgba(255, 255, 255, 0.9) 0%, 
-			rgba(255, 255, 255, 0.7) 100%);
-		backdrop-filter: blur(10px);
-		-webkit-backdrop-filter: blur(10px);
-		border: 1px solid rgba(255, 255, 255, 0.2);
-		box-shadow: 
-			0 8px 32px rgba(0, 0, 0, 0.1),
-			inset 0 1px 0 rgba(255, 255, 255, 0.4);
-	}
-	
-	/* Типографические классы */
-	.heading-display {
-		font-family: var(--font-display);
-		font-weight: 800;
-		line-height: 1.1;
-		letter-spacing: -0.02em;
-	}
-	
-	.heading-primary {
-		font-family: var(--font-display);
-		font-weight: 700;
-		line-height: 1.2;
-		letter-spacing: -0.01em;
-	}
-	
-	.text-balance {
-		text-wrap: balance;
-	}
-	
-	/* Анимация появления */
-	.fade-in {
-		animation: fadeIn 0.6s ease-out forwards;
-		opacity: 0;
-	}
-	
-	.slide-up {
-		animation: slideUp 0.8s ease-out forwards;
-		opacity: 0;
-		transform: translateY(30px);
-	}
-	
-	@keyframes fadeIn {
-		to {
-			opacity: 1;
-		}
-	}
-	
-	@keyframes slideUp {
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-	
-	/* Градиентные границы */
-	.border-gradient {
-		border: 2px solid transparent;
-		background: linear-gradient(hsl(120 15% 96%), hsl(120 15% 96%)) padding-box,
-		            linear-gradient(135deg, hsl(127 75% 38%), hsl(45 85% 55%)) border-box;
-	}
-	
-	
+    .gradient-primary {
+        background: linear-gradient(135deg, hsl(127 75% 38%) 0%, hsl(127 65% 45%) 100%);
+    }
+    
+    .gradient-secondary {
+        background: linear-gradient(135deg, hsl(45 85% 55%) 0%, hsl(35 80% 62%) 100%);
+    }
+    
+    .gradient-hero {
+        background: linear-gradient(135deg, 
+            hsl(142, 55%, 80%) 0%, 
+            hsl(0, 0%, 98%) 25%,
+            hsl(60, 14%, 97%) 75%,
+            hsl(53, 53%, 85%) 100%);
+    }
+    
+    .gradient-card {
+        background: linear-gradient(145deg, 
+            hsl(0 0% 100%) 0%, 
+            hsl(0 0% 97%) 50%,
+            hsl(0 0% 94%) 100%);
+        box-shadow: 
+            0 1px 3px 0 rgb(0 0 0 / 0.1), 
+            0 1px 2px -1px rgb(0 0 0 / 0.1),
+            inset 0 1px 0 0 rgb(255 255 255 / 0.1);
+    }
+    
+    .text-gradient-primary {
+        background: linear-gradient(135deg, hsl(127 75% 38%) 0%, hsl(127 65% 45%) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .text-gradient-secondary {
+        background: linear-gradient(135deg, hsl(45 85% 55%) 0%, hsl(35 80% 62%) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .shadow-green {
+        box-shadow: 
+            0 4px 6px -1px hsla(127, 75%, 38%, 0.1), 
+            0 2px 4px -2px hsla(127, 75%, 38%, 0.1),
+            0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .shadow-yellow {
+        box-shadow: 
+            0 4px 6px -1px hsla(45, 85%, 55%, 0.1), 
+            0 2px 4px -2px hsla(45, 85%, 55%, 0.1),
+            0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .hover-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 
+            0 20px 25px -5px rgba(0, 0, 0, 0.1),
+            0 8px 10px -6px rgba(0, 0, 0, 0.1),
+            0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    
+    /* Дополнительные рельефные эффекты */
+    .card-elevated {
+        background: linear-gradient(145deg, 
+            hsl(0 0% 100%) 0%, 
+            hsl(0 0% 98%) 100%);
+        box-shadow: 
+            0 4px 6px -1px rgba(0, 0, 0, 0.1),
+            0 2px 4px -2px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .card-elevated:hover {
+        box-shadow: 
+            0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -4px rgba(0, 0, 0, 0.1),
+            0 20px 25px -5px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8),
+            inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+    }
+    
+    .card-pressed {
+        background: linear-gradient(145deg, 
+            hsl(0 0% 96%) 0%, 
+            hsl(0 0% 100%) 100%);
+        box-shadow: 
+            inset 0 2px 4px rgba(0, 0, 0, 0.1),
+            inset 0 -1px 0 rgba(255, 255, 255, 0.9),
+            0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+    
+    .glass-effect {
+        background: linear-gradient(145deg, 
+            rgba(255, 255, 255, 0.9) 0%, 
+            rgba(255, 255, 255, 0.7) 100%);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 
+            0 8px 32px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+    
+    /* Типографические классы */
+    .heading-display {
+        font-family: "Verdana", ui-sans-serif, system-ui, Arial, sans-serif;
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+    
+    .heading-primary {
+        font-family: "Verdana", ui-sans-serif, system-ui, Arial, sans-serif;
+        font-weight: 700;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+    }
+    
+    .text-balance {
+        text-wrap: balance;
+    }
+    
+    /* Анимация появления */
+    .fade-in {
+        animation: fadeIn 0.6s ease-out forwards;
+        opacity: 0;
+    }
+    
+    .slide-up {
+        animation: slideUp 0.8s ease-out forwards;
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes slideUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Градиентные границы */
+    .border-gradient {
+        border: 2px solid transparent;
+        background: linear-gradient(hsl(120 15% 96%), hsl(120 15% 96%)) padding-box,
+                    linear-gradient(135deg, hsl(127 75% 38%), hsl(45 85% 55%)) border-box;
+    }
+    
+    /* Медленная анимация вращения */
+    .animate-slow-spin {
+        animation: slowSpin 20s linear infinite;
+    }
+    
+    @keyframes slowSpin {
+        0%, 100% {
+            transform: rotate(0deg) scale(1);
+        }
+        50% {
+            transform: rotate(180deg) scale(1.1);
+        }
+    }
 }
