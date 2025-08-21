@@ -3,13 +3,188 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import PageHero from "@/components/PageHero.astro";
+import AnimatedSection from "@/components/AnimatedSection.tsx";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Leaf, GaugeCircle } from "lucide-react";
+import { Image } from "astro:assets";
+import heroImage from "@/assets/hero.webp";
 ---
 
 <BaseLayout title="Наш автопарк | EUROPEGAZ">
 	<Header />
-	<PageHero />
-	<main class="mx-auto max-w-screen-xl px-4 py-16 text-center">
-		<h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Наш автопарк</h1>
+	<PageHero title="Наш автопарк" backgroundImage={heroImage} alt="Автопарк EUROPEGAZ с современными грузовиками MAN Euro 6" />
+	<main class="mx-auto max-w-screen-xl px-4 py-16">
+		<!-- Секция 1: Вводный текст и изображение -->
+		<AnimatedSection client:visible>
+			<section class="mb-16">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+					<div class="text-left">
+						<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
+							Современный и технологичный автопарк
+						</h2>
+						<p class="text-lg text-muted-foreground leading-relaxed">
+							Основа качественной логистики — надежная техника. Наш автопарк состоит из современных грузовиков MAN Euro 6, оснащенных передовыми системами безопасности и экономии топлива. Мы постоянно обновляем и расширяем наш парк, чтобы обеспечить максимальную эффективность и экологичность перевозок по всей Европе.
+						</p>
+					</div>
+					<div>
+						<Image 
+							src={heroImage} 
+							alt="Современные грузовики MAN Euro 6 EUROPEGAZ" 
+							class="rounded-lg shadow-lg w-full h-64 object-cover"
+							format="webp"
+							quality={80}
+						/>
+					</div>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<!-- Секция 2: Экологичность и инновации -->
+		<AnimatedSection client:visible>
+			<section class="mb-16 bg-muted py-16 px-8">
+				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-center mb-12">
+					Экологичность и инновации
+				</h2>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Leaf className="h-12 w-12 text-green-600 mb-4" />
+							<CardTitle>Соответствие EURO 6</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Все наши грузовики соответствуют самым высоким экологическим стандартам EURO 6, обеспечивая минимальные выбросы и заботу об окружающей среде.</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<GaugeCircle className="h-12 w-12 text-blue-600 mb-4" />
+							<CardTitle>Двигатели CNG Bi-Fuel</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Треть нашего автопарка оснащена газовыми двигателями CNG Bi-Fuel, что значительно снижает выбросы CO2 и эксплуатационные расходы.</p>
+						</CardContent>
+					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<!-- Секция 3: Галерея полуприцепов -->
+		<AnimatedSection client:visible>
+			<section class="text-center">
+				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-12">
+					Наши полуприцепы для любых задач
+				</h2>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<!-- Стандартный полуприцеп -->
+					<Card>
+						<Image 
+							src={heroImage} 
+							alt="Стандартный полуприцеп EUROPEGAZ" 
+							class="w-full h-48 object-cover rounded-t-lg"
+							format="webp"
+							quality={80}
+						/>
+						<CardHeader>
+							<CardTitle>Стандартный полуприцеп</CardTitle>
+						</CardHeader>
+						<CardContent className="text-left">
+							<ul class="space-y-2">
+								<li><strong>Размеры:</strong> 13,6 × 2,48 × 2,7 м</li>
+								<li><strong>Грузоподъемность:</strong> до 24 тонн</li>
+								<li><strong>Особенности:</strong> Универсальность для большинства грузов</li>
+							</ul>
+						</CardContent>
+					</Card>
+
+					<!-- Мега полуприцеп -->
+					<Card>
+						<Image 
+							src={heroImage} 
+							alt="Мега полуприцеп EUROPEGAZ" 
+							class="w-full h-48 object-cover rounded-t-lg"
+							format="webp"
+							quality={80}
+						/>
+						<CardHeader>
+							<CardTitle>Мега полуприцеп</CardTitle>
+						</CardHeader>
+						<CardContent className="text-left">
+							<ul class="space-y-2">
+								<li><strong>Размеры:</strong> 13,6 × 2,48 × 3,0 м</li>
+								<li><strong>Грузоподъемность:</strong> до 24 тонн</li>
+								<li><strong>Особенности:</strong> Увеличенная высота для объемных грузов</li>
+							</ul>
+						</CardContent>
+					</Card>
+
+					<!-- Хакпак полуприцеп -->
+					<Card>
+						<Image 
+							src={heroImage} 
+							alt="Хакпак полуприцеп EUROPEGAZ" 
+							class="w-full h-48 object-cover rounded-t-lg"
+							format="webp"
+							quality={80}
+						/>
+						<CardHeader>
+							<CardTitle>Хакпак полуприцеп</CardTitle>
+						</CardHeader>
+						<CardContent className="text-left">
+							<ul class="space-y-2">
+								<li><strong>Размеры:</strong> 13,6 × 2,48 × 2,7 м</li>
+								<li><strong>Грузоподъемность:</strong> до 24 тонн</li>
+								<li><strong>Особенности:</strong> Откидные борта для удобной погрузки</li>
+							</ul>
+						</CardContent>
+					</Card>
+
+					<!-- Изотерма полуприцеп -->
+					<Card>
+						<Image 
+							src={heroImage} 
+							alt="Изотерма полуприцеп EUROPEGAZ" 
+							class="w-full h-48 object-cover rounded-t-lg"
+							format="webp"
+							quality={80}
+						/>
+						<CardHeader>
+							<CardTitle>Изотерма полуприцеп</CardTitle>
+						</CardHeader>
+						<CardContent className="text-left">
+							<ul class="space-y-2">
+								<li><strong>Размеры:</strong> 13,6 × 2,48 × 2,6 м</li>
+								<li><strong>Грузоподъемность:</strong> до 22 тонн</li>
+								<li><strong>Особенности:</strong> Термоизоляция для температурных грузов</li>
+							</ul>
+						</CardContent>
+					</Card>
+
+					<!-- Силос полуприцеп -->
+					<Card>
+						<Image 
+							src={heroImage} 
+							alt="Силос полуприцеп EUROPEGAZ" 
+							class="w-full h-48 object-cover rounded-t-lg"
+							format="webp"
+							quality={80}
+						/>
+						<CardHeader>
+							<CardTitle>Силос полуприцеп</CardTitle>
+						</CardHeader>
+						<CardContent className="text-left">
+							<ul class="space-y-2">
+								<li><strong>Объем:</strong> до 63 м³</li>
+								<li><strong>Грузоподъемность:</strong> до 33 тонн</li>
+								<li><strong>Особенности:</strong> Пневматическая разгрузка сыпучих грузов</li>
+							</ul>
+						</CardContent>
+					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
 	</main>
 	<Footer />
 </BaseLayout>

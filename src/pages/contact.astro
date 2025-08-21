@@ -3,13 +3,109 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import PageHero from "@/components/PageHero.astro";
+import AnimatedSection from "@/components/AnimatedSection.tsx";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Phone, MessageSquare, Navigation } from "lucide-react";
+import { Image } from "astro:assets";
+import heroImage from "@/assets/hero.webp";
 ---
 
 <BaseLayout title="Контакты | EUROPEGAZ">
 	<Header />
-	<PageHero />
-	<main class="mx-auto max-w-screen-xl px-4 py-16 text-center">
-		<h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Контакты</h1>
+	<PageHero title="Контакты" backgroundImage={heroImage} alt="Офис EUROPEGAZ и логистический центр" />
+	<main class="mx-auto max-w-screen-xl px-4 py-16">
+		<!-- Секция 1: Вступительный текст -->
+		<AnimatedSection client:visible>
+			<section class="mb-16 max-w-3xl mx-auto text-center">
+				<h2 class="text-3xl font-bold mb-6">
+					Свяжитесь с нами
+				</h2>
+				<p class="text-lg text-muted-foreground leading-relaxed mb-6">
+					Мы всегда рады новым специалистам в нашей команде. Все открытые вакансии и подробные требования вы можете найти на нашей странице 'Карьера'. Если вас заинтересовала конкретная позиция, пожалуйста, отправляйте анкету непосредственно со страницы с ее описанием.
+				</p>
+				<Button variant="link" className="text-lg">
+					<a href="/careers">Посмотреть открытые вакансии</a>
+				</Button>
+				<p class="text-lg text-muted-foreground leading-relaxed mt-6">
+					Если у вас остались общие вопросы, вы можете связаться с нами любым удобным способом, указанным ниже.
+				</p>
+			</section>
+		</AnimatedSection>
+
+		<!-- Секция 2: Карточка с контактами -->
+		<AnimatedSection client:visible>
+			<section class="mb-16">
+				<Card className="max-w-4xl mx-auto overflow-hidden">
+					<div class="grid grid-cols-1 md:grid-cols-2">
+						<!-- Левая колонка: Изображение -->
+						<div class="h-64 md:h-auto">
+							<Image 
+								src={heroImage} 
+								alt="Главная база EUROPEGAZ в Осечной" 
+								class="w-full h-full object-cover"
+								format="webp"
+								quality={80}
+							/>
+						</div>
+						
+						<!-- Правая колонка: Контактная информация -->
+						<CardContent className="p-8">
+							<CardTitle className="text-2xl mb-6">Главная база</CardTitle>
+							
+							<div class="space-y-4">
+								<div>
+									<p class="font-semibold text-gray-900">Адрес:</p>
+									<p class="text-gray-700">Centrum logistyczne Osieczna<br/>64-113 Osieczna k. Leszna<br/>ul. Łoniewska 1</p>
+								</div>
+								
+								<div>
+									<p class="font-semibold text-gray-900">Часы работы:</p>
+									<p class="text-gray-700">8:00 - 16:00 (Пн-Пт)</p>
+								</div>
+								
+								<div>
+									<p class="font-semibold text-gray-900 mb-3">Контакты:</p>
+									<div class="space-y-3">
+										<a href="tel:+48509717619" class="flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+											<Phone className="h-5 w-5 mr-3" />
+											+48 509 717 619
+										</a>
+										<a href="viber://chat?number=%2B48509717619" class="flex items-center text-purple-600 hover:text-purple-800 transition-colors">
+											<MessageSquare className="h-5 w-5 mr-3" />
+											Viber
+										</a>
+										<a href="https://wa.me/48509717619" class="flex items-center text-green-600 hover:text-green-800 transition-colors">
+											<Navigation className="h-5 w-5 mr-3" />
+											WhatsApp
+										</a>
+									</div>
+								</div>
+							</div>
+						</CardContent>
+					</div>
+				</Card>
+			</section>
+		</AnimatedSection>
+
+		<!-- Секция 3: Карта Google -->
+		<AnimatedSection client:visible>
+			<section class="text-center">
+				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+					Мы на карте
+				</h2>
+				
+				<div class="max-w-4xl mx-auto">
+					<iframe 
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2438.7239058752647!2d16.418999815758398!3d52.29583737978469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47045b6e5f5a5a5f%3A0x5f5a5a5f5a5a5a5f!2s%C5%81oniewska%201%2C%2064-113%20Osieczna%2C%20Poland!5e0!3m2!1sen!2sus!4v1629872400000!5m2!1sen!2sus"
+						class="w-full h-96 rounded-lg border-0"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade">
+					</iframe>
+				</div>
+			</section>
+		</AnimatedSection>
 	</main>
 	<Footer />
 </BaseLayout>

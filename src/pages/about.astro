@@ -3,13 +3,227 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import PageHero from "@/components/PageHero.astro";
+import AnimatedSection from "@/components/AnimatedSection.tsx";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ShieldCheck, Lightbulb, Handshake } from "lucide-react";
+import { Image } from "astro:assets";
+import heroImage from "@/assets/hero.webp";
 ---
 
 <BaseLayout title="О компании | EUROPEGAZ">
 	<Header />
-	<PageHero />
-	<main class="mx-auto max-w-screen-xl px-4 py-16 text-center">
-		<h1 class="text-4xl font-bold tracking-tight sm:text-5xl">О компании</h1>
+	<PageHero title="О компании EUROPEGAZ" backgroundImage={heroImage} alt="Современные грузовики EUROPEGAZ на европейской автомагистрали" />
+	<main class="mx-auto max-w-screen-xl px-4 py-16">
+		<AnimatedSection client:visible>
+			<section class="mb-16 max-w-3xl mx-auto text-center">
+				<h1 class="text-3xl font-bold mb-6">
+					Более 30 лет традиций и инноваций в европейской логистике
+				</h1>
+				<p class="text-lg text-muted-foreground leading-relaxed">
+					Euro-Pegaz — это семейная компания с 30-летним опытом, занимающая одну из лидирующих позиций в сфере транспорта и логистики в Европе. Мы специализируемся на перевозках различных грузов, предлагая комплексные решения от складирования до доставки по всей Европе. Наша команда профессионалов обеспечивает высочайшее качество услуг, соблюдая все международные стандарты безопасности и эффективности.
+				</p>
+			</section>
+		</AnimatedSection>
+
+		<AnimatedSection client:visible>
+			<section class="text-center mb-16 bg-muted py-16 px-8">
+				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-12">
+					Наша философия: Логистика и больше
+				</h2>
+				
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<ShieldCheck className="h-12 w-12 text-blue-600 mb-4" />
+							<CardTitle>Качество и Безопасность</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>В основе нашей работы лежат качество и безопасность, подтвержденные системами управления ISO, HACCP и IFS.</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Lightbulb className="h-12 w-12 text-yellow-500 mb-4" />
+							<CardTitle>Инновационные Решения</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Мы разрабатываем собственные логистические решения, оптимизируя процессы и обеспечивая полный комфорт сотрудничества.</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Handshake className="h-12 w-12 text-green-600 mb-4" />
+							<CardTitle>Надежное Партнерство</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Благодаря индивидуальному подходу и страсти к делу, мы становимся надежным и лояльным бизнес-партнером для наших клиентов.</p>
+						</CardContent>
+					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<section class="text-center">
+			<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-16">
+				Ключевые этапы нашего развития
+			</h2>
+			
+			<div class="space-y-16">
+			<!-- 1991 - Image left, text right -->
+			<AnimatedSection client:visible>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+					<div>
+						<Image 
+							src={heroImage} 
+							alt="EUROPEGAZ 1991" 
+							class="rounded-lg shadow-lg w-full h-64 object-cover"
+							format="webp"
+							quality={80}
+						/>
+					</div>
+					<div class="text-left">
+						<h3 class="text-2xl font-bold text-gray-900 mb-4">1991</h3>
+						<p class="text-gray-700 text-lg">Основание компании и приобретение первого грузовика.</p>
+					</div>
+				</div>
+			</AnimatedSection>
+
+			<!-- 1999 - Text left, image right -->
+			<AnimatedSection client:visible>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+					<div class="text-left md:order-1">
+						<h3 class="text-2xl font-bold text-gray-900 mb-4">1999</h3>
+						<p class="text-gray-700 text-lg">Инвестиции в современные складские помещения класса 'А' в Осечной.</p>
+					</div>
+					<div class="md:order-2">
+						<Image 
+							src={heroImage} 
+							alt="EUROPEGAZ 1999" 
+							class="rounded-lg shadow-lg w-full h-64 object-cover"
+							format="webp"
+							quality={80}
+						/>
+					</div>
+				</div>
+			</AnimatedSection>
+
+			<!-- 2001 - Image left, text right -->
+			<AnimatedSection client:visible>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+					<div>
+						<Image 
+							src={heroImage} 
+							alt="EUROPEGAZ 2001" 
+							class="rounded-lg shadow-lg w-full h-64 object-cover"
+							format="webp"
+							quality={80}
+						/>
+					</div>
+					<div class="text-left">
+						<h3 class="text-2xl font-bold text-gray-900 mb-4">2001</h3>
+						<p class="text-gray-700 text-lg">Открытие нового офиса в Варшаве.</p>
+					</div>
+				</div>
+			</AnimatedSection>
+
+			<!-- 2007 - Text left, image right -->
+			<AnimatedSection client:visible>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+					<div class="text-left md:order-1">
+						<h3 class="text-2xl font-bold text-gray-900 mb-4">2007</h3>
+						<p class="text-gray-700 text-lg">Открытие Логистического центра в Домброве-Гурничей.</p>
+					</div>
+					<div class="md:order-2">
+						<Image 
+							src={heroImage} 
+							alt="EUROPEGAZ 2007" 
+							class="rounded-lg shadow-lg w-full h-64 object-cover"
+							format="webp"
+							quality={80}
+						/>
+					</div>
+				</div>
+			</AnimatedSection>
+
+			<!-- 2017 - Image left, text right -->
+			<AnimatedSection client:visible>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+					<div>
+						<Image 
+							src={heroImage} 
+							alt="EUROPEGAZ 2017" 
+							class="rounded-lg shadow-lg w-full h-64 object-cover"
+							format="webp"
+							quality={80}
+						/>
+					</div>
+					<div class="text-left">
+						<h3 class="text-2xl font-bold text-gray-900 mb-4">2017</h3>
+						<p class="text-gray-700 text-lg">Расширение группы компаний и запуск интермодальных услуг.</p>
+					</div>
+				</div>
+			</AnimatedSection>
+
+			<!-- 2019 - Text left, image right -->
+			<AnimatedSection client:visible>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+					<div class="text-left md:order-1">
+						<h3 class="text-2xl font-bold text-gray-900 mb-4">2019</h3>
+						<p class="text-gray-700 text-lg">Открытие филиала в Германии.</p>
+					</div>
+					<div class="md:order-2">
+						<Image 
+							src={heroImage} 
+							alt="EUROPEGAZ 2019" 
+							class="rounded-lg shadow-lg w-full h-64 object-cover"
+							format="webp"
+							quality={80}
+						/>
+					</div>
+				</div>
+			</AnimatedSection>
+
+			<!-- 2021 - Image left, text right -->
+			<AnimatedSection client:visible>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+					<div>
+						<Image 
+							src={heroImage} 
+							alt="EUROPEGAZ 2021" 
+							class="rounded-lg shadow-lg w-full h-64 object-cover"
+							format="webp"
+							quality={80}
+						/>
+					</div>
+					<div class="text-left">
+						<h3 class="text-2xl font-bold text-gray-900 mb-4">2021</h3>
+						<p class="text-gray-700 text-lg">Принятие новой стратегии развития.</p>
+					</div>
+				</div>
+			</AnimatedSection>
+
+			<!-- Сегодня - Text left, image right -->
+			<AnimatedSection client:visible>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+					<div class="text-left md:order-1">
+						<h3 class="text-2xl font-bold text-gray-900 mb-4">Сегодня</h3>
+						<p class="text-gray-700 text-lg">Продолжаем расти и совершенствоваться для вас.</p>
+					</div>
+					<div class="md:order-2">
+						<Image 
+							src={heroImage} 
+							alt="EUROPEGAZ сегодня" 
+							class="rounded-lg shadow-lg w-full h-64 object-cover"
+							format="webp"
+							quality={80}
+						/>
+					</div>
+				</div>
+			</AnimatedSection>
+		</div>
+	</section>
 	</main>
 	<Footer />
 </BaseLayout>

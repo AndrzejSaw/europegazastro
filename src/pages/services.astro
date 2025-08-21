@@ -3,13 +3,171 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import PageHero from "@/components/PageHero.astro";
+import AnimatedSection from "@/components/AnimatedSection.tsx";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Package, Lock, Container, CheckCircle, BadgeCheck, Siren, Smartphone } from "lucide-react";
+import { Image } from "astro:assets";
+import heroImage from "@/assets/hero.webp";
 ---
 
 <BaseLayout title="Наши услуги | EUROPEGAZ">
 	<Header />
-	<PageHero />
-	<main class="mx-auto max-w-screen-xl px-4 py-16 text-center">
-		<h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Наши услуги</h1>
+	<PageHero title="Наши услуги" backgroundImage={heroImage} alt="Грузовики EUROPEGAZ в логистическом центре готовые к отправке" />
+	<main class="mx-auto max-w-screen-xl px-4 py-16">
+		<!-- Секция 1: Вступительный блок -->
+		<AnimatedSection client:visible>
+			<section class="mb-16">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+					<div class="text-left">
+						<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
+							Как мы работаем: Профессиональные перевозки по Европе
+						</h2>
+						<p class="text-lg text-muted-foreground leading-relaxed">
+							В Euro-Pegaz мы гордимся тем, что предоставляем полный спектр логистических услуг высочайшего качества. Наша команда профессионалов обеспечивает безопасную и своевременную доставку грузов по всей Европе, используя современный автопарк и передовые технологии. Мы работаем с грузами любой сложности — от стандартных перевозок до специальных рейсов высокой степени безопасности.
+						</p>
+					</div>
+					<div>
+						<Image 
+							src={heroImage} 
+							alt="Профессиональные грузоперевозки EUROPEGAZ по Европе" 
+							class="rounded-lg shadow-lg w-full h-64 object-cover"
+							format="webp"
+							quality={80}
+						/>
+					</div>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<!-- Секция 2: Основные направления работы -->
+		<AnimatedSection client:visible>
+			<section class="mb-16 bg-muted py-16 px-8">
+				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-center mb-12">
+					Основные направления нашей работы
+				</h2>
+				
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<!-- FTL/LTL -->
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Package className="h-12 w-12 text-blue-600 mb-4" />
+							<CardTitle>Основные маршруты: FTL и LTL</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Основу нашей работы составляют регулярные грузоперевозки Full Truck Load (FTL) и Less Than Truck Load (LTL) по всей Европе. Мы обеспечиваем надежную доставку грузов различного объема с оптимальными сроками и конкурентными тарифами.</p>
+						</CardContent>
+					</Card>
+
+					<!-- High Security -->
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Lock className="h-12 w-12 text-red-600 mb-4" />
+							<CardTitle>Особые рейсы: High Security</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Специализируемся на перевозке высокоценных грузов с повышенными требованиями к безопасности. Наши водители проходят специальную подготовку, а грузы сопровождаются по особым протоколам безопасности.</p>
+						</CardContent>
+					</Card>
+
+					<!-- Сыпучие грузы -->
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Container className="h-12 w-12 text-orange-600 mb-4" />
+							<CardTitle>Специализированные перевозки: Сыпучие материалы</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Обладаем большим опытом в транспортировке сыпучих материалов с использованием специализированных полуприцепов-силосов с пневматической разгрузкой. Обеспечиваем сохранность груза и соблюдение всех технических требований.</p>
+						</CardContent>
+					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<!-- Секция 3: High Security акцент -->
+		<AnimatedSection client:visible>
+			<section class="mb-16">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+					<div>
+						<Image 
+							src={heroImage} 
+							alt="Рейсы High Security EUROPEGAZ" 
+							class="rounded-lg shadow-lg w-full h-64 object-cover"
+							format="webp"
+							quality={80}
+						/>
+					</div>
+					<div class="text-left">
+						<h3 class="text-2xl font-bold tracking-tight mb-6">
+							Что значит рейс 'High Security' для водителя?
+						</h3>
+						<ul class="space-y-4">
+							<li class="flex items-start">
+								<CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+								<div>
+									<strong>Четкие инструкции:</strong> Подробный брифинг перед каждым рейсом с детальным планом маршрута и процедур безопасности
+								</div>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+								<div>
+									<strong>Работа в паре:</strong> Два водителя на особо ответственных рейсах для обеспечения непрерывности движения и взаимного контроля
+								</div>
+							</li>
+							<li class="flex items-start">
+								<CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+								<div>
+									<strong>Надежная техника:</strong> Специально подготовленные грузовики с дополнительными системами безопасности и GPS-мониторингом
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<!-- Секция 4: Наши принципы -->
+		<AnimatedSection client:visible>
+			<section class="text-center">
+				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-12">
+					Наши принципы в работе
+				</h2>
+				
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<!-- Качество -->
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<BadgeCheck className="h-12 w-12 text-blue-600 mb-4" />
+							<CardTitle>Качество и порядок</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Строгое соблюдение всех процедур, регулярное техническое обслуживание автопарка и постоянное повышение квалификации персонала. Каждый этап работы контролируется для обеспечения высочайшего качества услуг.</p>
+						</CardContent>
+					</Card>
+
+					<!-- Безопасность -->
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Siren className="h-12 w-12 text-red-600 mb-4" />
+							<CardTitle>Безопасность — наш приоритет</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Соблюдение всех международных стандартов безопасности, регулярные инструктажи водителей, современные системы мониторинга и связи. Безопасность груза, водителя и других участников движения — наша главная задача.</p>
+						</CardContent>
+					</Card>
+
+					<!-- Технологии -->
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Smartphone className="h-12 w-12 text-green-600 mb-4" />
+							<CardTitle>Современные технологии</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Используем передовую систему Transics для мониторинга автопарка в режиме реального времени. Это позволяет оптимизировать маршруты, контролировать расход топлива и обеспечивать постоянную связь с водителями.</p>
+						</CardContent>
+					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
 	</main>
 	<Footer />
 </BaseLayout>

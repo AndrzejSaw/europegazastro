@@ -4,33 +4,61 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import PageHero from "@/components/PageHero.astro";
 import VacancyCard from "@/components/VacancyCard.astro";
+import AnimatedSection from "@/components/AnimatedSection.tsx";
+import heroImage from "@/assets/hero.webp";
 ---
 
 <BaseLayout title="Карьера в Euro-Pegaz | EUROPEGAZ">
 	<Header />
-	<PageHero />
+	<PageHero title="Карьера в Euro-Pegaz" backgroundImage={heroImage} alt="Водители EUROPEGAZ готовятся к международному рейсу" />
 	<main class="mx-auto max-w-screen-xl px-4 py-16">
 		<h1 class="text-4xl font-bold tracking-tight sm:text-5xl text-center mb-12">Открытые вакансии в Euro-Pegaz</h1>
 		
+		<!-- Вводный текст -->
+		<AnimatedSection client:visible>
+			<section class="mb-16 max-w-3xl mx-auto text-center">
+				<h2 class="text-3xl font-bold mb-6">
+					Постройте свою карьеру вместе с Euro-Pegaz
+				</h2>
+				<div class="space-y-4 text-lg text-muted-foreground leading-relaxed">
+					<p>
+						Euro-Pegaz — это место, где ценят профессионализм и стремление к развитию. Мы предлагаем стабильную работу в дружном коллективе, где каждый сотрудник важен и где его мнение имеет значение.
+					</p>
+					<p>
+						Наша компания инвестирует в современные технологии и оборудование, обеспечивая комфортные и безопасные условия труда. Мы предлагаем конкурентоспособную заработную плату, социальный пакет и возможности для профессионального роста.
+					</p>
+					<p>
+						Присоединяйтесь к нашей команде профессионалов и станьте частью успешной европейской логистической компании с более чем 30-летней историей!
+					</p>
+				</div>
+			</section>
+		</AnimatedSection>
+		
 		<div class="max-w-4xl mx-auto">
 			<div class="space-y-8">
-				<VacancyCard 
-					title="Водитель C+E"
-					description="Ищем опытного водителя с категорией C+E для международных перевозок по Европе. Требуется опыт работы от 2 лет, знание английского языка на базовом уровне. Предлагаем стабильную заработную плату, современный автопарк и комфортные условия труда."
-					href="/careers/driver"
-				/>
+				<AnimatedSection client:visible>
+					<VacancyCard 
+						title="Водитель C+E"
+						description="Ищем опытного водителя с категорией C+E для международных перевозок по Европе. Требуется опыт работы от 2 лет, знание английского языка на базовом уровне. Предлагаем стабильную заработную плату, современный автопарк и комфортные условия труда."
+						href="/careers/driver"
+					/>
+				</AnimatedSection>
 				
-				<VacancyCard 
-					title="Диспетчер"
-					description="В нашу команду требуется опытный диспетчер для координации международных грузоперевозок. Необходимы навыки планирования маршрутов, знание европейского законодательства в сфере транспорта, опыт работы с логистическими системами. Работа в современном офисе с полным социальным пакетом."
-					href="/careers/dispatcher"
-				/>
+				<AnimatedSection client:visible>
+					<VacancyCard 
+						title="Диспетчер"
+						description="В нашу команду требуется опытный диспетчер для координации международных грузоперевозок. Необходимы навыки планирования маршрутов, знание европейского законодательства в сфере транспорта, опыт работы с логистическими системами. Работа в современном офисе с полным социальным пакетом."
+						href="/careers/dispatcher"
+					/>
+				</AnimatedSection>
 				
-				<VacancyCard 
-					title="Автомеханик"
-					description="Приглашаем квалифицированного автомеханика для обслуживания и ремонта грузового транспорта. Требуется опыт работы с европейскими грузовиками, знание современных диагностических систем. Предлагаем работу в оборудованном сервисном центре, достойную оплату труда и возможности профессионального развития."
-					href="/careers/mechanic"
-				/>
+				<AnimatedSection client:visible>
+					<VacancyCard 
+						title="Автомеханик"
+						description="Приглашаем квалифицированного автомеханика для обслуживания и ремонта грузового транспорта. Требуется опыт работы с европейскими грузовиками, знание современных диагностических систем. Предлагаем работу в оборудованном сервисном центре, достойную оплату труда и возможности профессионального развития."
+						href="/careers/mechanic"
+					/>
+				</AnimatedSection>
 			</div>
 		</div>
 	</main>
