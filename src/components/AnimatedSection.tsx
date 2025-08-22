@@ -46,7 +46,7 @@ export default function AnimatedSection({
         opacity: 0, 
         y: 50, 
         scale: 0.95,
-        filter: "blur(10px)" 
+        filter: "blur(5px)" 
       }}
       animate={isInView ? { 
         opacity: 1, 
@@ -54,7 +54,7 @@ export default function AnimatedSection({
         scale: 1,
         filter: "blur(0px)",
         transition: {
-          duration: 0.8,
+          duration: 0.5,
           delay: delay,
           ease: [0.21, 1.11, 0.81, 0.99]
         }

@@ -14,7 +14,7 @@ import heroImage from "@/assets/hero.webp";
 	<Header />
 	<PageHero title="О компании EUROPEGAZ" backgroundImage={heroImage} alt="Современные грузовики EUROPEGAZ на европейской автомагистрали" />
 	<main class="mx-auto max-w-screen-xl px-4 py-16">
-		<AnimatedSection client:visible>
+		<AnimatedSection client:visible variant="transparent">
 			<section class="mb-16 max-w-3xl mx-auto text-center">
 				<h1 class="text-3xl font-bold mb-6">
 					Более 30 лет традиций и инноваций в европейской логистике
@@ -25,8 +25,8 @@ import heroImage from "@/assets/hero.webp";
 			</section>
 		</AnimatedSection>
 
-		<AnimatedSection client:visible>
-			<section class="text-center mb-16 bg-muted py-16 px-8">
+		<AnimatedSection client:visible variant="light" padding="lg" delay={0.2}>
+			<section class="text-center mb-16">
 				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-12">
 					Наша философия: Логистика и больше
 				</h2>
@@ -65,39 +65,40 @@ import heroImage from "@/assets/hero.webp";
 			</section>
 		</AnimatedSection>
 
-		<section class="text-center">
-			<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-16">
-				Ключевые этапы нашего развития
-			</h2>
-			
-			<div class="space-y-16">
-			<!-- 1991 - Image left, text right -->
-			<AnimatedSection client:visible>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-					<div>
-						<Image 
-							src={heroImage} 
-							alt="EUROPEGAZ 1991" 
-							class="rounded-lg shadow-lg w-full h-64 object-cover"
-							format="webp"
-							quality={80}
-						/>
+		<AnimatedSection client:visible variant="green" padding="lg" delay={0.4}>
+			<section class="text-center">
+				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-16">
+					Ключевые этапы нашего развития
+				</h2>
+				
+				<div class="space-y-16">
+				<!-- 1991 - Image left, text right -->
+				<AnimatedSection client:visible variant="light" delay={0.6}>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+						<div>
+							<Image 
+								src={heroImage} 
+								alt="EUROPEGAZ 1991" 
+								class="rounded-lg shadow-lg w-full h-64 object-cover"
+								format="webp"
+								quality={80}
+							/>
+						</div>
+						<div class="text-left">
+							<h3 class="text-2xl font-bold text-gray-900 mb-4">1991</h3>
+							<p class="text-gray-700 text-lg">Основание компании и приобретение первого грузовика.</p>
+						</div>
 					</div>
-					<div class="text-left">
-						<h3 class="text-2xl font-bold text-gray-900 mb-4">1991</h3>
-						<p class="text-gray-700 text-lg">Основание компании и приобретение первого грузовика.</p>
-					</div>
-				</div>
-			</AnimatedSection>
+				</AnimatedSection>
 
-			<!-- 1999 - Text left, image right -->
-			<AnimatedSection client:visible>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-					<div class="text-left md:order-1">
-						<h3 class="text-2xl font-bold text-gray-900 mb-4">1999</h3>
-						<p class="text-gray-700 text-lg">Инвестиции в современные складские помещения класса 'А' в Осечной.</p>
-					</div>
-					<div class="md:order-2">
+				<!-- 1999 - Text left, image right -->
+				<AnimatedSection client:visible variant="green" delay={0.8}>
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+						<div class="text-left md:order-1">
+							<h3 class="text-2xl font-bold text-gray-900 mb-4">1999</h3>
+							<p class="text-gray-700 text-lg">Инвестиции в современные складские помещения класса 'А' в Осечной.</p>
+						</div>
+						<div class="md:order-2">
 						<Image 
 							src={heroImage} 
 							alt="EUROPEGAZ 1999" 
@@ -110,7 +111,7 @@ import heroImage from "@/assets/hero.webp";
 			</AnimatedSection>
 
 			<!-- 2001 - Image left, text right -->
-			<AnimatedSection client:visible>
+			<AnimatedSection client:visible variant="light" delay={1.0}>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 					<div>
 						<Image 
@@ -129,7 +130,7 @@ import heroImage from "@/assets/hero.webp";
 			</AnimatedSection>
 
 			<!-- 2007 - Text left, image right -->
-			<AnimatedSection client:visible>
+			<AnimatedSection client:visible variant="green" delay={1.2}>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 					<div class="text-left md:order-1">
 						<h3 class="text-2xl font-bold text-gray-900 mb-4">2007</h3>
@@ -148,7 +149,7 @@ import heroImage from "@/assets/hero.webp";
 			</AnimatedSection>
 
 			<!-- 2017 - Image left, text right -->
-			<AnimatedSection client:visible>
+			<AnimatedSection client:visible variant="light" delay={1.4}>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 					<div>
 						<Image 
@@ -167,7 +168,7 @@ import heroImage from "@/assets/hero.webp";
 			</AnimatedSection>
 
 			<!-- 2019 - Text left, image right -->
-			<AnimatedSection client:visible>
+			<AnimatedSection client:visible variant="green" delay={1.6}>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 					<div class="text-left md:order-1">
 						<h3 class="text-2xl font-bold text-gray-900 mb-4">2019</h3>
@@ -186,7 +187,7 @@ import heroImage from "@/assets/hero.webp";
 			</AnimatedSection>
 
 			<!-- 2021 - Image left, text right -->
-			<AnimatedSection client:visible>
+			<AnimatedSection client:visible variant="light" delay={1.8}>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 					<div>
 						<Image 
@@ -205,7 +206,7 @@ import heroImage from "@/assets/hero.webp";
 			</AnimatedSection>
 
 			<!-- Сегодня - Text left, image right -->
-			<AnimatedSection client:visible>
+			<AnimatedSection client:visible variant="green" delay={2.0}>
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 					<div class="text-left md:order-1">
 						<h3 class="text-2xl font-bold text-gray-900 mb-4">Сегодня</h3>
@@ -223,7 +224,7 @@ import heroImage from "@/assets/hero.webp";
 				</div>
 			</AnimatedSection>
 		</div>
-	</section>
+		</AnimatedSection>
 	</main>
 	<Footer />
 </BaseLayout>

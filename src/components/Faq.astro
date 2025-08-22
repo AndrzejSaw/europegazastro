@@ -1,12 +1,36 @@
 ---
 import FaqIsland from "@/components/FaqIsland";
+
+const faqData = [
+  {
+    question: "Какие типы грузов вы перевозите?",
+    answer: "Мы специализируемся на широком спектре грузов, включая обычные товары, охлаждаемые продукты и негабаритные грузы. Наш автопарк оснащен для обработки различных транспортных потребностей по всей Европе."
+  },
+  {
+    question: "Какие требования к водителям?",
+    answer: "Мы ищем профессиональных водителей с действующими правами категории CE, цифровой тахографической картой и подтвержденным опытом международных перевозок. Приверженность безопасности и надежности является обязательной."
+  },
+  {
+    question: "Как я могу отследить свой груз?",
+    answer: "Все наши грузовики оснащены современными системами GPS-слежения. Клиенты получают доступ к порталу, где они могут отслеживать местоположение своего груза в режиме реального времени, 24/7."
+  }
+];
 ---
 <section class="py-16 sm:py-24">
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-    <h2 class="text-center text-3xl font-bold tracking-tight sm:text-4xl">Frequently Asked Questions</h2>
-
-    <div class="mx-auto mt-8 max-w-2xl text-left">
-      <FaqIsland client:load />
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <!-- Left Column -->
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Часто задаваемые вопросы</h2>
+        <p class="mt-6 text-lg text-muted-foreground leading-relaxed">
+          Здесь мы собрали ответы на самые частые вопросы о работе в нашей компании. Если вы не нашли ответ, свяжитесь с нами.
+        </p>
+      </div>
+      
+      <!-- Right Column -->
+      <div>
+        <FaqIsland client:load items={faqData} />
+      </div>
     </div>
   </div>
 </section>

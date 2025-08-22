@@ -15,7 +15,7 @@ import heroImage from "@/assets/hero.webp";
 		<h1 class="text-4xl font-bold tracking-tight sm:text-5xl text-center mb-12">Открытые вакансии в Euro-Pegaz</h1>
 		
 		<!-- Вводный текст -->
-		<AnimatedSection client:visible>
+		<AnimatedSection client:visible variant="transparent">
 			<section class="mb-16 max-w-3xl mx-auto text-center">
 				<h2 class="text-3xl font-bold mb-6">
 					Постройте свою карьеру вместе с Euro-Pegaz
@@ -34,25 +34,26 @@ import heroImage from "@/assets/hero.webp";
 			</section>
 		</AnimatedSection>
 		
-		<div class="max-w-4xl mx-auto">
-			<div class="space-y-8">
-				<AnimatedSection client:visible>
-					<VacancyCard 
-						title="Водитель C+E"
-						description="Ищем опытного водителя с категорией C+E для международных перевозок по Европе. Требуется опыт работы от 2 лет, знание английского языка на базовом уровне. Предлагаем стабильную заработную плату, современный автопарк и комфортные условия труда."
-						href="/careers/driver"
-					/>
-				</AnimatedSection>
-				
-				<AnimatedSection client:visible>
-					<VacancyCard 
-						title="Диспетчер"
-						description="В нашу команду требуется опытный диспетчер для координации международных грузоперевозок. Необходимы навыки планирования маршрутов, знание европейского законодательства в сфере транспорта, опыт работы с логистическими системами. Работа в современном офисе с полным социальным пакетом."
+		<AnimatedSection client:visible variant="light" padding="lg" delay={0.2}>
+			<div class="max-w-4xl mx-auto">
+				<div class="space-y-8">
+					<AnimatedSection client:visible variant="green" delay={0.4}>
+						<VacancyCard 
+							title="Водитель C+E"
+							description="Ищем опытного водителя с категорией C+E для международных перевозок по Европе. Требуется опыт работы от 2 лет, знание английского языка на базовом уровне. Предлагаем стабильную заработную плату, современный автопарк и комфортные условия труда."
+							href="/careers/driver"
+						/>
+					</AnimatedSection>
+					
+					<AnimatedSection client:visible variant="light" delay={0.6}>
+						<VacancyCard 
+							title="Диспетчер"
+							description="В нашу команду требуется опытный диспетчер для координации международных грузоперевозок. Необходимы навыки планирования маршрутов, знание европейского законодательства в сфере транспорта, опыт работы с логистическими системами. Работа в современном офисе с полным социальным пакетом."
 						href="/careers/dispatcher"
 					/>
 				</AnimatedSection>
 				
-				<AnimatedSection client:visible>
+				<AnimatedSection client:visible variant="green" delay={0.8}>
 					<VacancyCard 
 						title="Автомеханик"
 						description="Приглашаем квалифицированного автомеханика для обслуживания и ремонта грузового транспорта. Требуется опыт работы с европейскими грузовиками, знание современных диагностических систем. Предлагаем работу в оборудованном сервисном центре, достойную оплату труда и возможности профессионального развития."
@@ -60,7 +61,8 @@ import heroImage from "@/assets/hero.webp";
 					/>
 				</AnimatedSection>
 			</div>
-		</div>
+			</div>
+		</AnimatedSection>
 	</main>
 	<Footer />
 </BaseLayout>

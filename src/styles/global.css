@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Rubik:wght@400;500&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-    --font-sans: "Verdana", ui-sans-serif, system-ui, Arial, sans-serif;
-    --font-display: "Verdana", ui-sans-serif, system-ui, Arial, sans-serif;
+    --font-sans: "Rubik", ui-sans-serif, system-ui, Arial, sans-serif;
+    --font-display: "Manrope", ui-sans-serif, system-ui, Arial, sans-serif;
     --radius-lg: 12px;
     --radius-xl: 16px;
     --radius-2xl: 24px;
@@ -127,9 +128,11 @@ html { color-scheme: light; }
   * {
     @apply border-border outline-ring/50;
     }
+  html {
+    font-size: 17px;
+    }
   body {
     @apply bg-background text-foreground;
-    font-family: "Verdana", ui-sans-serif, system-ui, Arial, sans-serif;
     }
 }
 
@@ -251,14 +254,14 @@ html { color-scheme: light; }
     
     /* Типографические классы */
     .heading-display {
-        font-family: "Verdana", ui-sans-serif, system-ui, Arial, sans-serif;
+        font-family: "Manrope", ui-sans-serif, system-ui, Arial, sans-serif;
         font-weight: 800;
         line-height: 1.1;
         letter-spacing: -0.02em;
     }
     
     .heading-primary {
-        font-family: "Verdana", ui-sans-serif, system-ui, Arial, sans-serif;
+        font-family: "Manrope", ui-sans-serif, system-ui, Arial, sans-serif;
         font-weight: 700;
         line-height: 1.2;
         letter-spacing: -0.01em;
