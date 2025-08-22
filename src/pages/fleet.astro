@@ -15,11 +15,11 @@ import heroImage from "@/assets/hero.webp";
 	<PageHero title="Наш автопарк" backgroundImage={heroImage} alt="Автопарк EUROPEGAZ с современными грузовиками MAN Euro 6" />
 	<main class="mx-auto max-w-screen-xl px-4 py-16">
 		<!-- Секция 1: Вводный текст и изображение -->
-		<AnimatedSection client:visible>
+		<AnimatedSection client:visible variant="transparent">
 			<section class="mb-16">
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 					<div class="text-left">
-						<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
+						<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
 							Современный и технологичный автопарк
 						</h2>
 						<p class="text-lg text-muted-foreground leading-relaxed">
@@ -40,9 +40,9 @@ import heroImage from "@/assets/hero.webp";
 		</AnimatedSection>
 
 		<!-- Секция 2: Экологичность и инновации -->
-		<AnimatedSection client:visible>
-			<section class="mb-16 bg-muted py-16 px-8">
-				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-center mb-12">
+		<AnimatedSection client:visible variant="light" padding="lg" delay={0.2}>
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-center mb-8">
 					Экологичность и инновации
 				</h2>
 				
@@ -71,9 +71,9 @@ import heroImage from "@/assets/hero.webp";
 		</AnimatedSection>
 
 		<!-- Секция 3: Галерея полуприцепов -->
-		<AnimatedSection client:visible>
+		<AnimatedSection client:visible variant="green" padding="lg" delay={0.4}>
 			<section class="text-center">
-				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-12">
+				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
 					Наши полуприцепы для любых задач
 				</h2>
 				
