@@ -5,7 +5,10 @@ import Footer from "@/components/Footer.astro";
 import PageHero from "@/components/PageHero.astro";
 import VacancyCard from "@/components/VacancyCard.astro";
 import AnimatedSection from "@/components/AnimatedSection.tsx";
-import heroImage from "@/assets/hero.webp";
+import heroImage from "@/assets/hero3.webp";
+import careerDriverImage from "@/assets/career-driver.webp";
+import careerDispatcherImage from "@/assets/career-dispatcher.webp";
+import careerMechanicImage from "@/assets/career-mechanic.webp";
 ---
 
 <BaseLayout title="Карьера в Euro-Pegaz | EUROPEGAZ">
@@ -42,6 +45,8 @@ import heroImage from "@/assets/hero.webp";
 							title="Водитель C+E"
 							description="Ищем опытного водителя с категорией C+E для международных перевозок по Европе. Требуется опыт работы от 2 лет, знание английского языка на базовом уровне. Предлагаем стабильную заработную плату, современный автопарк и комфортные условия труда."
 							href="/careers/driver"
+							imageSrc={careerDriverImage}
+							imageAlt="Профессиональный водитель грузовика за рулем"
 						/>
 					</AnimatedSection>
 					
@@ -50,6 +55,8 @@ import heroImage from "@/assets/hero.webp";
 							title="Диспетчер"
 							description="В нашу команду требуется опытный диспетчер для координации международных грузоперевозок. Необходимы навыки планирования маршрутов, знание европейского законодательства в сфере транспорта, опыт работы с логистическими системами. Работа в современном офисе с полным социальным пакетом."
 						href="/careers/dispatcher"
+						imageSrc={careerDispatcherImage}
+						imageAlt="Диспетчер за работой в логистическом центре"
 					/>
 				</AnimatedSection>
 				
@@ -58,6 +65,8 @@ import heroImage from "@/assets/hero.webp";
 						title="Автомеханик"
 						description="Приглашаем квалифицированного автомеханика для обслуживания и ремонта грузового транспорта. Требуется опыт работы с европейскими грузовиками, знание современных диагностических систем. Предлагаем работу в оборудованном сервисном центре, достойную оплату труда и возможности профессионального развития."
 						href="/careers/mechanic"
+						imageSrc={careerMechanicImage}
+						imageAlt="Автомеханик за ремонтом грузового автомобиля"
 					/>
 				</AnimatedSection>
 			</div>
