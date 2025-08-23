@@ -8,6 +8,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Leaf, GaugeCircle } from "lucide-react";
 import { Image } from "astro:assets";
 import heroImage from "@/assets/hero3.webp";
+import fleetIntroImage from "@/assets/fleet-intro.webp";
+import galleryImage1 from "@/assets/gallery-1.webp";
+import galleryImage2 from "@/assets/gallery-2.webp";
+import galleryImage3 from "@/assets/gallery-3.webp";
+import trailerStandardImage from "@/assets/trailer-standard.webp";
+import trailerMegaImage from "@/assets/trailer-mega.webp";
+import trailerHuckepackImage from "@/assets/trailer-huckepack.webp";
+import trailerIsothermImage from "@/assets/trailer-isotherm.webp";
+import trailerSiloImage from "@/assets/trailer-silo.webp";
 ---
 
 <BaseLayout title="Наш автопарк | EUROPEGAZ">
@@ -28,7 +37,7 @@ import heroImage from "@/assets/hero3.webp";
 					</div>
 					<div>
 						<Image 
-							src={heroImage} 
+							src={fleetIntroImage} 
 							alt="Современные грузовики MAN Euro 6 EUROPEGAZ" 
 							class="rounded-lg shadow-lg w-full h-64 object-cover"
 							format="webp"
@@ -70,6 +79,38 @@ import heroImage from "@/assets/hero3.webp";
 			</section>
 		</AnimatedSection>
 
+		<!-- Секция 2.5: Фотогалерея автопарка -->
+		<AnimatedSection client:visible variant="transparent" delay={0.3}>
+			<section class="mb-16">
+				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-center mb-8">
+					Наш автопарк в действии
+				</h2>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<Image 
+						src={galleryImage1} 
+						alt="Грузовики EUROPEGAZ на европейской дороге" 
+						class="rounded-lg aspect-video object-cover w-full shadow-lg"
+						format="webp"
+						quality={80}
+					/>
+					<Image 
+						src={galleryImage2} 
+						alt="Современные грузовики MAN в парке EUROPEGAZ" 
+						class="rounded-lg aspect-video object-cover w-full shadow-lg"
+						format="webp"
+						quality={80}
+					/>
+					<Image 
+						src={galleryImage3} 
+						alt="Техническое обслуживание автопарка EUROPEGAZ" 
+						class="rounded-lg aspect-video object-cover w-full shadow-lg"
+						format="webp"
+						quality={80}
+					/>
+				</div>
+			</section>
+		</AnimatedSection>
+
 		<!-- Секция 3: Галерея полуприцепов -->
 		<AnimatedSection client:visible variant="green" padding="lg" delay={0.4}>
 			<section class="text-center">
@@ -81,7 +122,7 @@ import heroImage from "@/assets/hero3.webp";
 					<!-- Стандартный полуприцеп -->
 					<Card>
 						<Image 
-							src={heroImage} 
+							src={trailerStandardImage} 
 							alt="Стандартный полуприцеп EUROPEGAZ" 
 							class="w-full h-48 object-cover rounded-t-lg"
 							format="webp"
@@ -102,7 +143,7 @@ import heroImage from "@/assets/hero3.webp";
 					<!-- Мега полуприцеп -->
 					<Card>
 						<Image 
-							src={heroImage} 
+							src={trailerMegaImage} 
 							alt="Мега полуприцеп EUROPEGAZ" 
 							class="w-full h-48 object-cover rounded-t-lg"
 							format="webp"
@@ -123,7 +164,7 @@ import heroImage from "@/assets/hero3.webp";
 					<!-- Хакпак полуприцеп -->
 					<Card>
 						<Image 
-							src={heroImage} 
+							src={trailerHuckepackImage} 
 							alt="Хакпак полуприцеп EUROPEGAZ" 
 							class="w-full h-48 object-cover rounded-t-lg"
 							format="webp"
@@ -144,7 +185,7 @@ import heroImage from "@/assets/hero3.webp";
 					<!-- Изотерма полуприцеп -->
 					<Card>
 						<Image 
-							src={heroImage} 
+							src={trailerIsothermImage} 
 							alt="Изотерма полуприцеп EUROPEGAZ" 
 							class="w-full h-48 object-cover rounded-t-lg"
 							format="webp"
@@ -165,7 +206,7 @@ import heroImage from "@/assets/hero3.webp";
 					<!-- Силос полуприцеп -->
 					<Card>
 						<Image 
-							src={heroImage} 
+							src={trailerSiloImage} 
 							alt="Силос полуприцеп EUROPEGAZ" 
 							class="w-full h-48 object-cover rounded-t-lg"
 							format="webp"
