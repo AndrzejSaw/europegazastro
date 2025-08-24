@@ -22,14 +22,31 @@ import history8Image from "@/assets/history-8.webp";
 	<Header />
 	<PageHero title="О компании EUROPEGAZ" backgroundImage={heroImage} alt="Современные грузовики EUROPEGAZ на европейской автомагистрали" />
 	<main class="mx-auto max-w-screen-xl px-4 py-16">
-		<AnimatedSection client:visible variant="transparent">
-			<section class="mb-16 max-w-3xl mx-auto text-center">
-				<h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-12">
-					Более 30 лет традиций и инноваций в европейской логистике
-				</h1>
-				<p class="text-lg text-muted-foreground leading-relaxed">
-					Euro-Pegaz — это семейная компания с 30-летним опытом, занимающая одну из лидирующих позиций в сфере транспорта и логистики в Европе. Мы специализируемся на перевозках различных грузов, предлагая комплексные решения от складирования до доставки по всей Европе. Наша команда профессионалов обеспечивает высочайшее качество услуг, соблюдая все международные стандарты безопасности и эффективности.
-				</p>
+		<AnimatedSection client:visible variant="light" padding="lg">
+			<section class="mb-16">
+				<Card className="overflow-hidden">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+						<!-- Левая колонка: Контент -->
+						<div class="p-8 md:p-12 flex flex-col justify-center">
+							<h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-8">
+								Более 30 лет традиций и инноваций в европейской логистике
+							</h1>
+							<p class="text-lg text-muted-foreground leading-relaxed">
+								Euro-Pegaz — это семейная компания с 30-летним опытом, занимающая одну из лидирующих позиций в сфере транспорта и логистики в Европе. Мы специализируемся на перевозках различных грузов, предлагая комплексные решения от складирования до доставки по всей Европе. Наша команда профессионалов обеспечивает высочайшее качество услуг, соблюдая все международные стандарты безопасности и эффективности.
+							</p>
+						</div>
+						<!-- Правая колонка: Изображение -->
+						<div class="h-64 md:h-auto">
+							<Image 
+								src={history1Image} 
+								alt="30 лет истории компании EUROPEGAZ в европейской логистике" 
+								class="w-full h-full object-cover"
+								format="webp"
+								quality={80}
+							/>
+						</div>
+					</div>
+				</Card>
 			</section>
 		</AnimatedSection>
 

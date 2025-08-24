@@ -4,7 +4,9 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import PageHero from "@/components/PageHero.astro";
 import VacancyCard from "@/components/VacancyCard.astro";
+import { Card } from "@/components/ui/card";
 import AnimatedSection from "@/components/AnimatedSection.tsx";
+import { Image } from "astro:assets";
 import heroImage from "@/assets/hero3.webp";
 import careerDriverImage from "@/assets/career-driver.webp";
 import careerDispatcherImage from "@/assets/career-dispatcher.webp";
@@ -15,25 +17,46 @@ import careerMechanicImage from "@/assets/career-mechanic.webp";
 	<Header />
 	<PageHero title="Карьера в Euro-Pegaz" backgroundImage={heroImage} alt="Водители EUROPEGAZ готовятся к международному рейсу" />
 	<main class="mx-auto max-w-screen-xl px-4 py-16">
-		<h1 class="text-4xl font-bold tracking-tight sm:text-5xl text-center mb-12">Открытые вакансии в Euro-Pegaz</h1>
+		<!-- Вводный блок с изображением -->
+		<AnimatedSection client:visible variant="light" padding="lg">
+			<section class="mb-16">
+				<Card className="overflow-hidden">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+						<!-- Левая колонка: Контент -->
+						<div class="p-8 md:p-12 flex flex-col justify-center">
+							<h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-8">Открытые вакансии в Euro-Pegaz</h1>
+							<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+								Постройте свою карьеру вместе с Euro-Pegaz
+							</h2>
+							<div class="space-y-4 text-lg text-muted-foreground leading-relaxed">
+								<p>
+									Euro-Pegaz — это место, где ценят профессионализм и стремление к развитию. Мы предлагаем стабильную работу в дружном коллективе, где каждый сотрудник важен и где его мнение имеет значение.
+								</p>
+								<p>
+									Наша компания инвестирует в современные технологии и оборудование, обеспечивая комфортные и безопасные условия труда. Мы предлагаем конкурентоспособную заработную плату, социальный пакет и возможности для профессионального роста.
+								</p>
+							</div>
+						</div>
+						<!-- Правая колонка: Изображение -->
+						<div class="h-64 md:h-auto">
+							<Image 
+								src={careerDriverImage} 
+								alt="Команда профессионалов EUROPEGAZ" 
+								class="w-full h-full object-cover"
+								format="webp"
+								quality={80}
+							/>
+						</div>
+					</div>
+				</Card>
+			</section>
+		</AnimatedSection>
 		
-		<!-- Вводный текст -->
 		<AnimatedSection client:visible variant="transparent">
 			<section class="mb-16 max-w-3xl mx-auto text-center">
-				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
-					Постройте свою карьеру вместе с Euro-Pegaz
-				</h2>
-				<div class="space-y-4 text-lg text-muted-foreground leading-relaxed">
-					<p>
-						Euro-Pegaz — это место, где ценят профессионализм и стремление к развитию. Мы предлагаем стабильную работу в дружном коллективе, где каждый сотрудник важен и где его мнение имеет значение.
-					</p>
-					<p>
-						Наша компания инвестирует в современные технологии и оборудование, обеспечивая комфортные и безопасные условия труда. Мы предлагаем конкурентоспособную заработную плату, социальный пакет и возможности для профессионального роста.
-					</p>
-					<p>
-						Присоединяйтесь к нашей команде профессионалов и станьте частью успешной европейской логистической компании с более чем 30-летней историей!
-					</p>
-				</div>
+				<p class="text-lg text-muted-foreground leading-relaxed">
+					Присоединяйтесь к нашей команде профессионалов и станьте частью успешной европейской логистической компании с более чем 30-летней историей!
+				</p>
 			</section>
 		</AnimatedSection>
 		

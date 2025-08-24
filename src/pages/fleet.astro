@@ -24,27 +24,31 @@ import trailerSiloImage from "@/assets/trailer-silo.webp";
 	<PageHero title="Наш автопарк" backgroundImage={heroImage} alt="Автопарк EUROPEGAZ с современными грузовиками MAN Euro 6" />
 	<main class="mx-auto max-w-screen-xl px-4 py-16">
 		<!-- Секция 1: Вводный текст и изображение -->
-		<AnimatedSection client:visible variant="transparent">
+		<AnimatedSection client:visible variant="light" padding="lg">
 			<section class="mb-16">
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-					<div class="text-left">
-						<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
-							Современный и технологичный автопарк
-						</h2>
-						<p class="text-lg text-muted-foreground leading-relaxed">
-							Основа качественной логистики — надежная техника. Наш автопарк состоит из современных грузовиков MAN Euro 6, оснащенных передовыми системами безопасности и экономии топлива. Мы постоянно обновляем и расширяем наш парк, чтобы обеспечить максимальную эффективность и экологичность перевозок по всей Европе.
-						</p>
+				<Card className="overflow-hidden">
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-0">
+						<!-- Левая колонка: Контент -->
+						<div class="p-8 md:p-12 flex flex-col justify-center">
+							<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+								Современный и технологичный автопарк
+							</h2>
+							<p class="text-lg text-muted-foreground leading-relaxed">
+								Основа качественной логистики — надежная техника. Наш автопарк состоит из современных грузовиков MAN Euro 6, оснащенных передовыми системами безопасности и экономии топлива. Мы постоянно обновляем и расширяем наш парк, чтобы обеспечить максимальную эффективность и экологичность перевозок по всей Европе.
+							</p>
+						</div>
+						<!-- Правая колонка: Изображение -->
+						<div class="h-64 md:h-auto">
+							<Image 
+								src={fleetIntroImage} 
+								alt="Современные грузовики MAN Euro 6 EUROPEGAZ" 
+								class="w-full h-full object-cover"
+								format="webp"
+								quality={80}
+							/>
+						</div>
 					</div>
-					<div>
-						<Image 
-							src={fleetIntroImage} 
-							alt="Современные грузовики MAN Euro 6 EUROPEGAZ" 
-							class="rounded-lg shadow-lg w-full h-64 object-cover"
-							format="webp"
-							quality={80}
-						/>
-					</div>
-				</div>
+				</Card>
 			</section>
 		</AnimatedSection>
 
