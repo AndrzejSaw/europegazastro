@@ -5,9 +5,10 @@ import { animate, useInView } from "framer-motion";
 interface Props {
   to: number;
   className?: string;
+  suffix?: string;
 }
 
-export default function AnimatedCounter({ to, className }: Props) {
+export default function AnimatedCounter({ to, className, suffix = "" }: Props) {
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true });
 
@@ -18,13 +19,13 @@ export default function AnimatedCounter({ to, className }: Props) {
         ease: "easeOut",
         onUpdate(value) {
           if (ref.current) {
-            ref.current.textContent = Math.round(value).toString() + "+";
+            ref.current.textContent = Math.round(value).toString() + suffix;
           }
         },
       });
       return () => controls.stop();
     }
-  }, [isInView, to]);
+  }, [isInView, to, suffix]);
 
-  return <span ref={ref} className={className}>0+</span>;
+  return <span ref={ref} className={className}>0{suffix}</span>;
 }

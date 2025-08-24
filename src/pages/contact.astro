@@ -6,7 +6,7 @@ import PageHero from "@/components/PageHero.astro";
 import AnimatedSection from "@/components/AnimatedSection.tsx";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Phone, MessageSquare, Navigation } from "lucide-react";
+import { Phone, MessageSquare, Navigation, MapPin, Settings, CheckCircle, Building2, Truck, Container, Wrench, Fuel, Shield, Wifi } from "lucide-react";
 import { Image } from "astro:assets";
 import heroImage from "@/assets/hero2.webp";
 import contactOfficeImage from "@/assets/contact-office.webp";
@@ -54,39 +54,132 @@ import contactOfficeImage from "@/assets/contact-office.webp";
 		<!-- Секция 2: Контактная информация -->
 		<AnimatedSection client:visible variant="transparent">
 			<section class="mb-16">
-				<Card className="max-w-4xl mx-auto">
+				<Card className="max-w-6xl mx-auto">
 					<CardContent className="p-8">
-						<CardTitle className="text-2xl mb-6 text-center">Главная база</CardTitle>
+						<CardTitle className="text-3xl mb-8 text-center text-gray-900">Главная база Euro-Pegaz</CardTitle>
 						
-						<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-							<div>
-								<p class="font-semibold text-gray-900 mb-2">Адрес:</p>
-								<p class="text-gray-700">Centrum logistyczne Osieczna<br/>64-113 Osieczna k. Leszna<br/>ul. Łoniewska 1</p>
+						<!-- Описание базы -->
+						<div class="text-center mb-8">
+							<p class="text-lg text-gray-700 max-w-3xl mx-auto">
+								Наш современный логистический центр в Оседне является центральным хабом всех операций. 
+								Здесь базируется наш флот из 150+ автомобилей и 265 прицепов, а также работает опытная команда диспетчеров и механиков.
+							</p>
+						</div>
+
+						<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+							<!-- Адрес и контакты -->
+							<div class="lg:col-span-1">
+								<div class="bg-gray-50 p-6 rounded-lg h-full">
+									<h3 class="font-semibold text-gray-900 mb-4 text-lg flex items-center">
+										<MapPin className="h-5 w-5 mr-2 text-[#007e57]" />
+										Адрес и контакты
+									</h3>
+									<div class="space-y-4">
+										<div>
+											<p class="font-medium text-gray-900 mb-1">Адрес:</p>
+											<p class="text-gray-700">Centrum logistyczne Osieczna<br/>64-113 Osieczna k. Leszna<br/>ul. Łoniewska 1</p>
+										</div>
+										
+										<div>
+											<p class="font-medium text-gray-900 mb-1">Часы работы:</p>
+											<p class="text-gray-700">8:00 - 16:00 (Пн-Пт)<br/>Экстренная связь: 24/7</p>
+										</div>
+
+										<div>
+											<p class="font-medium text-gray-900 mb-3">Связь:</p>
+											<div class="space-y-2">
+												<a href="tel:+48509717619" class="flex items-center text-blue-700 hover:text-blue-800 transition-colors">
+													<Phone className="h-4 w-4 mr-2" />
+													+48 509 717 619
+												</a>
+												<a href="viber://chat?number=%2B48509717619" class="flex items-center text-[#eeba4b] hover:text-[#d4a935] transition-colors">
+													<MessageSquare className="h-4 w-4 mr-2" />
+													Viber
+												</a>
+												<a href="https://wa.me/48509717619" class="flex items-center text-[#007e57] hover:text-green-700 transition-colors">
+													<Navigation className="h-4 w-4 mr-2" />
+													WhatsApp
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
-							
-							<div>
-								<p class="font-semibold text-gray-900 mb-2">Часы работы:</p>
-								<p class="text-gray-700">8:00 - 16:00 (Пн-Пт)</p>
+
+							<!-- Услуги на базе -->
+							<div class="lg:col-span-1">
+								<div class="bg-blue-50 p-6 rounded-lg h-full">
+									<h3 class="font-semibold text-gray-900 mb-4 text-lg flex items-center">
+										<Settings className="h-5 w-5 mr-2 text-blue-700" />
+										Услуги на базе
+									</h3>
+									<ul class="space-y-3">
+										<li class="flex items-center text-gray-700">
+											<CheckCircle className="h-4 w-4 mr-2 text-[#007e57]" />
+											Техническое обслуживание
+										</li>
+										<li class="flex items-center text-gray-700">
+											<CheckCircle className="h-4 w-4 mr-2 text-[#007e57]" />
+											Диспетчерская служба 24/7
+										</li>
+										<li class="flex items-center text-gray-700">
+											<CheckCircle className="h-4 w-4 mr-2 text-[#007e57]" />
+											Парковка для водителей
+										</li>
+										<li class="flex items-center text-gray-700">
+											<CheckCircle className="h-4 w-4 mr-2 text-[#007e57]" />
+											Оформление документов
+										</li>
+										<li class="flex items-center text-gray-700">
+											<CheckCircle className="h-4 w-4 mr-2 text-[#007e57]" />
+											Консультации по визам
+										</li>
+										<li class="flex items-center text-gray-700">
+											<CheckCircle className="h-4 w-4 mr-2 text-[#007e57]" />
+											Отдел кадров
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<!-- Инфраструктура -->
+							<div class="lg:col-span-1">
+								<div class="bg-green-50 p-6 rounded-lg h-full">
+									<h3 class="font-semibold text-gray-900 mb-4 text-lg flex items-center">
+										<Building2 className="h-5 w-5 mr-2 text-[#eeba4b]" />
+										Инфраструктура
+									</h3>
+									<ul class="space-y-3">
+										<li class="flex items-center text-gray-700">
+											<Truck className="h-4 w-4 mr-2 text-slate-600" />
+											150+ грузовых автомобилей
+										</li>
+										<li class="flex items-center text-gray-700">
+											<Container className="h-4 w-4 mr-2 text-slate-600" />
+											265 прицепов разных типов
+										</li>
+										<li class="flex items-center text-gray-700">
+											<Wrench className="h-4 w-4 mr-2 text-slate-600" />
+											Собственная мастерская
+										</li>
+										<li class="flex items-center text-gray-700">
+											<Fuel className="h-4 w-4 mr-2 text-slate-600" />
+											Заправочная станция
+										</li>
+										<li class="flex items-center text-gray-700">
+											<Shield className="h-4 w-4 mr-2 text-slate-600" />
+											Охраняемая территория
+										</li>
+										<li class="flex items-center text-gray-700">
+											<Wifi className="h-4 w-4 mr-2 text-slate-600" />
+											Wi-Fi для водителей
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 
-						<div class="mt-8">
-							<p class="font-semibold text-gray-900 mb-4 text-center">Контакты:</p>
-							<div class="flex flex-col md:flex-row justify-center items-center space-y-3 md:space-y-0 md:space-x-8">
-								<a href="tel:+48509717619" class="flex items-center text-blue-600 hover:text-blue-800 transition-colors">
-									<Phone className="h-5 w-5 mr-3" />
-									+48 509 717 619
-								</a>
-								<a href="viber://chat?number=%2B48509717619" class="flex items-center text-purple-600 hover:text-purple-800 transition-colors">
-									<MessageSquare className="h-5 w-5 mr-3" />
-									Viber
-								</a>
-								<a href="https://wa.me/48509717619" class="flex items-center text-green-600 hover:text-green-800 transition-colors">
-									<Navigation className="h-5 w-5 mr-3" />
-									WhatsApp
-								</a>
-							</div>
-						</div>
+						
 					</CardContent>
 				</Card>
 			</section>

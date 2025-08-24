@@ -4,7 +4,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import PageHero from "@/components/PageHero.astro";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { CheckCircle, Briefcase, Wallet, MapPin, Truck, Globe, Info } from "lucide-react";
+import { CheckCircle, Briefcase, Wallet, MapPin, Truck, Globe, Info, Shield, Clock, Smartphone, Calendar, Award, Users } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import JobApplicationForm from "@/components/JobApplicationForm.tsx";
 import heroImage from "@/assets/driver.webp";
@@ -24,24 +24,55 @@ import heroImage from "@/assets/driver.webp";
 				<AnimatedSection client:visible>
 				<Card className="mb-12">
 					<CardHeader>
-						<CardTitle>Общая информация</CardTitle>
+						<CardTitle>Почему водители выбирают Euro-Pegaz</CardTitle>
 					</CardHeader>
 					<CardContent>
 						<div class="space-y-6">
-							<p class="text-lg leading-relaxed text-muted-foreground">
-								Мы предлагаем стабильную работу с возможностью профессионального роста в крупной транспортной компании. 
-								Наша команда состоит из опытных профессионалов, которые ценят качество работы и взаимопонимание.
-							</p>
+							<div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+								<h3 class="text-xl font-semibold text-green-800 mb-3 flex items-center gap-2">
+									<Shield className="h-6 w-6" />
+									34 года финансовой надежности
+								</h3>
+								<p class="text-green-700 text-lg leading-relaxed">
+									За 34 года нашей работы <strong>ни разу не было задержек в выплатах зарплаты</strong>. 
+									Ваш труд будет оплачен <strong>гарантированно 10-го числа каждого месяца</strong>.
+								</p>
+							</div>
 						
-							<p class="text-lg leading-relaxed text-muted-foreground">
-								Присоединяйтесь к нашей команде и получите возможность работать в международных рейсах по Европе. 
-								Мы обеспечиваем полную поддержку наших водителей и создаем комфортные условия для работы.
-							</p>
-						
-							<p class="text-lg leading-relaxed text-muted-foreground">
-								Все автомобили проходят регулярное техническое обслуживание и оборудованы современными системами безопасности. 
-								Мы гарантируем своевременные выплаты и прозрачные условия труда.
-							</p>
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+								<div class="space-y-4">
+									<h4 class="text-lg font-semibold flex items-center gap-2">
+										<Truck className="h-5 w-5 text-blue-700" />
+										Современная техника
+									</h4>
+									<ul class="space-y-2 text-muted-foreground">
+										<li>• Автомобили MAN <strong>не старше 3 лет</strong></li>
+										<li>• Система навигации Transics</li>
+										<li>• Служебный телефон с телематикой</li>
+										<li>• Интернет для служебных нужд</li>
+									</ul>
+								</div>
+								
+								<div class="space-y-4">
+									<h4 class="text-lg font-semibold flex items-center gap-2">
+										<CheckCircle className="h-5 w-5" style={{color: "#007e57"}} />
+										Простота работы
+									</h4>
+									<ul class="space-y-2 text-muted-foreground">
+										<li>• <strong>Без тандемов</strong> и сложностей</li>
+										<li>• <strong>90% заказов</strong> от прямых клиентов</li>
+										<li>• Без обмена паллет</li>
+										<li>• Грузы заранее подготовлены</li>
+									</ul>
+								</div>
+							</div>
+							
+							<div class="bg-blue-50 p-4 rounded-lg">
+								<p class="text-blue-800 text-center font-medium">
+									<Users className="inline h-5 w-5 mr-2" />
+									Большинство наших водителей остается работать с нами на долгие годы
+								</p>
+							</div>
 						</div>
 					</CardContent>
 				</Card>
@@ -54,36 +85,111 @@ import heroImage from "@/assets/driver.webp";
 						<CardTitle>Предлагаем:</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-							<li class="flex items-start gap-3">
-								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-								<span>Стабильную работу с официальным трудоустройством</span>
-							</li>
-							<li class="flex items-start gap-3">
-								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-								<span>Заработную плату от 85 до 98 евро в день</span>
-							</li>
-							<li class="flex items-start gap-3">
-								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-								<span>Современные грузовики MAN с полным техническим обслуживанием</span>
-							</li>
-							<li class="flex items-start gap-3">
-								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-								<span>Бесплатное проживание в современных общежитиях</span>
-							</li>
-							<li class="flex items-start gap-3">
-								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-								<span>Медицинскую страховку и социальный пакет</span>
-							</li>
-							<li class="flex items-start gap-3">
-								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-								<span>Оплачиваемые отпуска и больничные</span>
-							</li>
-							<li class="flex items-start gap-3">
-								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-								<span>Возможности профессионального развития</span>
-							</li>
-						</ul>
+						<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+							<!-- Зарплата и финансы -->
+							<div class="space-y-4">
+								<h4 class="font-semibold text-lg flex items-center gap-2">
+									<Wallet className="h-5 w-5" style={{color: "#eeba4b"}} />
+									Зарплата и финансы
+								</h4>
+								<ul class="space-y-3">
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span><strong>85-98 евро в день</strong> (до 3000 евро в месяц)</span>
+									</li>
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Средняя ставка <strong>91 евро в день</strong></span>
+									</li>
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Выплата <strong>гарантированно 10-го числа</strong></span>
+									</li>
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Трудоустройство по трудовому договору</span>
+									</li>
+								</ul>
+							</div>
+
+							<!-- Условия работы -->
+							<div class="space-y-4">
+								<h4 class="font-semibold text-lg flex items-center gap-2">
+									<Calendar className="h-5 w-5 text-blue-700" />
+									Условия работы
+								</h4>
+								<ul class="space-y-3">
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Графики: <strong>4/1, 5/1, 6/2, 8/2, 8/3, 12/4</strong></span>
+									</li>
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Каждые вторые выходные дома</span>
+									</li>
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Индивидуальные графики работы</span>
+									</li>
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Полный социальный пакет</span>
+									</li>
+								</ul>
+							</div>
+
+							<!-- Техника и поддержка -->
+							<div class="space-y-4">
+								<h4 class="font-semibold text-lg flex items-center gap-2">
+									<Truck className="h-5 w-5 text-blue-700" />
+									Техника и поддержка
+								</h4>
+								<ul class="space-y-3">
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Автомобили MAN Euro 6 <strong>не старше 3 лет</strong></span>
+									</li>
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Система Transics и навигация</span>
+									</li>
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Служебный телефон с интернетом</span>
+									</li>
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Современные комфортабельные кабины</span>
+									</li>
+								</ul>
+							</div>
+
+							<!-- Дополнительные бонусы -->
+							<div class="space-y-4">
+								<h4 class="font-semibold text-lg flex items-center gap-2">
+									<Award className="h-5 w-5" style={{color: "#eeba4b"}} />
+									Дополнительные бонусы
+								</h4>
+								<ul class="space-y-3">
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Медицинское обслуживание в ЕС</span>
+									</li>
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Помощь в получении кода 95</span>
+									</li>
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Бесплатное проживание в общежитиях</span>
+									</li>
+									<li class="flex items-start gap-3">
+										<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+										<span>Возможности профессионального развития</span>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</CardContent>
 				</Card>
 				</AnimatedSection>
@@ -92,39 +198,71 @@ import heroImage from "@/assets/driver.webp";
 				<AnimatedSection client:visible>
 				<Card className="mb-16">
 					<CardHeader>
-						<CardTitle>Требования к кандидатам:</CardTitle>
+						<CardTitle>Требования к кандидатам (обязательные условия):</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-							<li class="flex items-start gap-3">
-								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-								<span>Водительские права категории C+E</span>
-							</li>
-							<li class="flex items-start gap-3">
-								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-								<span>Опыт работы водителем от 2 лет</span>
-							</li>
-							<li class="flex items-start gap-3">
-								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-								<span>Карта водителя (цифровой тахограф)</span>
-							</li>
-							<li class="flex items-start gap-3">
-								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-								<span>Базовое знание английского языка</span>
-							</li>
-							<li class="flex items-start gap-3">
-								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-								<span>Ответственность и пунктуальность</span>
-							</li>
-							<li class="flex items-start gap-3">
-								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-								<span>Готовность к работе в международных рейсах</span>
-							</li>
-							<li class="flex items-start gap-3">
-								<CheckCircle size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-								<span>Чистое водительское удостоверение</span>
-							</li>
-						</ul>
+						<div class="space-y-6">
+							<!-- Критическое требование -->
+							<div class="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-lg">
+								<h4 class="font-semibold text-red-800 mb-2 flex items-center gap-2">
+									<Shield className="h-5 w-5" />
+									Обязательно для трудоустройства:
+								</h4>
+								<p class="text-red-700 font-medium">
+									<strong>Польская рабочая виза или карта побыту (ВНЖ)</strong>
+								</p>
+							</div>
+
+							<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+								<!-- Документы и права -->
+								<div class="space-y-4">
+									<h4 class="font-semibold text-lg">Документы и права</h4>
+									<ul class="space-y-3">
+										<li class="flex items-start gap-3">
+											<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+											<span>Водительские права категории <strong>C+E</strong></span>
+										</li>
+										<li class="flex items-start gap-3">
+											<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+											<span><strong>Код 95</strong> (любой страны ЕС) <br>или права С получены до 2009 года</span>
+										</li>
+										<li class="flex items-start gap-3">
+											<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+											<span>Чип карта тахографа</span>
+										</li>
+										<li class="flex items-start gap-3">
+											<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+											<span>Срок действия всех документов <strong>не менее 3 месяцев</strong></span>
+										</li>
+									</ul>
+								</div>
+
+								<!-- Опыт и навыки -->
+								<div class="space-y-4">
+									<h4 class="font-semibold text-lg">Опыт и навыки</h4>
+									<ul class="space-y-3">
+										<li class="flex items-start gap-3">
+											<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+											<span>Опыт работы водителем грузовика категории Е <strong>в Западной Европе не менее 6 месяцев</strong></span>
+										</li>
+										<li class="flex items-start gap-3">
+											<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+											<span>Ответственность и пунктуальность</span>
+										</li>
+										<li class="flex items-start gap-3">
+											<CheckCircle size={20} className="flex-shrink-0 mt-0.5" style={{color: "#007e57"}} />
+											<span>Готовность к работе в международных рейсах</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="bg-blue-50 p-4 rounded-lg">
+								<p class="text-blue-800 text-sm">
+									<strong>Примечание:</strong> Мы приглашаем водителей из Украины, Беларуси, Молдовы и стран Средней Азии.
+								</p>
+							</div>
+						</div>
 					</CardContent>
 				</Card>
 				</AnimatedSection>
@@ -162,6 +300,7 @@ import heroImage from "@/assets/driver.webp";
 								<div>
 									<p class="font-semibold text-sm text-muted-foreground">Зарплата:</p>
 									<p class="font-medium">85-98 евро в день</p>
+									<p class="text-xs text-muted-foreground">Средняя: 91€/день</p>
 								</div>
 							</li>
 							<li class="flex items-center gap-3">
@@ -169,6 +308,7 @@ import heroImage from "@/assets/driver.webp";
 								<div>
 									<p class="font-semibold text-sm text-muted-foreground">База:</p>
 									<p class="font-medium">64-113, Osieczna</p>
+									<p class="text-xs text-muted-foreground">10 км от Лешно</p>
 								</div>
 							</li>
 							<li class="flex items-center gap-3">
@@ -176,6 +316,7 @@ import heroImage from "@/assets/driver.webp";
 								<div>
 									<p class="font-semibold text-sm text-muted-foreground">Автомобили:</p>
 									<p class="font-medium">MAN Euro 6</p>
+									<p class="text-xs text-muted-foreground">Не старше 3 лет</p>
 								</div>
 							</li>
 							<li class="flex items-center gap-3">
@@ -183,6 +324,23 @@ import heroImage from "@/assets/driver.webp";
 								<div>
 									<p class="font-semibold text-sm text-muted-foreground">Маршруты:</p>
 									<p class="font-medium">Западная Европа</p>
+									<p class="text-xs text-muted-foreground">DE, FR, NL, BE</p>
+								</div>
+							</li>
+							<li class="flex items-center gap-3">
+								<Calendar className="size-5 text-primary flex-shrink-0" />
+								<div>
+									<p class="font-semibold text-sm text-muted-foreground">Графики:</p>
+									<p class="font-medium">4/1, 5/1, 6/2, 8/2</p>
+									<p class="text-xs text-muted-foreground">Индивидуально</p>
+								</div>
+							</li>
+							<li class="flex items-center gap-3">
+								<Shield className="size-5 text-primary flex-shrink-0" />
+								<div>
+									<p class="font-semibold text-sm text-muted-foreground">Требуется:</p>
+									<p class="font-medium text-red-600">Виза/ВНЖ Польши</p>
+									<p class="text-xs text-muted-foreground">Обязательно!</p>
 								</div>
 							</li>
 						</ul>

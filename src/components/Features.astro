@@ -1,55 +1,55 @@
 ---
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card";
-import { Truck, Timer, ShieldCheck } from "lucide-react";
+import { Euro, Truck, Users, Award } from "lucide-react";
 ---
 <section class="bg-muted py-16 sm:py-24">
   <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
     <h2 class="text-center text-3xl font-bold tracking-tight sm:text-4xl">
-      Why Choose Us?
+      Почему стоит выбрать Euro-Pegaz?
     </h2>
     <p class="mx-auto mt-3 max-w-2xl text-center text-muted-foreground">
-      We offer more than just transportation; we offer peace of mind.
+      Мы предлагаем больше, чем просто работу — мы предлагаем стабильное будущее в семейной компании.
     </p>
 
     <div class="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-3">
-      <!-- Card 1 -->
+      <!-- Card 1: Высокая зарплата -->
+      <Card>
+        <CardHeader className="flex-row items-center gap-3">
+          <Euro className="size-6 text-primary" />
+          <CardTitle>Высокая зарплата</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <p>
+            10,000-13,000 PLN в месяц с пунктуальной выплатой 10 числа каждого месяца. 
+            Дополнительные бонусы за пробег и экономичное вождение.
+          </p>
+        </CardContent>
+      </Card>
+
+      <!-- Card 2: Современная техника -->
       <Card>
         <CardHeader className="flex-row items-center gap-3">
           <Truck className="size-6 text-primary" />
-          <CardTitle>Modern Fleet</CardTitle>
+          <CardTitle>Новые грузовики MAN</CardTitle>
         </CardHeader>
         <CardContent>
           <p>
-            Our vehicles are maintained to the highest standards to ensure
-            reliability and efficiency.
+            Закрепленные грузовики MAN Euro 6 со средним возрастом 1,5 года. 
+            Полностью оснащены для комфортных дальних рейсов по Европе.
           </p>
         </CardContent>
       </Card>
 
-      <!-- Card 2 -->
+      <!-- Card 3: Семейная атмосфера -->
       <Card>
         <CardHeader className="flex-row items-center gap-3">
-          <Timer className="size-6 text-primary" />
-          <CardTitle>On-Time Delivery</CardTitle>
+          <Users className="size-6 text-primary" />
+          <CardTitle>Дружный коллектив</CardTitle>
         </CardHeader>
         <CardContent>
           <p>
-            We prioritize punctuality and keep you informed at every step of the
-            journey.
-          </p>
-        </CardContent>
-      </Card>
-
-      <!-- Card 3 -->
-      <Card>
-        <CardHeader className="flex-row items-center gap-3">
-          <ShieldCheck className="size-6 text-primary" />
-          <CardTitle>Guaranteed Safety</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p>
-            Safety is our top priority—from cargo handling to on-road
-            operations.
+            200+ водителей из разных стран в дружной семейной атмосфере. 
+            Персональный диспетчер и поддержка 24/7 в каждом рейсе.
           </p>
         </CardContent>
       </Card>

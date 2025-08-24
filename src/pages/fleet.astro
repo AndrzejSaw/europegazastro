@@ -5,7 +5,8 @@ import Footer from "@/components/Footer.astro";
 import PageHero from "@/components/PageHero.astro";
 import AnimatedSection from "@/components/AnimatedSection.tsx";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Leaf, GaugeCircle } from "lucide-react";
+import { Leaf, GaugeCircle, Truck, Wrench, Smartphone, MapPin, Users, Clock, Shield, ThermometerSun, Container, Package, Train, Building } from "lucide-react";
+import AnimatedCounter from "@/components/AnimatedCounter.tsx";
 import { Image } from "astro:assets";
 import heroImage from "@/assets/hero3.webp";
 import fleetIntroImage from "@/assets/fleet-intro.webp";
@@ -52,31 +53,125 @@ import trailerSiloImage from "@/assets/trailer-silo.webp";
 			</section>
 		</AnimatedSection>
 
-		<!-- Секция 2: Экологичность и инновации -->
-		<AnimatedSection client:visible variant="light" padding="lg" delay={0.2}>
+		<!-- Секция 1.5: Цифры и масштаб -->
+		<AnimatedSection client:visible variant="dark" padding="lg">
 			<section class="mb-16">
-				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-center mb-8">
-					Экологичность и инновации
-				</h2>
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+						Автопарк в цифрах
+					</h2>
+					<p class="mx-auto max-w-3xl text-muted-foreground">
+						За 34 года работы мы создали один из самых современных и надежных автопарков в Европе
+					</p>
+				</div>
 				
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+				<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
 					<Card className="text-center">
-						<CardHeader className="flex flex-col items-center">
-							<Leaf className="h-12 w-12 text-green-600 mb-4" />
-							<CardTitle>Соответствие EURO 6</CardTitle>
+						<CardHeader className="flex flex-col items-center pb-2">
+							<Truck className="h-12 w-12 text-[#007e57] mb-4" />
 						</CardHeader>
 						<CardContent>
-							<p>Все наши грузовики соответствуют самым высоким экологическим стандартам EURO 6, обеспечивая минимальные выбросы и заботу об окружающей среде.</p>
+							<div class="text-3xl font-bold text-primary">
+								<AnimatedCounter client:visible to={265} />
+							</div>
+							<p class="text-sm text-muted-foreground mt-2">Прицепов в парке</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center pb-2">
+							<Users className="h-12 w-12 text-[#eeba4b] mb-4" />
+						</CardHeader>
+						<CardContent>
+							<div class="text-3xl font-bold text-primary">
+								<AnimatedCounter client:visible to={150} suffix="+" />
+							</div>
+							<p class="text-sm text-muted-foreground mt-2">Тягачей MAN Euro 6</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center pb-2">
+							<Clock className="h-12 w-12 text-blue-700 mb-4" />
+						</CardHeader>
+						<CardContent>
+							<div class="text-3xl font-bold text-primary">
+								<AnimatedCounter client:visible to={3} />
+							</div>
+							<p class="text-sm text-muted-foreground mt-2">Средний возраст (лет)</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center pb-2">
+							<MapPin className="h-12 w-12 text-slate-600 mb-4" />
+						</CardHeader>
+						<CardContent>
+							<div class="text-3xl font-bold text-primary">
+								<AnimatedCounter client:visible to={15} />
+							</div>
+							<p class="text-sm text-muted-foreground mt-2">Стран Европы</p>
+						</CardContent>
+					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<!-- Секция 2: Тягачи MAN Euro 6 -->
+		<AnimatedSection client:visible variant="light" padding="lg" delay={0.2}>
+			<section class="mb-16">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+						Тягачи MAN Euro 6: надежность и комфорт
+					</h2>
+					<p class="mx-auto max-w-3xl text-muted-foreground">
+						Весь наш парк тягачей состоит из современных MAN Euro 6, обеспечивающих максимальную эффективность, экологичность и комфорт для водителей.
+					</p>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Leaf className="h-12 w-12 text-[#007e57] mb-4" />
+							<CardTitle>Экологические стандарты</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<ul class="text-sm space-y-2">
+								<li>• 100% соответствие Euro 6</li>
+								<li>• Треть парка с CNG Bi-Fuel</li>
+								<li>• Снижение выбросов CO2 до 20%</li>
+								<li>• Экономия топлива до 15%</li>
+							</ul>
 						</CardContent>
 					</Card>
 
 					<Card className="text-center">
 						<CardHeader className="flex flex-col items-center">
-							<GaugeCircle className="h-12 w-12 text-blue-600 mb-4" />
-							<CardTitle>Двигатели CNG Bi-Fuel</CardTitle>
+							<Users className="h-12 w-12 text-[#eeba4b] mb-4" />
+							<CardTitle>Комфорт водителя</CardTitle>
 						</CardHeader>
 						<CardContent>
-							<p>Треть нашего автопарка оснащена газовыми двигателями CNG Bi-Fuel, что значительно снижает выбросы CO2 и эксплуатационные расходы.</p>
+							<ul class="text-sm space-y-2">
+								<li>• Просторные кабины с кроватями</li>
+								<li>• Климат-контроль</li>
+								<li>• Холодильники в кабинах</li>
+								<li>• Эргономичные сиденья</li>
+							</ul>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Smartphone className="h-12 w-12 text-blue-700 mb-4" />
+							<CardTitle>Технологии</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<ul class="text-sm space-y-2">
+								<li>• Система Transics</li>
+								<li>• GPS навигация</li>
+								<li>• Мониторинг в реальном времени</li>
+								<li>• Экстренная связь 24/7</li>
+							</ul>
 						</CardContent>
 					</Card>
 				</div>
@@ -115,12 +210,73 @@ import trailerSiloImage from "@/assets/trailer-silo.webp";
 			</section>
 		</AnimatedSection>
 
+		<!-- Секция 2.7: Техническое обслуживание и надежность -->
+		<AnimatedSection client:visible variant="green" padding="lg">
+			<section class="mb-16">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+						Надежность через профессиональное обслуживание
+					</h2>
+					<p class="mx-auto max-w-3xl text-muted-foreground">
+						Собственные сертифицированные мастерские и регулярное техническое обслуживание гарантируют безупречную работу нашего парка.
+					</p>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Wrench className="h-12 w-12 text-blue-700 mb-4" />
+							<CardTitle>Собственные мастерские</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Сертифицированные мастерские с современным оборудованием для всех видов ремонта и обслуживания</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Clock className="h-12 w-12 text-[#007e57] mb-4" />
+							<CardTitle>Регулярное ТО</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Плановое техобслуживание каждые 15,000 км, предиктивная диагностика поломок</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Shield className="h-12 w-12 text-[#eeba4b] mb-4" />
+							<CardTitle>Поддержка 24/7</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Техническая поддержка и экстренный ремонт по всей Европе в любое время суток</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<GaugeCircle className="h-12 w-12 text-slate-600 mb-4" />
+							<CardTitle>Минимум простоев</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Система предиктивной диагностики и профилактики позволяет избежать внезапных поломок</p>
+						</CardContent>
+					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
+
 		<!-- Секция 3: Галерея полуприцепов -->
-		<AnimatedSection client:visible variant="green" padding="lg" delay={0.4}>
+		<AnimatedSection client:visible variant="yellow" padding="lg" delay={0.4}>
 			<section class="text-center">
-				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
-					Наши полуприцепы для любых задач
-				</h2>
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+						265 полуприцепов для любых задач
+					</h2>
+					<p class="mx-auto max-w-3xl text-muted-foreground">
+						Разнообразный парк полуприцепов позволяет нам эффективно перевозить любые виды грузов по всей Европе.
+					</p>
+				</div>
 				
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 					<!-- Стандартный полуприцеп -->
@@ -133,13 +289,18 @@ import trailerSiloImage from "@/assets/trailer-silo.webp";
 							quality={80}
 						/>
 						<CardHeader>
-							<CardTitle>Стандартный полуприцеп</CardTitle>
+							<CardTitle>Стандартные полуприцепы</CardTitle>
 						</CardHeader>
 						<CardContent className="text-left">
-							<ul class="space-y-2">
+							<div class="flex items-center justify-between mb-3">
+								<span class="text-2xl font-bold text-primary">120</span>
+								<span class="text-sm text-muted-foreground">единиц в парке</span>
+							</div>
+							<ul class="space-y-2 text-sm">
 								<li><strong>Размеры:</strong> 13,6 × 2,48 × 2,7 м</li>
+								<li><strong>Объем:</strong> 90 м³</li>
 								<li><strong>Грузоподъемность:</strong> до 24 тонн</li>
-								<li><strong>Особенности:</strong> Универсальность для большинства грузов</li>
+								<li><strong>Применение:</strong> Универсальные грузы</li>
 							</ul>
 						</CardContent>
 					</Card>
@@ -154,34 +315,18 @@ import trailerSiloImage from "@/assets/trailer-silo.webp";
 							quality={80}
 						/>
 						<CardHeader>
-							<CardTitle>Мега полуприцеп</CardTitle>
+							<CardTitle>Мега полуприцепы</CardTitle>
 						</CardHeader>
 						<CardContent className="text-left">
-							<ul class="space-y-2">
+							<div class="flex items-center justify-between mb-3">
+								<span class="text-2xl font-bold text-primary">80</span>
+								<span class="text-sm text-muted-foreground">единиц в парке</span>
+							</div>
+							<ul class="space-y-2 text-sm">
 								<li><strong>Размеры:</strong> 13,6 × 2,48 × 3,0 м</li>
+								<li><strong>Объем:</strong> 100 м³</li>
 								<li><strong>Грузоподъемность:</strong> до 24 тонн</li>
-								<li><strong>Особенности:</strong> Увеличенная высота для объемных грузов</li>
-							</ul>
-						</CardContent>
-					</Card>
-
-					<!-- Хакпак полуприцеп -->
-					<Card>
-						<Image 
-							src={trailerHuckepackImage} 
-							alt="Хакпак полуприцеп EUROPEGAZ" 
-							class="w-full h-48 object-cover rounded-t-lg"
-							format="webp"
-							quality={80}
-						/>
-						<CardHeader>
-							<CardTitle>Хакпак полуприцеп</CardTitle>
-						</CardHeader>
-						<CardContent className="text-left">
-							<ul class="space-y-2">
-								<li><strong>Размеры:</strong> 13,6 × 2,48 × 2,7 м</li>
-								<li><strong>Грузоподъемность:</strong> до 24 тонн</li>
-								<li><strong>Особенности:</strong> Откидные борта для удобной погрузки</li>
+								<li><strong>Применение:</strong> Объемные грузы</li>
 							</ul>
 						</CardContent>
 					</Card>
@@ -196,13 +341,18 @@ import trailerSiloImage from "@/assets/trailer-silo.webp";
 							quality={80}
 						/>
 						<CardHeader>
-							<CardTitle>Изотерма полуприцеп</CardTitle>
+							<CardTitle>Изотермические</CardTitle>
 						</CardHeader>
 						<CardContent className="text-left">
-							<ul class="space-y-2">
-								<li><strong>Размеры:</strong> 13,6 × 2,48 × 2,6 м</li>
-								<li><strong>Грузоподъемность:</strong> до 22 тонн</li>
-								<li><strong>Особенности:</strong> Термоизоляция для температурных грузов</li>
+							<div class="flex items-center justify-between mb-3">
+								<span class="text-2xl font-bold text-primary">30</span>
+								<span class="text-sm text-muted-foreground">единиц в парке</span>
+							</div>
+							<ul class="space-y-2 text-sm">
+								<li><strong>Температура:</strong> -25°C до +25°C</li>
+								<li><strong>Сертификация:</strong> ATP</li>
+								<li><strong>Мониторинг:</strong> Контроль температуры</li>
+								<li><strong>Применение:</strong> Пищевые, фарма грузы</li>
 							</ul>
 						</CardContent>
 					</Card>
@@ -217,14 +367,177 @@ import trailerSiloImage from "@/assets/trailer-silo.webp";
 							quality={80}
 						/>
 						<CardHeader>
-							<CardTitle>Силос полуприцеп</CardTitle>
+							<CardTitle>Силосы</CardTitle>
 						</CardHeader>
 						<CardContent className="text-left">
-							<ul class="space-y-2">
+							<div class="flex items-center justify-between mb-3">
+								<span class="text-2xl font-bold text-primary">20</span>
+								<span class="text-sm text-muted-foreground">единиц в парке</span>
+							</div>
+							<ul class="space-y-2 text-sm">
 								<li><strong>Объем:</strong> до 63 м³</li>
 								<li><strong>Грузоподъемность:</strong> до 33 тонн</li>
-								<li><strong>Особенности:</strong> Пневматическая разгрузка сыпучих грузов</li>
+								<li><strong>Выгрузка:</strong> Пневматическая</li>
+								<li><strong>Применение:</strong> Мука, цемент, пластик</li>
 							</ul>
+						</CardContent>
+					</Card>
+
+					<!-- Huckepack полуприцеп -->
+					<Card>
+						<Image 
+							src={trailerHuckepackImage} 
+							alt="Huckepack полуприцеп EUROPEGAZ для интермодальных перевозок" 
+							class="w-full h-48 object-cover rounded-t-lg"
+							format="webp"
+							quality={80}
+						/>
+						<CardHeader>
+							<CardTitle>Huckepack (интермодальные)</CardTitle>
+						</CardHeader>
+						<CardContent className="text-left">
+							<div class="flex items-center justify-between mb-3">
+								<span class="text-2xl font-bold text-primary">15</span>
+								<span class="text-sm text-muted-foreground">единиц в парке</span>
+							</div>
+							<ul class="space-y-2 text-sm">
+								<li><strong>Назначение:</strong> Ж/д + автотранспорт</li>
+								<li><strong>Конструкция:</strong> Кранопригодная</li>
+								<li><strong>Экология:</strong> Снижение выбросов</li>
+								<li><strong>Маршруты:</strong> PL-DE, PL-ES, PL-FR</li>
+							</ul>
+						</CardContent>
+					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<!-- Секция 4: Преимущества для водителей -->
+		<AnimatedSection client:visible variant="dark" padding="lg">
+			<section class="mb-16">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+						Почему водители выбирают EUROPEGAZ
+					</h2>
+					<p class="mx-auto max-w-3xl text-muted-foreground">
+						Современная техника, комфортные условия работы и надежная поддержка — все это делает работу в EUROPEGAZ привлекательной для профессиональных водителей.
+					</p>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Truck className="h-12 w-12 text-[#007e57] mb-4" />
+							<CardTitle>Новая техника</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Средний возраст парка 3-4 года. Работайте на современных MAN Euro 6 с максимальным комфортом.</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Shield className="h-12 w-12 text-[#eeba4b] mb-4" />
+							<CardTitle>Поддержка 24/7</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Техническая поддержка по всей Европе, быстрое решение проблем, минимум простоев в дороге.</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<MapPin className="h-12 w-12 text-blue-700 mb-4" />
+							<CardTitle>Интересные маршруты</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Разнообразие направлений по 15 странам Европы, от стандартных до интермодальных перевозок.</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<ThermometerSun className="h-12 w-12 text-slate-600 mb-4" />
+							<CardTitle>Комфорт кабин</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Просторные кабины с кроватями, климат-контроль, холодильники — все для вашего комфорта.</p>
+						</CardContent>
+					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<!-- Секция 5: Сертификации и стандарты -->
+		<AnimatedSection client:visible variant="transparent" padding="lg">
+			<section class="mb-16">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+						Сертификации и стандарты качества
+					</h2>
+					<p class="mx-auto max-w-3xl text-muted-foreground">
+						Наш автопарк соответствует всем европейским стандартам безопасности и качества, что гарантирует надежность наших услуг.
+					</p>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Leaf className="h-12 w-12 text-[#007e57] mb-4" />
+							<CardTitle>Euro 6</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>100% автопарка соответствует экологическим стандартам Euro 6 для минимального воздействия на окружающую среду.</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<ThermometerSun className="h-12 w-12 text-blue-700 mb-4" />
+							<CardTitle>ATP сертификация</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Изотермические прицепы сертифицированы ATP для безопасной перевозки температурных грузов.</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Shield className="h-12 w-12 text-[#eeba4b] mb-4" />
+							<CardTitle>Сертификация мастерских</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Собственные мастерские имеют все необходимые сертификаты для обслуживания коммерческого транспорта.</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Building className="h-12 w-12 text-slate-600 mb-4" />
+							<CardTitle>Европейские стандарты</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Весь парк соответствует строгим европейским стандартам безопасности и технического состояния.</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Smartphone className="h-12 w-12 text-blue-700 mb-4" />
+							<CardTitle>Система Transics</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Передовая система мониторинга для контроля всех параметров работы автопарка в реальном времени.</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Train className="h-12 w-12 text-[#eeba4b] mb-4" />
+							<CardTitle>Интермодальная сертификация</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Специальные прицепы huckepack сертифицированы для железнодорожных интермодальных перевозок.</p>
 						</CardContent>
 					</Card>
 				</div>

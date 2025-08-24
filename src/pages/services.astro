@@ -5,7 +5,7 @@ import Footer from "@/components/Footer.astro";
 import PageHero from "@/components/PageHero.astro";
 import AnimatedSection from "@/components/AnimatedSection.tsx";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Package, Lock, Container, CheckCircle, BadgeCheck, Siren, Smartphone } from "lucide-react";
+import { Package, Lock, Container, CheckCircle, BadgeCheck, Siren, Smartphone, Train, Warehouse, MapPin, Truck, Building } from "lucide-react";
 import { Image } from "astro:assets";
 import heroImage from "@/assets/uslugi.webp";
 import mlynImage from "@/assets/mlyn.webp";
@@ -56,7 +56,7 @@ import interImage from "@/assets/inter.webp";
 					<!-- FTL/LTL -->
 					<Card className="text-center">
 						<CardHeader className="flex flex-col items-center">
-							<Package className="h-12 w-12 text-blue-600 mb-4" />
+							<Package className="h-12 w-12 text-[#007e57] mb-4" />
 							<CardTitle>Основные маршруты: FTL и LTL</CardTitle>
 						</CardHeader>
 						<CardContent>
@@ -67,7 +67,7 @@ import interImage from "@/assets/inter.webp";
 					<!-- High Security -->
 					<Card className="text-center">
 						<CardHeader className="flex flex-col items-center">
-							<Lock className="h-12 w-12 text-red-600 mb-4" />
+							<Lock className="h-12 w-12 text-[#eeba4b] mb-4" />
 							<CardTitle>Особые рейсы: High Security</CardTitle>
 						</CardHeader>
 						<CardContent>
@@ -78,13 +78,229 @@ import interImage from "@/assets/inter.webp";
 					<!-- Сыпучие грузы -->
 					<Card className="text-center">
 						<CardHeader className="flex flex-col items-center">
-							<Container className="h-12 w-12 text-orange-600 mb-4" />
+							<Container className="h-12 w-12 text-blue-700 mb-4" />
 							<CardTitle>Специализированные перевозки: Сыпучие материалы</CardTitle>
 						</CardHeader>
 						<CardContent>
 							<p>Обладаем большим опытом в транспортировке сыпучих материалов с использованием специализированных полуприцепов-силосов с пневматической разгрузкой. Обеспечиваем сохранность груза и соблюдение всех технических требований.</p>
 						</CardContent>
 					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<!-- Секция 2.5: Интермодальные перевозки -->
+		<AnimatedSection client:visible variant="light" padding="lg">
+			<section class="mb-16">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+						Интермодальные решения: автодорога + железная дорога
+					</h2>
+					<p class="mx-auto max-w-3xl text-muted-foreground">
+						Мы развиваем интермодальные перевозки, комбинируя автомобильный и железнодорожный транспорт для максимальной эффективности и экологичности.
+					</p>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Train className="h-12 w-12 text-[#eeba4b] mb-4" />
+							<CardTitle>Регулярные ж/д сервисы</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Польша-Германия, Польша-Испания, Польша-Франция, транзитные связи Германия-Испания</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Container className="h-12 w-12 text-[#007e57] mb-4" />
+							<CardTitle>Специальные прицепы</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Прицепы типа huckepack, адаптированные для кранового погрузки на железнодорожные платформы</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<CheckCircle className="h-12 w-12 text-[#007e57] mb-4" />
+							<CardTitle>Экологичность</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Снижение затрат и вредных выбросов благодаря использованию железных дорог на длинных расстояниях</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<MapPin className="h-12 w-12 text-blue-700 mb-4" />
+							<CardTitle>Оптимизация сроков</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Расширение географии доставки и оптимизация времени за счет комбинированного транспорта</p>
+						</CardContent>
+					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<!-- Секция 2.7: Складская логистика и 3PL -->
+		<AnimatedSection client:visible variant="green" padding="lg">
+			<section class="mb-16">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+						Полный цикл логистики: не только перевозки
+					</h2>
+					<p class="mx-auto max-w-3xl text-muted-foreground">
+						Euro-Pegaz выступает как 3PL-оператор, предлагая комплексные логистические решения от хранения до финальной доставки.
+					</p>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Warehouse className="h-12 w-12 text-[#007e57] mb-4" />
+							<CardTitle>Современные склады</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Складские комплексы в Осечне и Домброве-Гурничей по 5000 м² каждый, 10000+ палетомест на стеллажном хранении</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Package className="h-12 w-12 text-[#eeba4b] mb-4" />
+							<CardTitle>VAS услуги</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Упаковка, комплектация, этикетирование, формирование промо-наборов, автоматизированная линия пакетирования</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<BadgeCheck className="h-12 w-12 text-[#eeba4b] mb-4" />
+							<CardTitle>Контролируемые условия</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>WMS система управления, контроль температуры (+10...+20°C), IFS Logistics сертификация для пищевых продуктов</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Truck className="h-12 w-12 text-blue-700 mb-4" />
+							<CardTitle>Кросс-докинг</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Прямой поток через склад без длительного хранения, минимизация складских издержек</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Smartphone className="h-12 w-12 text-blue-700 mb-4" />
+							<CardTitle>Удаленный доступ</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Клиенты получают онлайн-доступ к данным о запасах и движении товаров через информационную систему</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Building className="h-12 w-12 text-slate-600 mb-4" />
+							<CardTitle>Ответственное хранение</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Услуги ответственного хранения, перегрузки, видеонаблюдение и квалифицированный персонал</p>
+						</CardContent>
+					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<!-- Секция 4: География и специализация -->
+		<AnimatedSection client:visible variant="dark" padding="lg">
+			<section class="mb-16">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+						География работы и отраслевая экспертиза
+					</h2>
+					<p class="mx-auto max-w-3xl text-muted-foreground">
+						Euro-Pegaz специализируется на определенных отраслях и регионах, что позволяет нам быть экспертами в своих нишах.
+					</p>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					<div class="space-y-6">
+						<h3 class="text-xl font-semibold">Ключевые регионы работы</h3>
+						<div class="space-y-4">
+							<div class="flex items-start space-x-3">
+								<MapPin className="h-5 w-5 text-[#007e57] mt-1 flex-shrink-0" />
+								<div>
+									<h4 class="font-medium">Польша → Германия</h4>
+									<p class="text-sm text-muted-foreground">Основное направление, высокая частота рейсов</p>
+								</div>
+							</div>
+							<div class="flex items-start space-x-3">
+								<MapPin className="h-5 w-5 text-[#007e57] mt-1 flex-shrink-0" />
+								<div>
+									<h4 class="font-medium">Восточная и Западная Европа</h4>
+									<p class="text-sm text-muted-foreground">Чехия, Словакия, Венгрия, Словения, Франция, Испания</p>
+								</div>
+							</div>
+							<div class="flex items-start space-x-3">
+								<MapPin className="h-5 w-5 text-blue-700 mt-1 flex-shrink-0" />
+								<div>
+									<h4 class="font-medium">Северная Европа</h4>
+									<p class="text-sm text-muted-foreground">Скандинавские страны: Швеция, Дания, Норвегия</p>
+								</div>
+							</div>
+							<div class="flex items-start space-x-3">
+								<MapPin className="h-5 w-5 text-[#eeba4b] mt-1 flex-shrink-0" />
+								<div>
+									<h4 class="font-medium">Интермодальные связи</h4>
+									<p class="text-sm text-muted-foreground">Регулярные ж/д маршруты между ключевыми европейскими узлами</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="space-y-6">
+						<h3 class="text-xl font-semibold">Отраслевая специализация</h3>
+						<div class="space-y-4">
+							<div class="flex items-start space-x-3">
+								<Package className="h-5 w-5 text-[#007e57] mt-1 flex-shrink-0" />
+								<div>
+									<h4 class="font-medium">Пищевая промышленность</h4>
+									<p class="text-sm text-muted-foreground">IFS Logistics сертификация, контроль температурных режимов</p>
+								</div>
+							</div>
+							<div class="flex items-start space-x-3">
+								<Container className="h-5 w-5 text-[#007e57] mt-1 flex-shrink-0" />
+								<div>
+									<h4 class="font-medium">Производственные компании</h4>
+									<p class="text-sm text-muted-foreground">Автокомпоненты, запчасти, промышленное оборудование</p>
+								</div>
+							</div>
+							<div class="flex items-start space-x-3">
+								<Lock className="h-5 w-5 text-[#eeba4b] mt-1 flex-shrink-0" />
+								<div>
+									<h4 class="font-medium">High Value / High Security</h4>
+									<p class="text-sm text-muted-foreground">Ценные грузы, требующие повышенной безопасности</p>
+								</div>
+							</div>
+							<div class="flex items-start space-x-3">
+								<Truck className="h-5 w-5 text-blue-700 mt-1 flex-shrink-0" />
+								<div>
+									<h4 class="font-medium">Ритейл и дистрибуция</h4>
+									<p class="text-sm text-muted-foreground">Комплексная логистика для торговых сетей</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</AnimatedSection>
@@ -108,19 +324,19 @@ import interImage from "@/assets/inter.webp";
 						</h3>
 						<ul class="space-y-4">
 							<li class="flex items-start">
-								<CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+								<CheckCircle className="h-6 w-6 text-[#007e57] mr-3 mt-0.5 flex-shrink-0" />
 								<div>
 									<strong>Четкие инструкции:</strong> Подробный брифинг перед каждым рейсом с детальным планом маршрута и процедур безопасности
 								</div>
 							</li>
 							<li class="flex items-start">
-								<CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+								<CheckCircle className="h-6 w-6 text-[#007e57] mr-3 mt-0.5 flex-shrink-0" />
 								<div>
 									<strong>Работа в паре:</strong> Два водителя на особо ответственных рейсах для обеспечения непрерывности движения и взаимного контроля
 								</div>
 							</li>
 							<li class="flex items-start">
-								<CheckCircle className="h-6 w-6 text-green-600 mr-3 mt-0.5 flex-shrink-0" />
+								<CheckCircle className="h-6 w-6 text-[#007e57] mr-3 mt-0.5 flex-shrink-0" />
 								<div>
 									<strong>Надежная техника:</strong> Специально подготовленные грузовики с дополнительными системами безопасности и GPS-мониторингом
 								</div>
@@ -142,7 +358,7 @@ import interImage from "@/assets/inter.webp";
 					<!-- Качество -->
 					<Card className="text-center">
 						<CardHeader className="flex flex-col items-center">
-							<BadgeCheck className="h-12 w-12 text-blue-600 mb-4" />
+							<BadgeCheck className="h-12 w-12 text-[#eeba4b] mb-4" />
 							<CardTitle>Качество и порядок</CardTitle>
 						</CardHeader>
 						<CardContent>
@@ -153,7 +369,7 @@ import interImage from "@/assets/inter.webp";
 					<!-- Безопасность -->
 					<Card className="text-center">
 						<CardHeader className="flex flex-col items-center">
-							<Siren className="h-12 w-12 text-red-600 mb-4" />
+							<Siren className="h-12 w-12 text-[#007e57] mb-4" />
 							<CardTitle>Безопасность — наш приоритет</CardTitle>
 						</CardHeader>
 						<CardContent>
@@ -164,13 +380,137 @@ import interImage from "@/assets/inter.webp";
 					<!-- Технологии -->
 					<Card className="text-center">
 						<CardHeader className="flex flex-col items-center">
-							<Smartphone className="h-12 w-12 text-green-600 mb-4" />
+							<Smartphone className="h-12 w-12 text-blue-700 mb-4" />
 							<CardTitle>Современные технологии</CardTitle>
 						</CardHeader>
 						<CardContent>
 							<p>Используем передовую систему Transics для мониторинга автопарка в режиме реального времени. Это позволяет оптимизировать маршруты, контролировать расход топлива и обеспечивать постоянную связь с водителями.</p>
 						</CardContent>
 					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<!-- Секция 5: Типы прицепов -->
+		<AnimatedSection client:visible variant="light" padding="lg">
+			<section class="mb-16">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+						Разнообразный парк прицепов для любых задач
+					</h2>
+					<p class="mx-auto max-w-3xl text-muted-foreground">
+						Euro-Pegaz располагает современным автопарком с различными типами прицепов, что позволяет перевозить любые виды грузов.
+					</p>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					<!-- Стандартные прицепы -->
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Truck className="h-12 w-12 text-[#007e57] mb-4" />
+							<CardTitle>Стандартные прицепы</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p class="mb-2 font-medium">120 ед. в парке</p>
+							<ul class="text-sm text-muted-foreground space-y-1">
+								<li>• Длина: 13,6 м</li>
+								<li>• Высота: 2,7 м</li>
+								<li>• Грузоподъемность: 24 т</li>
+								<li>• Объем: 90 м³</li>
+							</ul>
+						</CardContent>
+					</Card>
+
+					<!-- Мега прицепы -->
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Container className="h-12 w-12 text-[#007e57] mb-4" />
+							<CardTitle>Мега прицепы</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p class="mb-2 font-medium">80 ед. в парке</p>
+							<ul class="text-sm text-muted-foreground space-y-1">
+								<li>• Длина: 13,6 м</li>
+								<li>• Высота: 3,0 м</li>
+								<li>• Грузоподъемность: 24 т</li>
+								<li>• Объем: 100 м³</li>
+							</ul>
+						</CardContent>
+					</Card>
+
+					<!-- Изотермические прицепы -->
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Lock className="h-12 w-12 text-blue-700 mb-4" />
+							<CardTitle>Изотермические</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p class="mb-2 font-medium">30 ед. в парке</p>
+							<ul class="text-sm text-muted-foreground space-y-1">
+								<li>• Temp: -25°C до +25°C</li>
+								<li>• ATP сертификация</li>
+								<li>• Мониторинг температуры</li>
+								<li>• Фармацевтические грузы</li>
+							</ul>
+						</CardContent>
+					</Card>
+
+					<!-- Силосы -->
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Package className="h-12 w-12 text-slate-600 mb-4" />
+							<CardTitle>Силосы</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p class="mb-2 font-medium">20 ед. в парке</p>
+							<ul class="text-sm text-muted-foreground space-y-1">
+								<li>• Сыпучие материалы</li>
+								<li>• Пневмовыгрузка</li>
+								<li>• Мука, цемент, пластик</li>
+								<li>• Герметичная конструкция</li>
+							</ul>
+						</CardContent>
+					</Card>
+
+					<!-- Huckepack прицепы -->
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Train className="h-12 w-12 text-[#eeba4b] mb-4" />
+							<CardTitle>Huckepack прицепы</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p class="mb-2 font-medium">15 ед. в парке</p>
+							<ul class="text-sm text-muted-foreground space-y-1">
+								<li>• Интермодальные перевозки</li>
+								<li>• Кранопригодная конструкция</li>
+								<li>• Железная дорога + авто</li>
+								<li>• Экологичное решение</li>
+							</ul>
+						</CardContent>
+					</Card>
+
+					<!-- Специальные прицепы -->
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<BadgeCheck className="h-12 w-12 text-[#eeba4b] mb-4" />
+							<CardTitle>Специальные прицепы</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p class="mb-2 font-medium">По запросу</p>
+							<ul class="text-sm text-muted-foreground space-y-1">
+								<li>• Негабаритные грузы</li>
+								<li>• Тентованные</li>
+								<li>• Платформы</li>
+								<li>• Индивидуальные решения</li>
+							</ul>
+						</CardContent>
+					</Card>
+				</div>
+
+				<div class="mt-12 text-center">
+					<p class="text-muted-foreground max-w-2xl mx-auto">
+						Все прицепы Euro-Pegaz соответствуют европейским стандартам безопасности и регулярно проходят техническое обслуживание в собственных сертифицированных мастерских.
+					</p>
 				</div>
 			</section>
 		</AnimatedSection>

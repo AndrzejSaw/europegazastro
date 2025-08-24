@@ -5,7 +5,7 @@ import Footer from "@/components/Footer.astro";
 import PageHero from "@/components/PageHero.astro";
 import AnimatedSection from "@/components/AnimatedSection.tsx";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ShieldCheck, Lightbulb, Handshake } from "lucide-react";
+import { ShieldCheck, Lightbulb, Handshake, Users, Truck, Building, Globe, Award, MapPin } from "lucide-react";
 import { Image } from "astro:assets";
 import heroImage from "@/assets/hero2.webp";
 import history1Image from "@/assets/history-1.webp";
@@ -29,17 +29,17 @@ import history8Image from "@/assets/history-8.webp";
 						<!-- Левая колонка: Контент -->
 						<div class="p-8 md:p-12 flex flex-col justify-center">
 							<h1 class="text-4xl font-bold tracking-tight sm:text-5xl mb-8">
-								Более 30 лет традиций и инноваций в европейской логистике
+								34 года традиций и инноваций в европейской логистике
 							</h1>
 							<p class="text-lg text-muted-foreground leading-relaxed">
-								Euro-Pegaz — это семейная компания с 30-летним опытом, занимающая одну из лидирующих позиций в сфере транспорта и логистики в Европе. Мы специализируемся на перевозках различных грузов, предлагая комплексные решения от складирования до доставки по всей Европе. Наша команда профессионалов обеспечивает высочайшее качество услуг, соблюдая все международные стандарты безопасности и эффективности.
+								Euro-Pegaz — это семейная компания с 34-летним опытом, занимающая одну из лидирующих позиций в сфере транспорта и логистики в Европе. Мы специализируемся на перевозках различных грузов, предлагая комплексные решения от складирования до доставки по всей Европе. Наша команда профессионалов обеспечивает высочайшее качество услуг, соблюдая все международные стандарты безопасности и эффективности.
 							</p>
 						</div>
 						<!-- Правая колонка: Изображение -->
 						<div class="h-64 md:h-auto">
 							<Image 
-								src={history1Image} 
-								alt="30 лет истории компании EUROPEGAZ в европейской логистике" 
+								src={heroImage} 
+								alt="34 года истории компании EUROPEGAZ в европейской логистике" 
 								class="w-full h-full object-cover"
 								format="webp"
 								quality={80}
@@ -59,7 +59,7 @@ import history8Image from "@/assets/history-8.webp";
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 					<Card className="text-center">
 						<CardHeader className="flex flex-col items-center">
-							<ShieldCheck className="h-12 w-12 text-blue-600 mb-4" />
+							<ShieldCheck className="h-12 w-12 text-[#eeba4b] mb-4" />
 							<CardTitle>Качество и Безопасность</CardTitle>
 						</CardHeader>
 						<CardContent>
@@ -69,7 +69,7 @@ import history8Image from "@/assets/history-8.webp";
 
 					<Card className="text-center">
 						<CardHeader className="flex flex-col items-center">
-							<Lightbulb className="h-12 w-12 text-yellow-500 mb-4" />
+							<Lightbulb className="h-12 w-12 text-[#eeba4b] mb-4" />
 							<CardTitle>Инновационные Решения</CardTitle>
 						</CardHeader>
 						<CardContent>
@@ -79,11 +79,65 @@ import history8Image from "@/assets/history-8.webp";
 
 					<Card className="text-center">
 						<CardHeader className="flex flex-col items-center">
-							<Handshake className="h-12 w-12 text-green-600 mb-4" />
+							<Handshake className="h-12 w-12 text-[#007e57] mb-4" />
 							<CardTitle>Надежное Партнерство</CardTitle>
 						</CardHeader>
 						<CardContent>
 							<p>Благодаря индивидуальному подходу и страсти к делу, мы становимся надежным и лояльным бизнес-партнером для наших клиентов.</p>
+						</CardContent>
+					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<!-- Новая секция: Масштаб деятельности -->
+		<AnimatedSection client:visible variant="transparent" padding="lg" delay={0.3}>
+			<section class="text-center mb-16">
+				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+					Масштаб нашей деятельности
+				</h2>
+				<p class="mx-auto mt-3 max-w-3xl text-center text-muted-foreground mb-12">
+					Euro-Pegaz сегодня — это крупная международная логистическая компания с внушительными ресурсами и географией присутствия.
+				</p>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Users className="h-12 w-12 text-[#eeba4b] mb-4" />
+							<CardTitle>500+ сотрудников</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Включая 200+ профессиональных водителей из разных стран Европы</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Truck className="h-12 w-12 text-[#007e57] mb-4" />
+							<CardTitle>300+ единиц техники</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>150+ собственных тягачей MAN Euro 6 + партнерская сеть, 265 полуприцепов различных типов</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Building className="h-12 w-12 text-slate-600 mb-4" />
+							<CardTitle>3 логистических центра</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Современные склады в Осечне и Домброве-Гурничей, специализированное подразделение LT Silo</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Globe className="h-12 w-12 text-blue-700 mb-4" />
+							<CardTitle>Международное присутствие</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Офисы в Польше и Германии, рейсы по всей Европе, региональные филиалы</p>
 						</CardContent>
 					</Card>
 				</div>
@@ -111,7 +165,7 @@ import history8Image from "@/assets/history-8.webp";
 						</div>
 						<div class="text-left">
 							<h3 class="text-2xl font-bold text-gray-900 mb-4">1991</h3>
-							<p class="text-gray-700 text-lg">Основание компании и приобретение первого грузовика.</p>
+							<p class="text-gray-700 text-lg">Основание компании и приобретение первого грузовика. Начало семейного бизнеса с одним грузовиком положил основу будущей логистической империи, где каждый рейс выполнялся с максимальной ответственностью.</p>
 						</div>
 					</div>
 				</AnimatedSection>
@@ -121,7 +175,7 @@ import history8Image from "@/assets/history-8.webp";
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 						<div class="text-left md:order-1">
 							<h3 class="text-2xl font-bold text-gray-900 mb-4">1999</h3>
-							<p class="text-gray-700 text-lg">Инвестиции в современные складские помещения класса 'А' в Осечной.</p>
+							<p class="text-gray-700 text-lg">Инвестиции в современные складские помещения класса 'А' в Осечной. Строительство складского комплекса площадью 5000 м² стало фундаментом для расширения логистических услуг и позиционирования как 3PL-оператора.</p>
 						</div>
 						<div class="md:order-2">
 						<Image 
@@ -149,7 +203,7 @@ import history8Image from "@/assets/history-8.webp";
 					</div>
 					<div class="text-left">
 						<h3 class="text-2xl font-bold text-gray-900 mb-4">2001</h3>
-						<p class="text-gray-700 text-lg">Открытие нового офиса в Варшаве.</p>
+						<p class="text-gray-700 text-lg">Открытие нового офиса в Варшаве. Укрепление присутствия в столице Польши открыло новые возможности для развития бизнеса и стало координационным центром всех операций компании.</p>
 					</div>
 				</div>
 			</AnimatedSection>
@@ -159,7 +213,7 @@ import history8Image from "@/assets/history-8.webp";
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 					<div class="text-left md:order-1">
 						<h3 class="text-2xl font-bold text-gray-900 mb-4">2007</h3>
-						<p class="text-gray-700 text-lg">Открытие Логистического центра в Домброве-Гурничей.</p>
+						<p class="text-gray-700 text-lg">Открытие Логистического центра в Домброве-Гурничей. Запуск крупного центра дистрибуции значительно расширил складские и перегрузочные возможности, став ключевым звеном в логистической сети компании.</p>
 					</div>
 					<div class="md:order-2">
 						<Image 
@@ -187,7 +241,7 @@ import history8Image from "@/assets/history-8.webp";
 					</div>
 					<div class="text-left">
 						<h3 class="text-2xl font-bold text-gray-900 mb-4">2017</h3>
-						<p class="text-gray-700 text-lg">Расширение группы компаний и запуск интермодальных услуг.</p>
+						<p class="text-gray-700 text-lg">Расширение группы компаний и запуск интермодальных услуг. Присоединение специализированной компании LT Silo расширило портфель услуг перевозкой наливных и сыпучих грузов в цистернах-силосах.</p>
 					</div>
 				</div>
 			</AnimatedSection>
@@ -197,7 +251,7 @@ import history8Image from "@/assets/history-8.webp";
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 					<div class="text-left md:order-1">
 						<h3 class="text-2xl font-bold text-gray-900 mb-4">2019</h3>
-						<p class="text-gray-700 text-lg">Открытие филиала в Германии.</p>
+						<p class="text-gray-700 text-lg">Открытие филиала в Германии. Зарубежное отделение в Берлине стало важным шагом в международной экспансии и начало эры интермодальных перевозок с использованием железнодорожного транспорта.</p>
 					</div>
 					<div class="md:order-2">
 						<Image 
@@ -225,7 +279,7 @@ import history8Image from "@/assets/history-8.webp";
 					</div>
 					<div class="text-left">
 						<h3 class="text-2xl font-bold text-gray-900 mb-4">2021</h3>
-						<p class="text-gray-700 text-lg">Принятие новой стратегии развития.</p>
+						<p class="text-gray-700 text-lg">Принятие новой стратегии развития. Стратегия сосредоточена на дальнейшей цифровизации и экологизации логистических процессов, включая инвестиции в экологичные CNG-двигатели для автопарка.</p>
 					</div>
 				</div>
 			</AnimatedSection>
@@ -235,7 +289,7 @@ import history8Image from "@/assets/history-8.webp";
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
 					<div class="text-left md:order-1">
 						<h3 class="text-2xl font-bold text-gray-900 mb-4">Сегодня</h3>
-						<p class="text-gray-700 text-lg">Продолжаем расти и совершенствоваться для вас.</p>
+						<p class="text-gray-700 text-lg">Продолжаем расти и совершенствоваться для вас. Команда из 500+ сотрудников, современный автопарк из 150+ тягачей MAN Euro 6 и присутствие в нескольких странах делают Euro-Pegaz надежным партнером для международного бизнеса.</p>
 					</div>
 					<div class="md:order-2">
 						<Image 
@@ -249,6 +303,144 @@ import history8Image from "@/assets/history-8.webp";
 				</div>
 			</AnimatedSection>
 		</div>
+		</AnimatedSection>
+
+		<!-- Новая секция: Сертификаты и стандарты -->
+		<AnimatedSection client:visible variant="light" padding="lg" delay={0.5}>
+			<section class="text-center mb-16">
+				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+					Сертификаты и международные стандарты
+				</h2>
+				<p class="mx-auto mt-3 max-w-3xl text-center text-muted-foreground mb-12">
+					Наше качество подтверждено международными сертификатами и стандартами, гарантирующими безопасность и надежность услуг.
+				</p>
+				
+				<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Award className="h-12 w-12 text-[#eeba4b] mb-4" />
+							<CardTitle>ISO 9001</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Система менеджмента качества</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Award className="h-12 w-12 text-[#007e57] mb-4" />
+							<CardTitle>ISO 14001</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Экологический менеджмент</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Award className="h-12 w-12 text-[#eeba4b] mb-4" />
+							<CardTitle>ISO 28000</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Безопасность цепи поставок</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Award className="h-12 w-12 text-[#007e57] mb-4" />
+							<CardTitle>HACCP</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Безопасность пищевых продуктов</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Award className="h-12 w-12 text-blue-700 mb-4" />
+							<CardTitle>IFS Logistics</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p>Стандарт для логистики пищевой продукции</p>
+						</CardContent>
+					</Card>
+				</div>
+			</section>
+		</AnimatedSection>
+
+		<!-- Новая секция: География присутствия -->
+		<AnimatedSection client:visible variant="green" padding="lg" delay={0.6}>
+			<section class="text-center mb-16">
+				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+					Наше присутствие в Европе
+				</h2>
+				<p class="mx-auto mt-3 max-w-3xl text-center text-muted-foreground mb-12">
+					Разветвленная сеть офисов и логистических центров обеспечивает эффективное обслуживание клиентов по всей Европе.
+				</p>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Building className="h-12 w-12 text-[#eeba4b] mb-4" />
+							<CardTitle>Головной офис</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p><strong>Варшава, Польша</strong><br/>
+							ul. Domaniewska 47<br/>
+							Центр управления всеми операциями</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Truck className="h-12 w-12 text-[#007e57] mb-4" />
+							<CardTitle>Логистические центры</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p><strong>Осечна и Домброва-Гурнича</strong><br/>
+							Современные склады класса "А"<br/>
+							База для водителей и диспетчеров</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<MapPin className="h-12 w-12 text-slate-600 mb-4" />
+							<CardTitle>Региональные филиалы</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p><strong>Валбжих, Познань</strong><br/>
+							Координация локальной логистики<br/>
+							LT Silo в Пехчине</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<Globe className="h-12 w-12 text-blue-700 mb-4" />
+							<CardTitle>Зарубежное отделение</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p><strong>Берлин, Германия</strong><br/>
+							Международная экспансия с 2019 года<br/>
+							Интермодальные перевозки</p>
+						</CardContent>
+					</Card>
+
+					<Card className="text-center">
+						<CardHeader className="flex flex-col items-center">
+							<MapPin className="h-12 w-12 text-blue-700 mb-4" />
+							<CardTitle>География рейсов</CardTitle>
+						</CardHeader>
+						<CardContent>
+							<p><strong>Вся Европа</strong><br/>
+							Германия, Франция, Бельгия, Нидерланды<br/>
+							Испания, Швейцария, Италия, Австрия</p>
+						</CardContent>
+					</Card>
+				</div>
+			</section>
 		</AnimatedSection>
 	</main>
 	<Footer />
