@@ -15,26 +15,28 @@ import contactOfficeImage from "@/assets/contact-office.webp";
 <BaseLayout title="Контакты | EUROPEGAZ">
 	<Header />
 	<PageHero title="Контакты" backgroundImage={heroImage} alt="Офис EUROPEGAZ и логистический центр" />
-	<main class="mx-auto max-w-screen-xl px-4 py-16">
-		<!-- Секция 1: Вступительный текст с изображением -->
+	<main class="px-2 sm:px-4 py-8 sm:py-16">
+		<!-- Секция 1: Вступительный блок -->
 		<AnimatedSection client:visible variant="light" padding="lg">
-			<section class="mb-16">
+			<section class="mb-8 sm:mb-16 mx-auto max-w-screen-xl">
 				<Card className="overflow-hidden">
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-0">
 						<!-- Левая колонка: Контент -->
-						<div class="p-8 md:p-12 flex flex-col justify-center">
-							<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+						<div class="p-3 sm:p-4 md:p-6 lg:p-8 xl:p-12 flex flex-col justify-center">
+							<h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-4 sm:mb-6 lg:mb-8">
 								Свяжитесь с нами
 							</h2>
-							<p class="text-lg text-muted-foreground leading-relaxed mb-6">
-								Мы всегда рады новым специалистам в нашей команде. Все открытые вакансии и подробные требования вы можете найти на нашей странице 'Карьера'. Если вас заинтересовала конкретная позиция, пожалуйста, отправляйте анкету непосредственно со страницы с ее описанием.
+							<p class="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed mb-3 sm:mb-4 lg:mb-6">
+								У вас есть вопросы по нашим услугам или вы хотите обсудить логистические потребности вашей компании? 
+								Мы всегда готовы к диалогу и ждем возможности стать вашим надежным партнером в сфере грузоперевозок по Европе.
 							</p>
-							<Button variant="link" className="text-lg self-start">
-								<a href="/careers">Посмотреть открытые вакансии</a>
+							<p class="text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed mb-6 sm:mb-8">
+								Наша команда экспертов готова предложить индивидуальные решения для любых логистических задач. 
+								Свяжитесь с нами удобным способом, и мы оперативно ответим на все ваши вопросы.
+							</p>
+							<Button variant="link" className="text-base sm:text-lg self-start">
+								→ Написать сообщение
 							</Button>
-							<p class="text-lg text-muted-foreground leading-relaxed mt-6">
-								Если у вас остались общие вопросы, вы можете связаться с нами любым удобным способом, указанным ниже.
-							</p>
 						</div>
 						<!-- Правая колонка: Изображение -->
 						<div class="h-64 md:h-auto">
@@ -53,23 +55,23 @@ import contactOfficeImage from "@/assets/contact-office.webp";
 
 		<!-- Секция 2: Контактная информация -->
 		<AnimatedSection client:visible variant="transparent">
-			<section class="mb-16">
+			<section class="mb-8 sm:mb-16 mx-auto max-w-screen-xl">
 				<Card className="max-w-6xl mx-auto">
-					<CardContent className="p-8">
-						<CardTitle className="text-3xl mb-8 text-center text-gray-900">Главная база Euro-Pegaz</CardTitle>
+					<CardContent className="p-3 sm:p-4 md:p-6 lg:p-8">
+						<CardTitle className="text-xl sm:text-2xl lg:text-3xl mb-4 sm:mb-6 lg:mb-8 text-center text-gray-900">Главная база Euro-Pegaz</CardTitle>
 						
 						<!-- Описание базы -->
-						<div class="text-center mb-8">
-							<p class="text-lg text-gray-700 max-w-3xl mx-auto">
-								Наш современный логистический центр в Оседне является центральным хабом всех операций. 
+						<div class="text-center mb-4 sm:mb-6 lg:mb-8">
+							<p class="text-sm sm:text-base lg:text-lg text-gray-700 max-w-3xl mx-auto">
+								Наш современный логистический центр в Оседне является центральным хубом всех операций. 
 								Здесь базируется наш флот из 150+ автомобилей и 265 прицепов, а также работает опытная команда диспетчеров и механиков.
 							</p>
 						</div>
 
-						<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+						<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-4 sm:mb-6 lg:mb-8">
 							<!-- Адрес и контакты -->
 							<div class="lg:col-span-1">
-								<div class="bg-gray-50 p-6 rounded-lg h-full">
+								<div class="bg-gray-50 p-3 sm:p-4 lg:p-6 rounded-lg h-full">
 									<h3 class="font-semibold text-gray-900 mb-4 text-lg flex items-center">
 										<MapPin className="h-5 w-5 mr-2 text-[#007e57]" />
 										Адрес и контакты
@@ -79,128 +81,128 @@ import contactOfficeImage from "@/assets/contact-office.webp";
 											<p class="font-medium text-gray-900 mb-1">Адрес:</p>
 											<p class="text-gray-700">Centrum logistyczne Osieczna<br/>64-113 Osieczna k. Leszna<br/>ul. Łoniewska 1</p>
 										</div>
-										
 										<div>
-											<p class="font-medium text-gray-900 mb-1">Часы работы:</p>
-											<p class="text-gray-700">8:00 - 16:00 (Пн-Пт)<br/>Экстренная связь: 24/7</p>
-										</div>
-
-										<div>
-											<p class="font-medium text-gray-900 mb-3">Связь:</p>
+											<p class="font-medium text-gray-900 mb-2">Контакты:</p>
 											<div class="space-y-2">
-												<a href="tel:+48509717619" class="flex items-center text-blue-700 hover:text-blue-800 transition-colors">
+												<div class="flex items-center">
 													<Phone className="h-4 w-4 mr-2" />
-													+48 509 717 619
-												</a>
-												<a href="viber://chat?number=%2B48509717619" class="flex items-center text-[#eeba4b] hover:text-[#d4a935] transition-colors">
+													<span class="text-gray-700">+48 796 969 901</span>
+												</div>
+												<div class="flex items-center">
 													<MessageSquare className="h-4 w-4 mr-2" />
-													Viber
-												</a>
-												<a href="https://wa.me/48509717619" class="flex items-center text-[#007e57] hover:text-green-700 transition-colors">
+													<span class="text-gray-700">biuro@europegaz.eu</span>
+												</div>
+												<div class="flex items-center">
 													<Navigation className="h-4 w-4 mr-2" />
-													WhatsApp
-												</a>
+													<span class="text-gray-700">GPS: 51.8478, 16.4236</span>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
 							</div>
 
-							<!-- Услуги на базе -->
+							<!-- Техническое оснащение -->
 							<div class="lg:col-span-1">
-								<div class="bg-blue-50 p-6 rounded-lg h-full">
+								<div class="bg-blue-50 p-3 sm:p-4 lg:p-6 rounded-lg h-full">
 									<h3 class="font-semibold text-gray-900 mb-4 text-lg flex items-center">
 										<Settings className="h-5 w-5 mr-2 text-blue-700" />
-										Услуги на базе
+										Техническое оснащение
 									</h3>
-									<ul class="space-y-3">
-										<li class="flex items-center text-gray-700">
+									<ul class="space-y-2">
+										<li class="flex items-center">
 											<CheckCircle className="h-4 w-4 mr-2 text-[#007e57]" />
-											Техническое обслуживание
+											<span class="text-gray-700">Круглосуточная охрана</span>
 										</li>
-										<li class="flex items-center text-gray-700">
+										<li class="flex items-center">
 											<CheckCircle className="h-4 w-4 mr-2 text-[#007e57]" />
-											Диспетчерская служба 24/7
+											<span class="text-gray-700">Видеонаблюдение</span>
 										</li>
-										<li class="flex items-center text-gray-700">
+										<li class="flex items-center">
 											<CheckCircle className="h-4 w-4 mr-2 text-[#007e57]" />
-											Парковка для водителей
+											<span class="text-gray-700">Современный автопарк</span>
 										</li>
-										<li class="flex items-center text-gray-700">
+										<li class="flex items-center">
 											<CheckCircle className="h-4 w-4 mr-2 text-[#007e57]" />
-											Оформление документов
+											<span class="text-gray-700">Складские помещения</span>
 										</li>
-										<li class="flex items-center text-gray-700">
+										<li class="flex items-center">
 											<CheckCircle className="h-4 w-4 mr-2 text-[#007e57]" />
-											Консультации по визам
+											<span class="text-gray-700">Автомастерская</span>
 										</li>
-										<li class="flex items-center text-gray-700">
+										<li class="flex items-center">
 											<CheckCircle className="h-4 w-4 mr-2 text-[#007e57]" />
-											Отдел кадров
+											<span class="text-gray-700">Мойка для грузовиков</span>
 										</li>
 									</ul>
 								</div>
 							</div>
 
-							<!-- Инфраструктура -->
+							<!-- Инфраструктура базы -->
 							<div class="lg:col-span-1">
-								<div class="bg-green-50 p-6 rounded-lg h-full">
+								<div class="bg-yellow-50 p-3 sm:p-4 lg:p-6 rounded-lg h-full">
 									<h3 class="font-semibold text-gray-900 mb-4 text-lg flex items-center">
 										<Building2 className="h-5 w-5 mr-2 text-[#eeba4b]" />
-										Инфраструктура
+										Инфраструктура базы
 									</h3>
-									<ul class="space-y-3">
-										<li class="flex items-center text-gray-700">
+									<ul class="space-y-2">
+										<li class="flex items-start">
 											<Truck className="h-4 w-4 mr-2 text-slate-600" />
-											150+ грузовых автомобилей
+											<span class="text-gray-700">Парковка для 200+ грузовиков</span>
 										</li>
-										<li class="flex items-center text-gray-700">
+										<li class="flex items-start">
 											<Container className="h-4 w-4 mr-2 text-slate-600" />
-											265 прицепов разных типов
+											<span class="text-gray-700">Стоянка для 265 прицепов</span>
 										</li>
-										<li class="flex items-center text-gray-700">
+										<li class="flex items-start">
 											<Wrench className="h-4 w-4 mr-2 text-slate-600" />
-											Собственная мастерская
+											<span class="text-gray-700">Сервисная мастерская</span>
 										</li>
-										<li class="flex items-center text-gray-700">
+										<li class="flex items-start">
 											<Fuel className="h-4 w-4 mr-2 text-slate-600" />
-											Заправочная станция
+											<span class="text-gray-700">Заправочная станция</span>
 										</li>
-										<li class="flex items-center text-gray-700">
+										<li class="flex items-start">
 											<Shield className="h-4 w-4 mr-2 text-slate-600" />
-											Охраняемая территория
+											<span class="text-gray-700">Системы безопасности</span>
 										</li>
-										<li class="flex items-center text-gray-700">
+										<li class="flex items-start">
 											<Wifi className="h-4 w-4 mr-2 text-slate-600" />
-											Wi-Fi для водителей
+											<span class="text-gray-700">Wi-Fi и связь</span>
 										</li>
 									</ul>
 								</div>
 							</div>
 						</div>
 
-						
+						<div class="text-center">
+							<p class="text-sm text-gray-600">
+								Время работы офиса: Понедельник - Пятница, 8:00 - 18:00 CET
+							</p>
+						</div>
 					</CardContent>
 				</Card>
 			</section>
 		</AnimatedSection>
 
-		<!-- Секция 3: Карта Google -->
+		<!-- Секция 3: Карьерные возможности -->
 		<AnimatedSection client:visible>
-			<section class="text-center">
-				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
-					Мы на карте
-				</h2>
-				
-				<div class="max-w-4xl mx-auto">
-					<iframe 
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2438.7239058752647!2d16.418999815758398!3d52.29583737978469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47045b6e5f5a5a5f%3A0x5f5a5a5f5a5a5a5f!2s%C5%81oniewska%201%2C%2064-113%20Osieczna%2C%20Poland!5e0!3m2!1sen!2sus!4v1629872400000!5m2!1sen!2sus"
-						class="w-full h-96 rounded-lg border-0"
-						allowfullscreen=""
-						loading="lazy"
-						referrerpolicy="no-referrer-when-downgrade">
-					</iframe>
-				</div>
+			<section class="mb-8 sm:mb-16 mx-auto max-w-screen-xl">
+				<Card className="max-w-4xl mx-auto bg-gradient-to-r from-[#007e57] to-[#eeba4b] text-white">
+					<CardContent className="p-4 sm:p-6 lg:p-8 text-center">
+						<h2 class="text-xl sm:text-2xl lg:text-3xl font-bold mb-4 sm:mb-6">Присоединяйтесь к нашей команде</h2>
+						<p class="text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 opacity-90">
+							Мы всегда ищем талантливых и мотивированных специалистов. 
+							Посмотрите наши открытые вакансии и станьте частью одной из ведущих логистических компаний Европы.
+						</p>
+						<Button variant="secondary" size="lg" className="bg-white text-[#007e57] hover:bg-gray-100">
+							<a href="/careers" class="flex items-center">
+								Посмотреть вакансии
+								<Navigation className="ml-2 h-4 w-4" />
+							</a>
+						</Button>
+					</CardContent>
+				</Card>
 			</section>
 		</AnimatedSection>
 	</main>

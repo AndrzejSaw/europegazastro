@@ -15,18 +15,18 @@ import interImage from "@/assets/inter.webp";
 <BaseLayout title="Наши услуги | EUROPEGAZ">
 	<Header />
 	<PageHero title="Наши услуги" backgroundImage={heroImage} alt="Грузовики EUROPEGAZ в логистическом центре готовые к отправке" />
-	<main class="mx-auto max-w-screen-xl px-4 py-16">
+	<main class="mx-auto max-w-screen-xl px-2 sm:px-4 lg:px-6 py-8 sm:py-16">
 		<!-- Секция 1: Вступительный блок -->
 		<AnimatedSection client:visible variant="light" padding="lg">
-			<section class="mb-16">
+			<section class="mb-8 sm:mb-16">
 				<Card className="overflow-hidden">
 					<div class="grid grid-cols-1 md:grid-cols-2 gap-0">
 						<!-- Левая колонка: Контент -->
-						<div class="p-8 md:p-12 flex flex-col justify-center">
-							<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+						<div class="p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 flex flex-col justify-center">
+							<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-6 sm:mb-8">
 								Как мы работаем: Профессиональные перевозки по Европе
 							</h2>
-							<p class="text-lg text-muted-foreground leading-relaxed">
+							<p class="text-base sm:text-lg text-muted-foreground leading-relaxed">
 								В Euro-Pegaz мы гордимся тем, что предоставляем полный спектр логистических услуг высочайшего качества. Наша команда профессионалов обеспечивает безопасную и своевременную доставку грузов по всей Европе, используя современный автопарк и передовые технологии. Мы работаем с грузами любой сложности — от стандартных перевозок до специальных рейсов высокой степени безопасности.
 							</p>
 						</div>
@@ -47,12 +47,12 @@ import interImage from "@/assets/inter.webp";
 
 		<!-- Секция 2: Основные направления работы -->
 		<AnimatedSection client:visible>
-			<section class="mb-16 bg-muted py-16 px-8">
-				<h2 class="text-3xl font-bold tracking-tight sm:text-4xl text-center mb-12">
+			<section class="mb-16 bg-muted py-12 sm:py-16 px-4 sm:px-8">
+				<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-center mb-8 sm:mb-12">
 					Основные направления нашей работы
 				</h2>
 				
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
 					<!-- FTL/LTL -->
 					<Card className="text-center">
 						<CardHeader className="flex flex-col items-center">
@@ -92,11 +92,11 @@ import interImage from "@/assets/inter.webp";
 		<!-- Секция 2.5: Интермодальные перевозки -->
 		<AnimatedSection client:visible variant="light" padding="lg">
 			<section class="mb-16">
-				<div class="text-center mb-12">
-					<h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-8">
+				<div class="text-center mb-8 sm:mb-12">
+					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-6 sm:mb-8">
 						Интермодальные решения: автодорога + железная дорога
 					</h2>
-					<p class="mx-auto max-w-3xl text-muted-foreground">
+					<p class="mx-auto max-w-3xl text-sm sm:text-base text-muted-foreground">
 						Мы развиваем интермодальные перевозки, комбинируя автомобильный и железнодорожный транспорт для максимальной эффективности и экологичности.
 					</p>
 				</div>

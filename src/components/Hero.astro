@@ -15,7 +15,7 @@ import HeroImage from "@/assets/hero.webp";
     <div class="absolute bottom-40 left-16 w-20 h-20 bg-[#007e57]/10 rounded-full animate-drift" style="animation-delay: 1s;"></div>
     
     <!-- Технические линии -->
-    <div class="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#007e57]/20 via-[#007e57]/30 to-transparent"></div>
+    <div class="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#007e57]/30 to-transparent"></div>
     <div class="absolute bottom-1/3 left-0 w-2/3 h-px bg-gradient-to-r from-transparent via-[#eeba4b]/25 to-transparent"></div>
     
     <!-- Точечная сетка -->
@@ -34,24 +34,24 @@ import HeroImage from "@/assets/hero.webp";
   </div>
   
   <!-- Используем тот же контейнер что и в других секциях -->
-  <div class="relative z-10 mx-auto max-w-screen-xl px-4 min-h-[85vh] flex items-center">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+  <div class="relative z-10 mx-auto max-w-screen-xl px-2 sm:px-4 lg:px-6 min-h-[85vh] flex items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center w-full">
       
       <!-- Контент -->
-      <div class="relative space-y-8">
+      <div class="relative space-y-6 sm:space-y-8">
         <!-- Декоративные элементы вокруг заголовка -->
         <div class="absolute -top-4 left-20 w-8 h-8 bg-[#eeba4b] transform rotate-45 animate-float" style="animation-delay: 1s;"></div>
         <div class="absolute top-32 left-32 w-4 h-4 bg-[#eeba4b] rounded-full animate-pulse" style="animation-delay: 1.5s;"></div>
         
         <!-- Технологичные линии -->
         <div class="absolute top-12 left-24 w-20 h-0.5 bg-gradient-to-r from-[#007e57]/70 to-transparent animate-pulse" style="animation-delay: 1.2s;"></div>
-        <div class="space-y-6">
+        <div class="space-y-4 sm:space-y-6">
           <div class="inline-flex items-center space-x-2 bg-[#007e57]/10 px-4 py-2 rounded-full">
             <div class="w-2 h-2 bg-[#007e57] rounded-full animate-pulse"></div>
             <span class="text-[#007e57] font-medium">Международные перевозки</span>
           </div>
           
-          <h1 class="relative text-5xl lg:text-7xl font-bold text-gray-900 leading-none">
+          <h1 class="relative text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 leading-tight">
             <!-- Декоративные элементы прямо вокруг заголовка -->
             <div class="absolute top-4 -right-6 w-3 h-3 border border-[#007e57] transform rotate-45 animate-rotate-slow" style="animation-delay: 1.8s;"></div>
             
@@ -61,18 +61,18 @@ import HeroImage from "@/assets/hero.webp";
             Transport
           </h1>
           
-          <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+          <p class="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-lg">
             Присоединяйтесь к команде лидера европейской логистики. 
             Стабильность, рост, перспективы.
           </p>
         </div>
         
-        <div class="relative space-y-4">
+        <div class="relative space-y-3 sm:space-y-4">
           <!-- Декоративные элементы в области кнопки -->
           <div class="absolute bottom-0 -left-4 w-4 h-4 bg-[#007e57] transform rotate-45 animate-float" style="animation-delay: 1.7s;"></div>
           
           <a href="/careers">
-            <Button size="lg" className="bg-[#007e57] hover:bg-[#006b4a] text-white px-8 py-4 text-lg w-full sm:w-auto shadow-lg hover:shadow-xl transition-all duration-300">
+            <Button size="lg" className="bg-[#007e57] hover:bg-[#006b4a] text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg w-full sm:w-auto shadow-lg hover:shadow-xl transition-all duration-300">
               Открытые вакансии →
             </Button>
           </a>
