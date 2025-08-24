@@ -3,37 +3,115 @@ import { Button } from "./ui/button";
 import { Image } from "astro:assets";
 import HeroImage from "@/assets/hero.webp";
 ---
-<section class="rounded-2xl gradient-hero relative overflow-hidden p-8 sm:p-12 flex flex-col items-center text-center">
-  
-  <div class="relative mx-auto max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    <!-- Left Column (Text) -->
-    <div>
-<h1 class="heading-display text-4xl sm:text-4xl leading-tight">
-  <span class="text-[#007e57]">Euro-Pegaz</span>
-  <span class="text-[#eeba4b]"> Transport</span><br>
-  <span class="text-[#007e57]"> sp. z o.o.</span>
-</h1>
-      <p class="mt-6 text-xl text-muted-foreground leading-relaxed">
-        Вы находитесь на официальном сайте по трудоустройству в нашей компании. Мы всегда в поиске талантливых специалистов, готовых расти вместе с нами. Узнайте больше о нашей компании или сразу переходите к открытым вакансиям.
-      </p>
-      <div class="mt-8 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-        <a href="/about">
-          <Button variant="default" size="lg">О компании</Button>
-        </a>
-        <a href="/careers">
-          <Button variant="secondary" size="lg">Смотреть вакансии</Button>
-        </a>
-      </div>
+<section class="relative min-h-[85vh] bg-gradient-to-br from-white via-gray-50/50 to-white overflow-hidden">
+  <!-- Структурная сетка -->
+  <div class="absolute inset-0">
+    <!-- Главная диагональная структура -->
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-[#007e57]/6 to-transparent transform skew-x-12"></div>
+    
+    <!-- Геометрические панели -->
+    <div class="absolute top-20 right-20 w-32 h-32 bg-[#007e57]/8 transform rotate-45 animate-float"></div>
+    <div class="absolute top-32 right-48 w-16 h-16 bg-[#eeba4b]/15 transform rotate-12 animate-scale-pulse" style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-40 left-16 w-20 h-20 bg-[#007e57]/10 rounded-full animate-drift" style="animation-delay: 1s;"></div>
+    
+    <!-- Технические линии -->
+    <div class="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#007e57]/20 via-[#007e57]/30 to-transparent"></div>
+    <div class="absolute bottom-1/3 left-0 w-2/3 h-px bg-gradient-to-r from-transparent via-[#eeba4b]/25 to-transparent"></div>
+    
+    <!-- Точечная сетка -->
+    <div class="absolute top-1/3 left-1/4 grid grid-cols-3 gap-8 opacity-40">
+      <div class="w-1 h-1 bg-[#007e57] rounded-full"></div>
+      <div class="w-1 h-1 bg-[#007e57] rounded-full"></div>
+      <div class="w-1 h-1 bg-[#eeba4b] rounded-full"></div>
     </div>
-
-    <!-- Right Column (Image) -->
-    <div class="relative p-6 bg-white/10 backdrop-blur-sm rounded-2xl border-t border-l border-white/20 shadow-2xl shadow-inner-2xl md:scale-110">
-      <Image
-        src={HeroImage}
-        alt="Современный грузовик EUROPEGAZ на европейской автомагистрали"
-        loading="eager"
-        class="rounded-lg shadow-xl w-full h-auto"
-      />
+    
+    <!-- Акцентные элементы -->
+    <div class="absolute top-1/2 right-1/3 w-6 h-6 border-2 border-[#007e57]/30 transform rotate-45 animate-rotate-slow"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-4 h-4 bg-[#eeba4b] transform rotate-45 animate-pulse" style="animation-delay: 3s;"></div>
+    
+    <!-- Современные градиенты -->
+    <div class="absolute top-40 left-40 w-40 h-40 bg-gradient-conic from-[#007e57]/8 via-transparent to-[#eeba4b]/8 rounded-full blur-2xl"></div>
+  </div>
+  
+  <!-- Используем тот же контейнер что и в других секциях -->
+  <div class="relative z-10 mx-auto max-w-screen-xl px-4 min-h-[85vh] flex items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+      
+      <!-- Контент -->
+      <div class="relative space-y-8">
+        <!-- Декоративные элементы вокруг заголовка -->
+        <div class="absolute -top-4 left-20 w-8 h-8 bg-[#eeba4b] transform rotate-45 animate-float" style="animation-delay: 1s;"></div>
+        <div class="absolute top-32 left-32 w-4 h-4 bg-[#eeba4b] rounded-full animate-pulse" style="animation-delay: 1.5s;"></div>
+        
+        <!-- Технологичные линии -->
+        <div class="absolute top-12 left-24 w-20 h-0.5 bg-gradient-to-r from-[#007e57]/70 to-transparent animate-pulse" style="animation-delay: 1.2s;"></div>
+        <div class="space-y-6">
+          <div class="inline-flex items-center space-x-2 bg-[#007e57]/10 px-4 py-2 rounded-full">
+            <div class="w-2 h-2 bg-[#007e57] rounded-full animate-pulse"></div>
+            <span class="text-[#007e57] font-medium">Международные перевозки</span>
+          </div>
+          
+          <h1 class="relative text-5xl lg:text-7xl font-bold text-gray-900 leading-none">
+            <!-- Декоративные элементы прямо вокруг заголовка -->
+            <div class="absolute top-4 -right-6 w-3 h-3 border border-[#007e57] transform rotate-45 animate-rotate-slow" style="animation-delay: 1.8s;"></div>
+            
+            <span class="relative text-[#007e57]">
+              Euro-Pegaz
+            </span><br>
+            Transport
+          </h1>
+          
+          <p class="text-xl text-gray-600 leading-relaxed max-w-lg">
+            Присоединяйтесь к команде лидера европейской логистики. 
+            Стабильность, рост, перспективы.
+          </p>
+        </div>
+        
+        <div class="relative space-y-4">
+          <!-- Декоративные элементы в области кнопки -->
+          <div class="absolute bottom-0 -left-4 w-4 h-4 bg-[#007e57] transform rotate-45 animate-float" style="animation-delay: 1.7s;"></div>
+          
+          <a href="/careers">
+            <Button size="lg" className="bg-[#007e57] hover:bg-[#006b4a] text-white px-8 py-4 text-lg w-full sm:w-auto shadow-lg hover:shadow-xl transition-all duration-300">
+              Открытые вакансии →
+            </Button>
+          </a>
+          
+        </div>
+      </div>
+      
+      <!-- Изображение с техно-дизайном -->
+      <div class="relative">
+        <!-- Основное изображение -->
+        <div class="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-gray-200/50 hover:shadow-3xl transition-shadow duration-500">
+          <Image
+            src={HeroImage}
+            alt="EUROPEGAZ truck"
+            class="w-full h-[500px] object-cover"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+          
+          <!-- Технические оверлеи -->
+          <div class="absolute top-4 left-4 w-12 h-0.5 bg-[#eeba4b] shadow-lg"></div>
+          <div class="absolute top-6 left-4 w-8 h-0.5 bg-[#007e57] shadow-lg"></div>
+        </div>
+        
+        <!-- Технические декорации -->
+        <div class="absolute -top-4 -left-4 w-8 h-8 border-2 border-[#007e57] transform rotate-45 -z-10 animate-rotate-slow" style="animation-delay: 4s;"></div>
+        <div class="absolute -bottom-4 -right-4 w-6 h-6 bg-[#eeba4b] transform rotate-45 -z-10 animate-scale-pulse" style="animation-delay: 1.5s;"></div>
+        <div class="absolute top-1/2 -right-12 w-20 h-0.5 bg-gradient-to-r from-[#007e57]/50 to-transparent"></div>
+        
+        <!-- Анимированный элемент -->
+        <div class="absolute top-8 left-8 w-12 h-12 border-2 border-[#007e57]/30 rounded-full -z-20 animate-slow-spin"></div>
+        
+        <!-- Тени и свечение -->
+        <div class="absolute -inset-8 bg-gradient-to-br from-[#007e57]/5 via-transparent to-[#eeba4b]/5 rounded-3xl -z-30 blur-xl"></div>
+        
+        <!-- Плавающие элементы -->
+        <div class="absolute top-8 right-8 w-3 h-3 bg-white rounded-full opacity-80 animate-float" style="animation-delay: 0.5s;"></div>
+        <div class="absolute bottom-12 left-12 w-2 h-2 bg-[#eeba4b] rounded-full opacity-60 animate-drift" style="animation-delay: 1s;"></div>
+      </div>
+      
     </div>
   </div>
 </section>

@@ -43,20 +43,16 @@ export default function AnimatedSection({
       ref={ref}
       className={`${backgroundClass} ${paddingClass} ${className} rounded-2xl mb-8`}
       initial={{ 
-        opacity: 0, 
-        y: 50, 
-        scale: 0.95,
-        filter: "blur(5px)" 
+        opacity: 0.8, 
+        y: 5
       }}
       animate={isInView ? { 
         opacity: 1, 
-        y: 0, 
-        scale: 1,
-        filter: "blur(0px)",
+        y: 0,
         transition: {
-          duration: 0.5,
+          duration: 0.3,
           delay: delay,
-          ease: [0.21, 1.11, 0.81, 0.99]
+          ease: "easeOut"
         }
       } : {}}
     >

@@ -1,0 +1,148 @@
+---
+import { Image } from "astro:assets";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Quote } from "lucide-react";
+// Используем временные изображения, позже можно заменить
+import driverImage from "@/assets/driver.webp";
+import dispatcherImage from "@/assets/dispatcher.webp";
+import mechanicImage from "@/assets/mechanic.webp";
+---
+
+<section class="text-center">
+  <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+    Отзывы наших сотрудников
+  </h2>
+  <p class="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+    Узнайте, что говорят о работе в EUROPEGAZ наши коллеги
+  </p>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    
+    <!-- Отзыв водителя -->
+    <Card className="text-left relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+      <!-- Декоративная цитата -->
+      <div class="absolute top-4 right-4 text-[#007e57]/20 group-hover:text-[#007e57]/30 transition-colors">
+        <Quote className="h-8 w-8" />
+      </div>
+      
+      <CardHeader className="pb-4">
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <Image 
+              src={driverImage} 
+              alt="Василий - водитель EUROPEGAZ" 
+              class="w-16 h-16 rounded-full object-cover border-2 border-[#007e57]/20"
+            />
+            <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-[#007e57] rounded-full flex items-center justify-center">
+              <div class="w-3 h-3 bg-white rounded-full"></div>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg text-gray-900">Василий</h3>
+            <p class="text-[#007e57] font-medium">Водитель международных маршрутов</p>
+            <p class="text-sm text-gray-500">5 лет в компании</p>
+          </div>
+        </div>
+      </CardHeader>
+      
+      <CardContent>
+        <blockquote class="text-gray-700 leading-relaxed">
+          "Работаю в EUROPEGAZ уже 5 лет и очень рад своему выбору. Езжу по международным маршрутам, 
+          вижу Европу, получаю достойную зарплату. Компания предоставляет современные грузовики 
+          и всегда поддерживает водителей в дороге."
+        </blockquote>
+        
+        <!-- Рейтинг звездочками -->
+        <div class="flex space-x-1 mt-4">
+          {[...Array(5)].map(() => (
+            <div class="w-4 h-4 bg-[#eeba4b] rounded-full"></div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+
+    <!-- Отзыв специалиста по легализации -->
+    <Card className="text-left relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+      <div class="absolute top-4 right-4 text-[#007e57]/20 group-hover:text-[#007e57]/30 transition-colors">
+        <Quote className="h-8 w-8" />
+      </div>
+      
+      <CardHeader className="pb-4">
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <Image 
+              src={dispatcherImage} 
+              alt="Юлия - специалист по легализации EUROPEGAZ" 
+              class="w-16 h-16 rounded-full object-cover border-2 border-[#007e57]/20"
+            />
+            <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-[#007e57] rounded-full flex items-center justify-center">
+              <div class="w-3 h-3 bg-white rounded-full"></div>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg text-gray-900">Юлия</h3>
+            <p class="text-[#007e57] font-medium">Специалист по легализации</p>
+            <p class="text-sm text-gray-500">3+ года в компании</p>
+          </div>
+        </div>
+      </CardHeader>
+      
+      <CardContent>
+        <blockquote class="text-gray-700 leading-relaxed">
+          "Занимаюсь легализацией документов уже более 3 лет и очень довольна работой. 
+          Компания обеспечивает все необходимые условия для профессионального роста. 
+          Отличная команда, стабильность и интересные задачи каждый день."
+        </blockquote>
+        
+        <div class="flex space-x-1 mt-4">
+          {[...Array(5)].map(() => (
+            <div class="w-4 h-4 bg-[#eeba4b] rounded-full"></div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+
+    <!-- Отзыв координатора -->
+    <Card className="text-left relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+      <div class="absolute top-4 right-4 text-[#007e57]/20 group-hover:text-[#007e57]/30 transition-colors">
+        <Quote className="h-8 w-8" />
+      </div>
+      
+      <CardHeader className="pb-4">
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <Image 
+              src={mechanicImage} 
+              alt="Айнур - координатор водителей EUROPEGAZ" 
+              class="w-16 h-16 rounded-full object-cover border-2 border-[#007e57]/20"
+            />
+            <div class="absolute -bottom-1 -right-1 w-6 h-6 bg-[#007e57] rounded-full flex items-center justify-center">
+              <div class="w-3 h-3 bg-white rounded-full"></div>
+            </div>
+          </div>
+          <div>
+            <h3 class="font-semibold text-lg text-gray-900">Айнур</h3>
+            <p class="text-[#007e57] font-medium">Координатор водителей</p>
+            <p class="text-sm text-gray-500">1+ год в компании</p>
+          </div>
+        </div>
+      </CardHeader>
+      
+      <CardContent>
+        <blockquote class="text-gray-700 leading-relaxed">
+          "Работаю координатором водителей уже больше года и очень рада, что выбрала EUROPEGAZ. 
+          Здесь невероятно дружный коллектив, всегда готовый помочь. Руководство ценит каждого 
+          сотрудника и создает отличные условия для работы."
+        </blockquote>
+        
+        <div class="flex space-x-1 mt-4">
+          {[...Array(5)].map(() => (
+            <div class="w-4 h-4 bg-[#eeba4b] rounded-full"></div>
+          ))}
+        </div>
+      </CardContent>
+    </Card>
+    
+  </div>
+
+</section>

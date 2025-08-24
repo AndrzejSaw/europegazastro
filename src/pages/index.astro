@@ -9,6 +9,7 @@ import HiringProcess from "@/components/HiringProcess.astro";
 import AboutSummary from "@/components/AboutSummary.astro";
 import Cta from "@/components/Cta.astro";
 import Faq from "@/components/Faq.astro";
+import Testimonials from "@/components/Testimonials.astro";
 import AnimatedSection from "@/components/AnimatedSection";
 ---
 
@@ -21,6 +22,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 		<AnimatedSection client:visible variant="light" padding="lg" delay={0.6}><HiringProcess /></AnimatedSection>
 		<AnimatedSection client:visible variant="green" padding="lg" delay={0.8}><AboutSummary /></AnimatedSection>
 		<AnimatedSection client:visible variant="light" padding="lg" delay={1.0}><Faq /></AnimatedSection>
+		<AnimatedSection client:visible variant="transparent" padding="lg" delay={1.1}><Testimonials /></AnimatedSection>
 		<AnimatedSection client:visible variant="green" padding="lg" delay={1.2}><Cta /></AnimatedSection>
 	</main>
 	<Footer />
